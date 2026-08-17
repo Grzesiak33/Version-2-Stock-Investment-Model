@@ -1,0 +1,45 @@
+NVDA
+Score: 77.05/100
+Classification: WATCH
+Risk Level: LOW
+Data Confidence: 82.4/100 (MODERATE)
+
+Revenue Growth: 13.12/15
+Earnings/FCF: 13.6/15
+Industry Growth: 13.5/15
+Balance Sheet: 9.26/10
+Valuation: 2.95/10
+Moat: 9.0/10
+Momentum: 6.0/10
+Insider/Institutional: 3.12/5
+Catalysts: 2.5/5
+Inflation Resilience: 4.0/5
+
+Major Strengths:
+- Revenue Growth
+- Earnings Fcf
+- Industry Growth
+- Balance Sheet
+- Competitive Advantage
+- Inflation Resilience
+
+Major Weaknesses:
+- Valuation
+
+Major Risks:
+- DEMO valuation risk
+
+Key Catalysts:
+- DEMO product cycle
+- DEMO capacity expansion
+
+Investment Thesis:
+Demo thesis only; replace with researched evidence.
+
+What Would Invalidate the Thesis:
+Demo invalidation condition.
+
+Model Version: 2.0.0
+Data Sources: DEMO SYNTHETIC DATA - NOT MARKET DATA
+Data Timestamp: 2026-08-17T12:00:00-04:00
+Missing Fields: revenue, eps, gross_margin

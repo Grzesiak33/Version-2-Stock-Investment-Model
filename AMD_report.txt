@@ -1,0 +1,41 @@
+AMD
+Score: 64.25/100
+Classification: RESEARCH
+Risk Level: LOW
+Data Confidence: 82.4/100 (MODERATE)
+
+Revenue Growth: 8.62/15
+Earnings/FCF: 10.6/15
+Industry Growth: 13.5/15
+Balance Sheet: 8.53/10
+Valuation: 3.28/10
+Moat: 7.5/10
+Momentum: 4.59/10
+Insider/Institutional: 2.88/5
+Catalysts: 1.25/5
+Inflation Resilience: 3.5/5
+
+Major Strengths:
+- Industry Growth
+- Balance Sheet
+
+Major Weaknesses:
+- Valuation
+- Catalysts
+
+Major Risks:
+- DEMO intense competition
+
+Key Catalysts:
+- DEMO accelerator launch
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.0.0
+Data Sources: DEMO SYNTHETIC DATA - NOT MARKET DATA
+Data Timestamp: 2026-08-17T12:00:00-04:00
+Missing Fields: revenue, eps, gross_margin

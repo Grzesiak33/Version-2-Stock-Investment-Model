@@ -1,0 +1,45 @@
+PLTR
+Score: 75.9/100
+Classification: WATCH
+Risk Level: MEDIUM
+Data Confidence: 82.4/100 (MODERATE)
+
+Revenue Growth: 11.25/15
+Earnings/FCF: 13.21/15
+Industry Growth: 15.0/15
+Balance Sheet: 9.71/10
+Valuation: 0.57/10
+Moat: 8.5/10
+Momentum: 7.91/10
+Insider/Institutional: 2.75/5
+Catalysts: 2.5/5
+Inflation Resilience: 4.5/5
+
+Major Strengths:
+- Earnings Fcf
+- Industry Growth
+- Balance Sheet
+- Competitive Advantage
+- Inflation Resilience
+
+Major Weaknesses:
+- Valuation
+
+Major Risks:
+- DEMO premium valuation
+- Excessive price-to-sales valuation
+
+Key Catalysts:
+- DEMO enterprise adoption
+- DEMO contract expansion
+
+Investment Thesis:
+Demo thesis only; replace with researched evidence.
+
+What Would Invalidate the Thesis:
+Demo invalidation condition.
+
+Model Version: 2.0.0
+Data Sources: DEMO SYNTHETIC DATA - NOT MARKET DATA
+Data Timestamp: 2026-08-17T12:00:00-04:00
+Missing Fields: revenue, eps, gross_margin

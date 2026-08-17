@@ -1,0 +1,25 @@
+name: daily-market-snapshot
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 22 * * 1-5'
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Run live snapshot
+        run: python -m src.main --provider live --save-snapshot --no-sec
+      - name: Commit snapshot if generated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/historical/snapshots reports/*.txt
+          git diff --cached --quiet || git commit -m "chore: daily market snapshot"
+          git push
