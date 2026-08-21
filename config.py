@@ -1,10 +1,11 @@
 """Central configuration for the investment model."""
 from __future__ import annotations
 
-MODEL_VERSION = "2.0.0"
+MODEL_VERSION = "2.1.0"
 EXPERIMENT_START = "2026-08-14"
 NEXT_DECISION_POINT = "2026-08-28"
 BENCHMARK_TICKER = "SPY"
+QUALITATIVE_RESEARCH_PATH = "data/qualitative_research.json"
 
 # Seed universe focused on AI compute, infrastructure, software and security.
 # Market capitalization is NOT a scoring input and earns no bonus.
@@ -29,8 +30,6 @@ CATEGORY_MAX = {
 }
 assert sum(CATEGORY_MAX.values()) == 100.0
 
-# Fields used to calculate data completeness. Narrative fields can remain unavailable
-# without crashing the model, but lower confidence must remain visible.
 CONFIDENCE_FIELDS = [
     "revenue", "revenue_growth", "eps", "eps_growth", "free_cash_flow",
     "cash", "debt", "gross_margin", "operating_margin", "pe_ratio",
