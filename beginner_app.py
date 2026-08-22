@@ -1,160 +1,129 @@
-"""Beginner-first mobile web experience for the AI stock research model."""
+"""AI Stocks Made Simple - mobile-first beginner research and simulation app."""
 from __future__ import annotations
 import json
+from datetime import date, timedelta
 from pathlib import Path
+import pandas as pd
 import streamlit as st
+import yfinance as yf
 
-APP_VERSION = "2.2-beta"
-COMPANY_NAMES = {
-    "NVDA": "NVIDIA", "MSFT": "Microsoft", "AVGO": "Broadcom", "PLTR": "Palantir",
-    "AMD": "AMD", "GOOGL": "Alphabet", "AMZN": "Amazon", "META": "Meta",
-    "ORCL": "Oracle", "TSM": "TSMC", "ASML": "ASML", "ARM": "Arm",
-    "CRWD": "CrowdStrike", "PANW": "Palo Alto Networks", "ANET": "Arista Networks",
-    "VRT": "Vertiv", "SNOW": "Snowflake", "DDOG": "Datadog", "NET": "Cloudflare",
-    "NOW": "ServiceNow", "MDB": "MongoDB", "PATH": "UiPath", "MU": "Micron",
-    "AMAT": "Applied Materials", "MRVL": "Marvell", "DELL": "Dell",
-    "SMCI": "Super Micro Computer", "CRDO": "Credo Technology", "TER": "Teradyne",
-    "ACMR": "ACM Research",
-}
-AI_ROLES = {
-    "NVDA": "Builds the GPUs and computing platforms used to train and run many AI systems.",
-    "MSFT": "Provides Azure cloud infrastructure and AI software used by businesses worldwide.",
-    "AVGO": "Supplies networking and custom chips used in large AI data centers.",
-    "PLTR": "Builds enterprise software that helps organizations use data and AI in operations.",
-    "AMD": "Competes in AI accelerators, CPUs and data-center computing.",
-    "GOOGL": "Operates Google Cloud and develops AI models, chips and consumer AI products.",
-    "AMZN": "Provides AI infrastructure and services through Amazon Web Services.",
-    "META": "Uses AI across advertising, recommendation systems and its open-source Llama models.",
-    "ORCL": "Provides cloud infrastructure and databases increasingly used for AI workloads.",
-    "TSM": "Manufactures many of the advanced chips used by leading AI companies.",
-    "ASML": "Makes the lithography machines required to manufacture advanced semiconductors.",
-}
+APP_VERSION="2.2.1-beta"
+UNIVERSE=["NVDA","MSFT","AVGO","PLTR","AMD","GOOGL","AMZN","META","ORCL","TSM","ASML","ARM","CRWD","PANW","ANET","VRT","SNOW","DDOG","NET","NOW","MDB","PATH","MU","AMAT","MRVL","DELL","SMCI","CRDO","TER","ACMR"]
+NAMES={"NVDA":"NVIDIA","MSFT":"Microsoft","AVGO":"Broadcom","PLTR":"Palantir","AMD":"AMD","GOOGL":"Alphabet","AMZN":"Amazon","META":"Meta","ORCL":"Oracle","TSM":"TSMC","ASML":"ASML","ARM":"Arm","CRWD":"CrowdStrike","PANW":"Palo Alto Networks","ANET":"Arista Networks","VRT":"Vertiv","SNOW":"Snowflake","DDOG":"Datadog","NET":"Cloudflare","NOW":"ServiceNow","MDB":"MongoDB","PATH":"UiPath","MU":"Micron","AMAT":"Applied Materials","MRVL":"Marvell","DELL":"Dell","SMCI":"Super Micro Computer","CRDO":"Credo","TER":"Teradyne","ACMR":"ACM Research"}
+DOMAINS={"NVDA":"nvidia.com","MSFT":"microsoft.com","AVGO":"broadcom.com","PLTR":"palantir.com","AMD":"amd.com","GOOGL":"google.com","AMZN":"amazon.com","META":"meta.com","ORCL":"oracle.com","TSM":"tsmc.com","ASML":"asml.com","ARM":"arm.com","CRWD":"crowdstrike.com","PANW":"paloaltonetworks.com","ANET":"arista.com","VRT":"vertiv.com","SNOW":"snowflake.com","DDOG":"datadoghq.com","NET":"cloudflare.com","NOW":"servicenow.com","MDB":"mongodb.com","PATH":"uipath.com","MU":"micron.com","AMAT":"appliedmaterials.com","MRVL":"marvell.com","DELL":"dell.com","SMCI":"supermicro.com","CRDO":"credosemi.com","TER":"teradyne.com","ACMR":"acmrcsh.com"}
+AI_ROLES={"NVDA":"AI chips & accelerated computing","MSFT":"Azure cloud & enterprise AI","AVGO":"AI networking & custom silicon","PLTR":"Enterprise AI software","AMD":"AI accelerators & data-center CPUs","GOOGL":"Cloud, models & AI chips","AMZN":"AWS AI infrastructure","META":"AI models, ads & recommendations","ORCL":"Cloud infrastructure & databases","TSM":"Advanced AI-chip manufacturing","ASML":"Chipmaking lithography systems"}
 
-st.set_page_config(page_title="AI Stocks Made Simple", page_icon="🤖", layout="centered")
+st.set_page_config(page_title="AI Stocks Made Simple",page_icon="🤖",layout="wide")
+st.markdown("""<style>
+.stApp{background:linear-gradient(180deg,#071124 0,#101b3d 25%,#f6f8fc 58%);}
+.hero{padding:22px;border-radius:24px;background:radial-gradient(circle at 80% 10%,#c026d3 0,transparent 28%),radial-gradient(circle at 12% 20%,#ff7a00 0,transparent 30%),linear-gradient(135deg,#07152f,#092c5f 48%,#11143f);color:white;border:1px solid #38bdf8;box-shadow:0 12px 38px #0006;margin-bottom:18px}.hero h1{font-size:clamp(2rem,7vw,4rem);margin:0;background:linear-gradient(90deg,#22d3ee,#a855f7,#f97316);-webkit-background-clip:text;color:transparent}.hero p{font-size:1.05rem}.pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#0b244d;border:1px solid #22d3ee;margin:4px 4px 4px 0}.stockcard{background:#0a1328;color:white;border:1px solid #23345e;border-radius:18px;padding:14px;margin:8px 0}.rank{font-size:1.5rem;font-weight:800;color:#22d3ee}.tiny{font-size:.8rem;color:#a9bad8}.logo{width:34px;height:34px;border-radius:8px;background:white;padding:3px;vertical-align:middle;margin-right:8px}.simbox{background:linear-gradient(135deg,#171042,#082a4d);color:white;border:1px solid #a855f7;border-radius:20px;padding:18px}.disclaimer{font-size:.78rem;color:#64748b}.stTabs [data-baseweb="tab"]{font-size:16px;font-weight:700}
+</style>""",unsafe_allow_html=True)
 
-st.markdown("# 🤖 AI Stocks Made Simple")
-st.markdown("### A simpler way to understand the companies powering artificial intelligence.")
-st.caption(f"{APP_VERSION} • Educational research only • No trades are placed • Not personalized investment advice")
+@st.cache_data(ttl=300,show_spinner=False)
+def live_market(tickers):
+    out={}
+    try:
+        raw=yf.download(tickers=list(tickers),period="6mo",interval="1d",group_by="ticker",auto_adjust=False,progress=False,threads=True)
+        for t in tickers:
+            try:
+                d=raw[t] if len(tickers)>1 else raw
+                close=d["Close"].dropna()
+                if len(close):
+                    p=float(close.iloc[-1]); prev=float(close.iloc[-2]) if len(close)>1 else p
+                    m=float(close.iloc[-22]) if len(close)>=22 else float(close.iloc[0])
+                    out[t]={"price":p,"day":p/prev-1 if prev else 0,"month":p/m-1 if m else 0,"spark":close.tail(30).tolist()}
+            except Exception: pass
+    except Exception: pass
+    return out
 
-rank_dir = Path("data/historical/rankings")
-files = sorted(rank_dir.glob("*.json")) if rank_dir.exists() else []
-latest_file = files[-1] if files else None
-rows = json.loads(latest_file.read_text(encoding="utf-8")) if latest_file else []
+def latest_model_rows():
+    p=Path("data/historical/rankings")
+    files=sorted(p.glob("*.json")) if p.exists() else []
+    if not files:return [],None
+    try:return json.loads(files[-1].read_text(encoding="utf-8")),files[-1].stem
+    except Exception:return [],None
 
-if rows:
-    latest_date = latest_file.stem
-    st.success(f"Latest model snapshot: {latest_date}")
-else:
-    st.info("The first live ranking snapshot has not been saved yet. The learning sections below are still available.")
+def logo(t): return f"https://www.google.com/s2/favicons?domain={DOMAINS.get(t,'example.com')}&sz=64"
 
-nav = st.radio(
-    "Choose a section",
-    ["🏆 Top AI Stocks", "💵 Start Small", "🎓 Learn", "🔎 How the Model Works"],
-    horizontal=False,
-    label_visibility="collapsed",
-)
+def payday_dates(start,end):
+    d=start; arr=[]
+    while d<=end:
+        arr.append(d); d+=timedelta(days=14)
+    return arr
 
-if nav == "🏆 Top AI Stocks":
-    st.markdown("## Today's highest-ranked AI stocks")
-    st.write("The model compares the same evidence categories across the entire AI-stock universe. Higher scores mean the current evidence fits the model better—not that a stock is guaranteed to rise.")
-    amount = st.select_slider(
-        "Learning amount",
-        options=[5, 10, 25, 50, 100],
-        value=10,
-        format_func=lambda x: f"${x}",
-    )
+rows,snapshot_date=latest_model_rows()
+market=live_market(tuple(UNIVERSE))
+rankmap={r.get("ticker"):r for r in rows}
+ranked=[t for t in UNIVERSE if t in market]
+ranked.sort(key=lambda t:(rankmap.get(t,{}).get("rank",999),-market[t].get("month",0)))
 
-    if rows:
-        for row in rows[:5]:
-            ticker = row["ticker"]
-            name = COMPANY_NAMES.get(ticker, ticker)
-            score = float(row["score"])
-            price = row.get("price")
-            risk = str(row.get("risk", "Unknown")).title()
-            confidence = float(row.get("confidence", 0) or 0)
-            ret = row.get("return_since_experiment_start")
-            classification = row.get("classification", "Research")
+st.markdown(f"""<div class='hero'><div class='pill'>🐍 AI model + live market data</div><div class='pill'>🥤 Beginner friendly</div><h1>AI STOCKS<br>MADE SIMPLE</h1><p><b>AI powered. Data driven. Easier investing research.</b></p><p>See the AI-stock leaderboard, learn what each company does, and simulate how small bi-weekly contributions can accumulate over time.</p><div class='tiny'>Prices refresh about every 5 minutes while the app is active. Model rankings use the latest completed model snapshot.</div></div>""",unsafe_allow_html=True)
 
-            with st.container(border=True):
-                st.markdown(f"### #{row['rank']} {name} ({ticker})")
-                st.markdown(f"**Model score: {score:.1f}/100 · {classification}**")
-                st.progress(max(0.0, min(score / 100.0, 1.0)))
-                metrics = st.columns(3)
-                metrics[0].metric("Risk", risk)
-                metrics[1].metric("Data confidence", f"{confidence:.0f}%")
-                metrics[2].metric("Since Aug. 14", "—" if ret is None else f"{ret:+.1%}")
+tab1,tab2,tab3,tab4=st.tabs(["🏆 TOP 20","💵 PAYDAY SIMULATOR","🎓 LEARN","⚙️ MODEL"])
 
-                st.write(AI_ROLES.get(ticker, "Participates in the AI ecosystem through semiconductors, cloud, software, infrastructure or related technology."))
+with tab1:
+    st.subheader("Top 20 AI-related stocks")
+    st.caption("Rank order follows the latest model snapshot when available; price, daily change and recent trend refresh from market data.")
+    if not market: st.error("Live market prices are temporarily unavailable. Please refresh shortly.")
+    for i,t in enumerate(ranked[:20],1):
+        m=market[t]; r=rankmap.get(t,{})
+        score=r.get("score")
+        c1,c2,c3,c4=st.columns([2.4,1,1,1.2])
+        with c1:
+            st.markdown(f"<div class='rank'>#{i} <img class='logo' src='{logo(t)}'>{NAMES[t]} <span class='tiny'>{t}</span></div><div class='tiny'>{AI_ROLES.get(t,'AI ecosystem company')}</div>",unsafe_allow_html=True)
+        c2.metric("Price",f"${m['price']:,.2f}",f"{m['day']:+.2%}")
+        c3.metric("1 mo",f"{m['month']:+.1%}")
+        c4.metric("AI score","—" if score is None else f"{float(score):.0f}/100")
+        if len(m["spark"])>2: st.line_chart(pd.DataFrame({t:m["spark"]}),height=85)
+        st.divider()
 
-                if price:
-                    shares = amount / float(price)
-                    st.markdown(f"**Small-dollar example:** ${amount} ÷ ${float(price):.2f} ≈ **{shares:.4f} shares**")
-                    st.caption("This is math for learning only. Fractional-share availability varies by brokerage.")
+with tab2:
+    st.markdown("<div class='simbox'><h2>💵 Payday Accumulation Simulator</h2><p>Pick up to three AI stocks, choose how much you want to simulate investing every two weeks, and rotate the purchase from A → B → C on each payday.</p></div>",unsafe_allow_html=True)
+    available=ranked[:20] if ranked else UNIVERSE[:20]
+    c1,c2,c3=st.columns(3)
+    a=c1.selectbox("Stock A",available,index=available.index("MSFT") if "MSFT" in available else 0,format_func=lambda x:f"{NAMES[x]} ({x})")
+    b=c2.selectbox("Stock B",available,index=available.index("NVDA") if "NVDA" in available else min(1,len(available)-1),format_func=lambda x:f"{NAMES[x]} ({x})")
+    c=c3.selectbox("Stock C",available,index=available.index("GOOGL") if "GOOGL" in available else min(2,len(available)-1),format_func=lambda x:f"{NAMES[x]} ({x})")
+    amount=st.number_input("Amount invested each payday",min_value=1.0,max_value=10000.0,value=10.0,step=5.0,format="$%.2f")
+    d1,d2=st.columns(2)
+    start=d1.date_input("First payday",value=date.today())
+    end=d2.date_input("Simulate through",value=date(2026,12,31),min_value=date.today())
+    mode=st.radio("Purchase plan",["Rotate A → B → C every payday","Buy all selected stocks every payday"],horizontal=False)
+    if end<start:
+        st.warning("End date must be after the first payday.")
+    elif st.button("🚀 Run my simulation",use_container_width=True,type="primary"):
+        picks=[a,b,c]; dates=payday_dates(start,end); ledger=[]; shares={x:0.0 for x in picks}; invested={x:0.0 for x in picks}
+        for i,d in enumerate(dates):
+            targets=[picks[i%len(picks)]] if mode.startswith("Rotate") else list(dict.fromkeys(picks))
+            for t in targets:
+                price=market.get(t,{}).get("price")
+                if not price: continue
+                qty=amount/price; shares[t]+=qty; invested[t]+=amount
+                ledger.append({"Date":d,"Stock":t,"Contribution":amount,"Price assumption":price,"Shares added":qty})
+        total=sum(invested.values()); value=sum(shares[t]*market.get(t,{}).get("price",0) for t in shares)
+        st.success(f"By {end:%b %d, %Y}, this schedule makes {len(dates)} bi-weekly payday cycles.")
+        k1,k2,k3=st.columns(3); k1.metric("Total contributed",f"${total:,.2f}"); k2.metric("Value at today's prices",f"${value:,.2f}"); k3.metric("Purchases",str(len(ledger)))
+        summary=[]
+        for t in dict.fromkeys(picks):
+            p=market.get(t,{}).get("price",0); summary.append({"Stock":f"{NAMES[t]} ({t})","Invested":invested[t],"Shares accumulated":shares[t],"Value at today's price":shares[t]*p})
+        sdf=pd.DataFrame(summary).set_index("Stock")
+        st.dataframe(sdf.style.format({"Invested":"${:,.2f}","Shares accumulated":"{:.4f}","Value at today's price":"${:,.2f}"}),use_container_width=True)
+        if ledger:
+            ldf=pd.DataFrame(ledger); chart=ldf.groupby("Date")["Contribution"].sum().cumsum(); st.markdown("### How your contributions build") ; st.area_chart(chart,height=220)
+            with st.expander("See every simulated payday"): st.dataframe(ldf,use_container_width=True,hide_index=True)
+        st.info("This simulation holds today's stock prices constant so you can see the contribution/share accumulation clearly. It is not a forecast of what these stocks will be worth in the future.")
 
-                with st.expander("Why can this ranking change?"):
-                    st.write("Scores can move when revenue growth, earnings, cash flow, valuation, momentum, ownership data, documented catalysts, competitive position or other model inputs change.")
-    else:
-        st.warning("No live rankings are available yet, so the app will not invent a Top 5 list.")
+with tab3:
+    st.subheader("AI investing in plain English")
+    st.markdown("### 🐍 Meet the model's Python helper")
+    st.write("Think of the model like a nerdy Python with glasses: it checks the same evidence across every company instead of chasing whatever stock is getting the most hype.")
+    for q,a in [("What is an AI stock?","A company materially involved in AI chips, cloud computing, data centers, networking, cybersecurity, databases or AI software."),("Why invest small amounts repeatedly?","Regular contributions can make investing easier to budget and reduce the pressure to guess one perfect entry day. It does not eliminate the risk of loss."),("What are fractional shares?","They let you buy part of a share. If Microsoft costs hundreds of dollars, a brokerage that supports fractional shares may still let you invest $10."),("Why can rankings change?","Growth, profitability, valuation, price momentum, competitive position, catalysts and other evidence change over time.")]:
+        with st.expander(q):st.write(a)
 
-elif nav == "💵 Start Small":
-    st.markdown("## Learn with small numbers first")
-    st.write("A beginner does not need to think in whole-share prices. Many brokerages support fractional shares, which makes it easier to understand what $5, $10, $25, $50 or $100 represents.")
-    amount = st.select_slider("Choose an example amount", [5, 10, 25, 50, 100], value=10, format_func=lambda x: f"${x}")
+with tab4:
+    st.subheader("How the 100-point model works")
+    cats=[("Revenue Growth",15),("Earnings / Free Cash Flow",15),("Industry Growth",15),("Balance Sheet",10),("Valuation",10),("Competitive Advantage",10),("Momentum",10),("Insider / Institutional",5),("Catalysts",5),("Inflation Resilience",5)]
+    for n,p in cats: st.progress(p/15,text=f"{n} — {p} points")
+    st.caption(f"App {APP_VERSION} • Latest model snapshot: {snapshot_date or 'not yet available'}")
 
-    if rows:
-        st.markdown("### What that amount looks like across today's Top 5")
-        for row in rows[:5]:
-            price = row.get("price")
-            if not price:
-                continue
-            ticker = row["ticker"]
-            st.write(f"**{COMPANY_NAMES.get(ticker, ticker)} ({ticker})** — about {amount/float(price):.4f} shares at ${float(price):.2f}/share")
-    else:
-        st.write("Once a live ranking is saved, this section will automatically calculate fractional-share examples across the Top 5.")
-
-    st.markdown("### Three beginner rules")
-    st.write("1. Small does not mean risk-free. A $10 stock investment can still lose value.")
-    st.write("2. A high model score is research evidence, not a promise or guarantee.")
-    st.write("3. Money needed for bills, emergencies or near-term obligations should not be treated like experimental investing money.")
-
-elif nav == "🎓 Learn":
-    st.markdown("## AI investing in plain English")
-    with st.expander("What is an AI stock?", expanded=True):
-        st.write("A public company whose products or services materially participate in artificial intelligence. That can include chips, cloud computing, data centers, networking, databases, cybersecurity and AI software—not just companies that build chatbots.")
-    with st.expander("Why not just buy the stock that went up the most?"):
-        st.write("Past price movement is only one input. The model also checks business growth, profits and cash flow, financial strength, valuation and other evidence so momentum does not dominate the decision.")
-    with st.expander("What is valuation?"):
-        st.write("Valuation asks how much investors are paying for the company's profits, sales and cash flow. A great business can still be an expensive stock.")
-    with st.expander("What is momentum?"):
-        st.write("Momentum measures recent price trends. Strong momentum can be useful evidence, but the model caps its influence so a rapidly rising stock cannot win on hype alone.")
-    with st.expander("What does data confidence mean?"):
-        st.write("Confidence measures how complete and trustworthy the available inputs are. It is separate from the investment score. A stock can look attractive while still having incomplete data.")
-    with st.expander("Why diversify?"):
-        st.write("Owning only one company exposes you to company-specific risk. Diversification spreads risk across multiple investments, although it cannot eliminate market losses.")
-
-elif nav == "🔎 How the Model Works":
-    st.markdown("## The 100-point research model")
-    categories = [
-        ("Revenue Growth", 15, "How quickly the business is growing sales."),
-        ("Earnings / Free Cash Flow", 15, "Profitability and real cash generation."),
-        ("Industry Growth", 15, "How attractive the company's broader market opportunity is."),
-        ("Balance Sheet", 10, "Cash, debt and financial durability."),
-        ("Valuation", 10, "How expensive the stock is relative to earnings, sales and cash flow."),
-        ("Competitive Advantage", 10, "Evidence of a durable moat or strategic advantage."),
-        ("Momentum", 10, "Price trend across multiple time windows."),
-        ("Insider / Institutional", 5, "Ownership-related evidence."),
-        ("Catalysts", 5, "Documented events that could materially affect the business."),
-        ("Inflation Resilience", 5, "Evidence of pricing power and resilience."),
-    ]
-    for title, points, description in categories:
-        st.markdown(f"**{title} — {points} points**")
-        st.caption(description)
-
-    st.markdown("### What the model deliberately does not do")
-    st.write("• It does not award bonus points just because a stock has a low share price.")
-    st.write("• It does not guarantee future returns.")
-    st.write("• It does not know your income, debts, emergency savings, goals or risk tolerance.")
-    st.write("• It does not place trades or connect to a brokerage account.")
-
-st.divider()
-st.caption("AI Stocks Made Simple is a beginner-facing educational interface powered by the Stock Investment Model. Rankings are research outputs, not individualized recommendations. Stocks can lose value.")
+st.divider(); st.markdown("<div class='disclaimer'>Educational research only. The app does not know your personal financial circumstances, does not place trades, and does not guarantee returns. Live prices may be delayed by the market-data provider. Stocks can lose value.</div>",unsafe_allow_html=True)
