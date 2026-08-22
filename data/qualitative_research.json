@@ -1,0 +1,14 @@
+{
+  "_README": {
+    "purpose": "Optional sourced inputs for the 35 qualitative model points. Never enter estimates without evidence.",
+    "fields": {
+      "industry_growth": "decimal 0.0 to 0.20+; scoring caps at 15 points",
+      "competitive_advantage": "0.0 to 1.0",
+      "inflation_resilience": "0.0 to 1.0 or legacy 0 to 5 scale",
+      "catalysts": "list of verified catalysts",
+      "risk_factors": "list of documented risks",
+      "sources": "required list of source names/URLs",
+      "as_of": "YYYY-MM-DD"
+    }
+  }
+}
