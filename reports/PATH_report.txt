@@ -1,5 +1,5 @@
 PATH
-Score: 48.25/100
+Score: 48.3/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 94.1/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 8.36/15
 Earnings/FCF: 9.32/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.7/10
-Valuation: 7.12/10
+Valuation: 7.17/10
 Moat: 0.0/10
 Momentum: 10.0/10
 Insider/Institutional: 3.75/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-22T01:55:45.491511+00:00
+Data Timestamp: 2026-08-22T03:05:01.590514+00:00
 Missing Fields: eps_growth

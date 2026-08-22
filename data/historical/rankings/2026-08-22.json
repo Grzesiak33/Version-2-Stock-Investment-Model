@@ -14,7 +14,7 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 55.66,
+    "score": 55.67,
     "classification": "RESEARCH",
     "price": 418.95001220703125,
     "experiment_start_price": 426.3500061035156,
@@ -86,7 +86,7 @@
   {
     "ticker": "NVDA",
     "rank": 8,
-    "score": 50.09,
+    "score": 50.06,
     "classification": "RESEARCH",
     "price": 214.72000122070312,
     "experiment_start_price": 225.16000366210938,
@@ -98,7 +98,7 @@
   {
     "ticker": "PATH",
     "rank": 9,
-    "score": 48.25,
+    "score": 48.3,
     "classification": "REJECT",
     "price": 16.389999389648438,
     "experiment_start_price": 16.010000228881836,
@@ -134,7 +134,7 @@
   {
     "ticker": "AMAT",
     "rank": 12,
-    "score": 45.8,
+    "score": 45.78,
     "classification": "REJECT",
     "price": 492.32000732421875,
     "experiment_start_price": 506.63824462890625,
@@ -300,26 +300,26 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "CRWD",
+    "ticker": "META",
     "rank": 26,
+    "score": 39.3,
+    "classification": "REJECT",
+    "price": 549.9000244140625,
+    "experiment_start_price": 589.8499755859375,
+    "return_since_experiment_start": -0.06772900368808188,
+    "confidence": 100.0,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "CRWD",
+    "rank": 27,
     "score": 39.29,
     "classification": "REJECT",
     "price": 191.9499969482422,
     "experiment_start_price": 216.9499969482422,
     "return_since_experiment_start": -0.11523392648843533,
     "confidence": 88.2,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
-    "ticker": "META",
-    "rank": 27,
-    "score": 39.29,
-    "classification": "REJECT",
-    "price": 549.9000244140625,
-    "experiment_start_price": 589.8499755859375,
-    "return_since_experiment_start": -0.06772900368808188,
-    "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
   },
@@ -350,7 +350,7 @@
   {
     "ticker": "ORCL",
     "rank": 30,
-    "score": 30.87,
+    "score": 30.94,
     "classification": "REJECT",
     "price": 146.47000122070312,
     "experiment_start_price": 150.52000427246094,
