@@ -1,0 +1,45 @@
+TER
+Score: 51.21/100
+Classification: RESEARCH
+Risk Level: LOW
+Data Confidence: 100.0/100 (HIGH)
+
+Revenue Growth: 15.0/15
+Earnings/FCF: 15.0/15
+Industry Growth: 0.0/15
+Balance Sheet: 8.9/10
+Valuation: 2.85/10
+Moat: 0.0/10
+Momentum: 5.71/10
+Insider/Institutional: 3.75/5
+Catalysts: 0.0/5
+Inflation Resilience: 0.0/5
+
+Major Strengths:
+- Revenue Growth
+- Earnings Fcf
+- Balance Sheet
+
+Major Weaknesses:
+- Industry Growth
+- Valuation
+- Competitive Advantage
+- Catalysts
+- Inflation Resilience
+
+Major Risks:
+- No explicit risk flags in supplied data
+
+Key Catalysts:
+- Unavailable — requires qualitative research; not fabricated
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.1.0
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-08-22T00:21:05.798638+00:00
+Missing Fields: None

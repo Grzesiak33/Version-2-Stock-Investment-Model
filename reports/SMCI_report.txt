@@ -1,0 +1,44 @@
+SMCI
+Score: 42.01/100
+Classification: REJECT
+Risk Level: LOW
+Data Confidence: 94.1/100 (HIGH)
+
+Revenue Growth: 15.0/15
+Earnings/FCF: 7.23/15
+Industry Growth: 0.0/15
+Balance Sheet: 2.23/10
+Valuation: 9.9/10
+Moat: 0.0/10
+Momentum: 4.11/10
+Insider/Institutional: 3.54/5
+Catalysts: 0.0/5
+Inflation Resilience: 0.0/5
+
+Major Strengths:
+- Revenue Growth
+- Valuation
+
+Major Weaknesses:
+- Industry Growth
+- Balance Sheet
+- Competitive Advantage
+- Catalysts
+- Inflation Resilience
+
+Major Risks:
+- Negative free cash flow / unprofitable growth
+
+Key Catalysts:
+- Unavailable — requires qualitative research; not fabricated
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.1.0
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-08-22T00:21:15.196451+00:00
+Missing Fields: price_to_fcf

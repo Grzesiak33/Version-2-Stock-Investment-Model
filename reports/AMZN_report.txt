@@ -1,0 +1,42 @@
+AMZN
+Score: 42.92/100
+Classification: REJECT
+Risk Level: LOW
+Data Confidence: 100.0/100 (HIGH)
+
+Revenue Growth: 9.22/15
+Earnings/FCF: 12.28/15
+Industry Growth: 0.0/15
+Balance Sheet: 6.64/10
+Valuation: 6.51/10
+Moat: 0.0/10
+Momentum: 4.8/10
+Insider/Institutional: 3.47/5
+Catalysts: 0.0/5
+Inflation Resilience: 0.0/5
+
+Major Strengths:
+- Earnings Fcf
+
+Major Weaknesses:
+- Industry Growth
+- Competitive Advantage
+- Catalysts
+- Inflation Resilience
+
+Major Risks:
+- No explicit risk flags in supplied data
+
+Key Catalysts:
+- Unavailable — requires qualitative research; not fabricated
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.1.0
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-08-22T00:21:08.903136+00:00
+Missing Fields: None

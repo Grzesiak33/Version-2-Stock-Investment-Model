@@ -1,0 +1,43 @@
+MSFT
+Score: 41.9/100
+Classification: REJECT
+Risk Level: LOW
+Data Confidence: 100.0/100 (HIGH)
+
+Revenue Growth: 8.51/15
+Earnings/FCF: 14.63/15
+Industry Growth: 0.0/15
+Balance Sheet: 6.87/10
+Valuation: 3.07/10
+Moat: 0.0/10
+Momentum: 5.37/10
+Insider/Institutional: 3.45/5
+Catalysts: 0.0/5
+Inflation Resilience: 0.0/5
+
+Major Strengths:
+- Earnings Fcf
+
+Major Weaknesses:
+- Industry Growth
+- Valuation
+- Competitive Advantage
+- Catalysts
+- Inflation Resilience
+
+Major Risks:
+- No explicit risk flags in supplied data
+
+Key Catalysts:
+- Unavailable — requires qualitative research; not fabricated
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.1.0
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-08-22T00:21:07.555990+00:00
+Missing Fields: None

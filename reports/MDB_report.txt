@@ -1,0 +1,44 @@
+MDB
+Score: 42.91/100
+Classification: REJECT
+Risk Level: LOW
+Data Confidence: 88.2/100 (HIGH)
+
+Revenue Growth: 11.32/15
+Earnings/FCF: 7.5/15
+Industry Growth: 0.0/15
+Balance Sheet: 9.88/10
+Valuation: 1.69/10
+Moat: 0.0/10
+Momentum: 8.78/10
+Insider/Institutional: 3.74/5
+Catalysts: 0.0/5
+Inflation Resilience: 0.0/5
+
+Major Strengths:
+- Balance Sheet
+- Momentum
+
+Major Weaknesses:
+- Industry Growth
+- Valuation
+- Competitive Advantage
+- Catalysts
+- Inflation Resilience
+
+Major Risks:
+- No explicit risk flags in supplied data
+
+Key Catalysts:
+- Unavailable — requires qualitative research; not fabricated
+
+Investment Thesis:
+Unavailable — requires research; not fabricated.
+
+What Would Invalidate the Thesis:
+Unavailable — requires research.
+
+Model Version: 2.1.0
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-08-22T00:21:18.242316+00:00
+Missing Fields: eps_growth, pe_ratio
