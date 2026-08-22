@@ -1,0 +1,75 @@
+name: live-model-v2-1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/historical/**'
+      - 'reports/**'
+  schedule:
+    - cron: '45 22 * * 1-5'
+
+permissions:
+  contents: write
+
+jobs:
+  live-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build runnable package from archived v2 project
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil, zipfile
+
+          root = Path('.')
+          build = root / '_runtime'
+          if build.exists():
+              shutil.rmtree(build)
+          build.mkdir()
+          with zipfile.ZipFile('investment-model-v2.0.zip') as zf:
+              zf.extractall(build)
+
+          candidates = [p for p in build.rglob('src') if (p / 'main.py').exists()]
+          if not candidates:
+              raise SystemExit('Could not locate src/main.py inside investment-model-v2.0.zip')
+          src = candidates[0]
+          project = src.parent
+
+          for name in ['config.py','qualitative.py','experiment.py','tracking.py','main.py']:
+              shutil.copy2(root / name, src / name)
+
+          qsrc = root / 'data' / 'qualitative_research.json'
+          if qsrc.exists():
+              (project / 'data').mkdir(exist_ok=True)
+              shutil.copy2(qsrc, project / 'data' / 'qualitative_research.json')
+
+          (root / '_runtime_path.txt').write_text(str(project.resolve()))
+          print(project.resolve())
+          PY
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run v2.1 live ranking
+        run: |
+          PROJECT=$(cat _runtime_path.txt)
+          cd "$PROJECT"
+          python -m src.main --provider live --save-snapshot --save-ranking --no-sec
+      - name: Copy results into repository
+        run: |
+          PROJECT=$(cat _runtime_path.txt)
+          mkdir -p data/historical/snapshots data/historical/rankings reports
+          cp -f "$PROJECT"/data/historical/snapshots/*.json data/historical/snapshots/ 2>/dev/null || true
+          cp -f "$PROJECT"/data/historical/rankings/*.json data/historical/rankings/ 2>/dev/null || true
+          cp -f "$PROJECT"/reports/* reports/ 2>/dev/null || true
+      - name: Commit live results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/historical/snapshots data/historical/rankings reports
+          git diff --cached --quiet || git commit -m "data: live v2.1 market ranking"
+          git push
