@@ -1,6 +1,6 @@
-# STREAMLIT DEPLOYMENT BUILD: 3.2.0
-# The production app now renders the hero with Streamlit's native image component
-# and runs the interactive single-stock / multi-stock paycheck planner below it.
+# STREAMLIT DEPLOYMENT BUILD: 3.5.0
+# Compact colorful beginner UX: one-stock / rotation planner, tappable company education,
+# optional growth scenarios, and simplified mobile-first navigation.
 from pathlib import Path
 
 entry = Path("beginner_app.py")
