@@ -1,157 +1,89 @@
 from __future__ import annotations
-import calendar, json
-from datetime import date, timedelta
+import base64, json
 from pathlib import Path
-
-import pandas as pd
 import streamlit as st
-import yfinance as yf
+import streamlit.components.v1 as components
 
-APP_VERSION="3.0.1"
-ROBINHOOD_REFERRAL_URL="https://join.robinhood.com/steveng-15bac4"
-HERO_URL="https://raw.githubusercontent.com/Grzesiak33/Version-2-Stock-Investment-Model/main/assets/hero_production.jpg"
-NAMES={"MU":"Micron","TSM":"TSMC","CRDO":"Credo","ANET":"Arista Networks","PLTR":"Palantir","TER":"Teradyne","NVDA":"NVIDIA","DELL":"Dell","PATH":"UiPath","AMD":"AMD","GOOGL":"Alphabet","AMAT":"Applied Materials","DDOG":"Datadog","AVGO":"Broadcom","SNOW":"Snowflake","AMZN":"Amazon","MDB":"MongoDB","NET":"Cloudflare","ACMR":"ACM Research","VRT":"Vertiv","ASML":"ASML","SMCI":"Super Micro Computer","MSFT":"Microsoft","PANW":"Palo Alto Networks","ARM":"Arm","META":"Meta","CRWD":"CrowdStrike","MRVL":"Marvell","NOW":"ServiceNow","ORCL":"Oracle"}
-DOMAINS={"MU":"micron.com","TSM":"tsmc.com","CRDO":"credosemi.com","ANET":"arista.com","PLTR":"palantir.com","TER":"teradyne.com","NVDA":"nvidia.com","DELL":"dell.com","PATH":"uipath.com","AMD":"amd.com","GOOGL":"google.com","AMAT":"appliedmaterials.com","DDOG":"datadoghq.com","AVGO":"broadcom.com","SNOW":"snowflake.com","AMZN":"amazon.com","MDB":"mongodb.com","NET":"cloudflare.com","ACMR":"acmrcsh.com","VRT":"vertiv.com","ASML":"asml.com","SMCI":"supermicro.com","MSFT":"microsoft.com","PANW":"paloaltonetworks.com","ARM":"arm.com","META":"meta.com","CRWD":"crowdstrike.com","MRVL":"marvell.com","NOW":"servicenow.com","ORCL":"oracle.com"}
+APP_VERSION = "3.1.0"
 
-st.set_page_config(page_title="AI Stocks Made Simple",page_icon="⚡",layout="wide",initial_sidebar_state="collapsed")
-st.markdown("""<style>
-html{scroll-behavior:smooth}.stApp{background:#020711;color:#eef7ff}.block-container{max-width:1120px;padding-top:.55rem;padding-bottom:6.5rem}.stButton>button,.stLinkButton>a{border-radius:14px!important;min-height:46px;font-weight:900}.stMetric{background:#07111f;border:1px solid #17365f;border-radius:15px;padding:10px}.glass{background:linear-gradient(180deg,#081322,#030812);border:1px solid #17365f;border-radius:20px;padding:15px}.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:stretch;border:1px solid #244e80;border-radius:28px;padding:16px;background:radial-gradient(circle at 15% 35%,#ff7a1840,transparent 28%),radial-gradient(circle at 80% 20%,#2563eb55,transparent 33%),linear-gradient(135deg,#02050c,#071b38 52%,#18072e);box-shadow:0 0 34px #0ea5e92b}.hero-img{width:100%;height:360px;object-fit:cover;object-position:18% center;border-radius:22px;border:1px solid #315b8f;box-shadow:0 0 25px #2563eb44}.eyebrow{font-size:.75rem;letter-spacing:.2em;color:#9fb4ce;font-weight:900}.hero-title{font-size:clamp(2.7rem,6.6vw,5rem);font-weight:1000;line-height:.86;font-style:italic;margin:.35rem 0;background:linear-gradient(90deg,#22d3ee,#818cf8,#e879f9);-webkit-background-clip:text;color:transparent}.hero-sub{font-size:clamp(1.2rem,3vw,2rem);font-weight:950;font-style:italic}.cyan{color:#22d3ee}.pink{color:#e879f9}.green{color:#4ade80}.orange{color:#fb923c}.fine{font-size:.77rem;color:#91a7c0}.snake{margin-top:14px;padding:11px;border:1px solid #22d3ee;border-radius:14px;background:#061727;text-align:center;font-weight:900}.statusbar{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:12px 0}.status{background:linear-gradient(180deg,#081526,#040a12);border:1px solid #17365f;border-radius:15px;padding:12px}.status b{font-size:.68rem;color:#92a7c0;display:block}.section-title{font-size:1.45rem;font-weight:950;margin:.2rem 0}.plan{background:radial-gradient(circle at 10% 15%,#ec489944,transparent 27%),linear-gradient(120deg,#24104d,#07345b,#481c08);border:1px solid #a855f7;border-radius:22px;padding:17px;box-shadow:0 0 24px #7c3aed2d}.selected{background:#052d23;border:1px solid #22c55e;border-radius:14px;padding:11px;margin:9px 0}.stockrow{display:grid;grid-template-columns:2fr .75fr .8fr .75fr;gap:7px;align-items:center;padding:9px 4px;border-bottom:1px solid #15253b}.logo{width:34px;height:34px;border-radius:8px;background:white;padding:3px;vertical-align:middle;margin-right:7px}.stockname{font-weight:900}.score{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:3px solid #22c55e;color:#4ade80;font-weight:900}.quick-title{font-size:.77rem;font-weight:900;color:#22d3ee;margin-top:5px}.result-head{background:linear-gradient(135deg,#052e16,#07345b);border:1px solid #22c55e;border-radius:19px;padding:15px;margin-top:12px}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:10px 0}.result-card{border-radius:16px;padding:13px;background:#07111f;border:1px solid #17365f}.result-card b{display:block;font-size:.69rem;color:#8fa5bf}.result-card strong{font-size:1.25rem}.upcoming{background:#07111f;border:1px solid #17365f;border-radius:17px;padding:13px}.learn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.learn{border-radius:17px;padding:14px;min-height:125px;background:#07111f;border:1px solid #17365f}.referral{background:linear-gradient(120deg,#052e16,#08182c);border:1px solid #22c55e;border-radius:18px;padding:15px}.bottom-nav{position:fixed;z-index:999;bottom:8px;left:50%;transform:translateX(-50%);width:min(95%,800px);display:flex;justify-content:space-around;background:#07111ff5;border:1px solid #17365f;border-radius:18px;padding:10px;box-shadow:0 0 30px #000}.bottom-nav a{color:#9fb6d3;text-decoration:none;font-size:.68rem;text-align:center;font-weight:900}.bottom-nav a span{display:block;font-size:1.15rem;color:#22d3ee}@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-img{height:300px}.statusbar,.learn-grid,.result-grid{grid-template-columns:repeat(2,1fr)}.stockrow{grid-template-columns:1.9fr .7fr .75fr}.hide-mobile{display:none}.block-container{padding-left:.62rem;padding-right:.62rem}.hero-title{font-size:3.1rem}.hero-sub{font-size:1.17rem}}</style>""",unsafe_allow_html=True)
+st.set_page_config(page_title="AI Stocks Made Simple", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
+st.markdown("<style>.block-container{padding:0!important;max-width:none!important}.stApp{background:#020711}header,footer{visibility:hidden}</style>", unsafe_allow_html=True)
 
+# Load the latest saved ranking snapshot. No network calls occur during startup.
 def latest_snapshot():
-    p=Path("data/historical/rankings"); files=sorted(p.glob("*.json")) if p.exists() else []
-    if not files:return [],"none"
-    try:return json.loads(files[-1].read_text(encoding="utf-8")),files[-1].stem
-    except:return [],"unavailable"
-
-@st.cache_data(ttl=300,show_spinner=False)
-def fetch_live_prices(tickers):
-    out={}
+    p = Path("data/historical/rankings")
+    files = sorted(p.glob("*.json")) if p.exists() else []
+    if not files:
+        return [], "unavailable"
     try:
-        raw=yf.download(list(tickers),period="5d",interval="1d",group_by="ticker",auto_adjust=False,progress=False,threads=False,timeout=6)
-        for t in tickers:
-            try:
-                close=raw[t]["Close"].dropna()
-                if len(close):
-                    p=float(close.iloc[-1]); prev=float(close.iloc[-2]) if len(close)>1 else p
-                    out[t]={"price":p,"day":p/prev-1 if prev else 0.0}
-            except Exception:pass
-    except Exception:pass
-    return out
+        return json.loads(files[-1].read_text(encoding="utf-8")), files[-1].stem
+    except Exception:
+        return [], "unavailable"
 
-def logo(t):return f"https://www.google.com/s2/favicons?domain={DOMAINS.get(t,'example.com')}&sz=64"
-def next_friday(d):return d+timedelta(days=(4-d.weekday())%7)
-def schedule_dates(start,end,freq,custom=14):
-    d=next_friday(start) if freq=="Every Friday" else start; dates=[]
-    while d<=end:
-        dates.append(d)
-        if freq=="Every Friday":d+=timedelta(days=7)
-        elif freq in ("Every 2 weeks","Every payday (2 weeks)"):d+=timedelta(days=14)
-        elif freq=="Every month":
-            y,m=d.year,d.month+1
-            if m==13:y,m=y+1,1
-            d=date(y,m,min(d.day,calendar.monthrange(y,m)[1]))
-        else:d+=timedelta(days=max(1,int(custom)))
-    return dates
+rows, snapshot = latest_snapshot()
+rows = sorted(rows, key=lambda r: r.get("rank", 999))[:20]
+if not rows:
+    st.error("The saved Top-20 ranking snapshot could not be loaded.")
+    st.stop()
 
-def get_price(t,rows,live):
-    row=next((r for r in rows if r.get("ticker")==t),{})
-    return float(live.get(t,{}).get("price",row.get("price",0) or 0))
+names = {
+    "MU":"Micron","TSM":"TSMC","CRDO":"Credo","ANET":"Arista Networks","PLTR":"Palantir","TER":"Teradyne","NVDA":"NVIDIA","DELL":"Dell","PATH":"UiPath","AMD":"AMD","GOOGL":"Alphabet","AMAT":"Applied Materials","DDOG":"Datadog","AVGO":"Broadcom","SNOW":"Snowflake","AMZN":"Amazon","MDB":"MongoDB","NET":"Cloudflare","ACMR":"ACM Research","VRT":"Vertiv","ASML":"ASML","SMCI":"Super Micro Computer","MSFT":"Microsoft","PANW":"Palo Alto Networks","ARM":"Arm","META":"Meta","CRWD":"CrowdStrike","MRVL":"Marvell","NOW":"ServiceNow","ORCL":"Oracle"
+}
+stocks = []
+for r in rows:
+    t = r.get("ticker", "")
+    stocks.append({
+        "rank": r.get("rank", 0),
+        "ticker": t,
+        "name": names.get(t, t),
+        "score": round(float(r.get("score", 0) or 0), 1),
+        "price": round(float(r.get("price", 0) or 0), 2),
+        "risk": r.get("risk", "—"),
+    })
 
-def choose_stock(t):
-    st.session_state.selected_stock=t
-    st.session_state.stock_select=t
+hero_b64 = ""
+hero_path = Path("assets/hero_production.jpg")
+if hero_path.exists():
+    try:
+        hero_b64 = base64.b64encode(hero_path.read_bytes()).decode("ascii")
+    except Exception:
+        hero_b64 = ""
 
-def choose_amount(v):
-    st.session_state.amount_input=float(v)
+stocks_json = json.dumps(stocks)
+hero_src = f"data:image/jpeg;base64,{hero_b64}" if hero_b64 else ""
 
-rows,snapshot=latest_snapshot(); rows=sorted(rows,key=lambda r:r.get("rank",999)); top20=rows[:20]
-if not top20:st.error("Ranking snapshot could not be loaded.");st.stop()
-choices=[r["ticker"] for r in top20]
-if "selected_stock" not in st.session_state:st.session_state.selected_stock="NVDA" if "NVDA" in choices else choices[0]
-if "stock_select" not in st.session_state:st.session_state.stock_select=st.session_state.selected_stock
-if "live_prices" not in st.session_state:st.session_state.live_prices={}
-if "amount_input" not in st.session_state:st.session_state.amount_input=10.0
+html = f'''<!doctype html>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><style>
+*{{box-sizing:border-box}}html,body{{margin:0;background:#020711;color:#edf7ff;font-family:Arial,Helvetica,sans-serif}}body{{padding:12px 12px 94px}}.app{{max-width:920px;margin:auto}}
+.hero{{position:relative;overflow:hidden;border:1px solid #254e82;border-radius:28px;min-height:380px;background:radial-gradient(circle at 15% 25%,#ff7a1845,transparent 30%),radial-gradient(circle at 80% 15%,#2563eb55,transparent 34%),linear-gradient(135deg,#02050c,#071b38 52%,#18072e);box-shadow:0 0 35px #0ea5e92c}}
+.hero img{{position:absolute;left:0;bottom:0;width:47%;height:100%;object-fit:cover;object-position:18% center;filter:saturate(1.12) contrast(1.04)}}.heroText{{margin-left:45%;padding:26px 22px 20px;position:relative;z-index:2}}.eyebrow{{font-size:11px;letter-spacing:2.4px;color:#9fb5ce;font-weight:900}}.title{{font-size:clamp(42px,8vw,72px);line-height:.86;font-weight:1000;font-style:italic;margin:12px 0;background:linear-gradient(90deg,#22d3ee,#7c8cff,#ec65e8);-webkit-background-clip:text;color:transparent}}.tag{{font-size:clamp(20px,3.2vw,32px);font-weight:1000;font-style:italic;line-height:1.05}}.cyan{{color:#22d3ee}}.pink{{color:#e879f9}}.green{{color:#4ade80}}.orange{{color:#fb923c}}.callout{{margin-top:18px;border:1px solid #1d4ed8;border-radius:13px;background:#07152ddd;padding:12px;font-weight:900}}.snake{{margin-top:10px;border:1px solid #22d3ee;border-radius:12px;background:#061727;padding:10px;text-align:center;font-weight:900}}
+.status{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}}.stat{{background:#07111f;border:1px solid #17365f;border-radius:15px;padding:12px}}.stat small{{display:block;color:#8fa6bf;font-weight:900;font-size:9px}}.stat strong{{font-size:16px}}
+.panel{{background:linear-gradient(180deg,#081322,#030812);border:1px solid #17365f;border-radius:22px;padding:16px;margin:12px 0}}h2{{margin:0 0 5px;font-size:24px}}.muted{{color:#8fa6bf;font-size:13px}}.stocks{{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:12px}}.stock{{display:flex;align-items:center;gap:10px;text-align:left;background:#07111f;border:1px solid #17365f;border-radius:15px;padding:12px;color:white;cursor:pointer}}.stock.active{{border-color:#22d3ee;background:#09253b;box-shadow:0 0 18px #22d3ee33}}.badge{{min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:2px solid #22c55e;color:#4ade80;font-weight:900}}.stockMain{{flex:1}}.stockName{{font-weight:900;font-size:15px}}.ticker{{color:#8fa6bf;font-size:12px}}.price{{font-weight:900}}.risk{{font-size:11px;color:#facc15}}
+.plan{{background:radial-gradient(circle at 10% 15%,#ec489944,transparent 27%),linear-gradient(120deg,#24104d,#07345b,#481c08);border-color:#a855f7}}label{{display:block;font-size:12px;font-weight:900;color:#b7c9dd;margin:12px 0 6px}}select,input{{width:100%;background:#06101d;border:1px solid #315177;color:white;border-radius:13px;padding:13px;font-size:16px;outline:none}}.quick{{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}}button{{border:1px solid #275078;border-radius:13px;background:#07111f;color:white;padding:12px;font-weight:900;cursor:pointer}}button.active,button.primary{{background:linear-gradient(90deg,#0ea5e9,#7c3aed);border-color:#22d3ee}}.two{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}.selected{{margin-top:10px;background:#052d23;border:1px solid #22c55e;border-radius:14px;padding:12px;font-weight:900}}
+.results{{display:none}}.results.show{{display:block}}.cards{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}}.card{{background:#07111f;border:1px solid #17365f;border-radius:15px;padding:12px}}.card small{{display:block;color:#8fa6bf;font-size:9px;font-weight:900}}.card strong{{font-size:19px}}.chart{{height:190px;display:flex;align-items:end;gap:4px;margin:16px 0;border-bottom:1px solid #21405f;padding:10px}}.bar{{flex:1;background:linear-gradient(#22d3ee,#7c3aed);border-radius:4px 4px 0 0;min-height:3px}}.upcoming{{background:#07111f;border:1px solid #17365f;border-radius:15px;padding:12px}}.deposit{{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #14263a;font-size:13px}}
+.learn{{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}}.learn div{{background:#07111f;border:1px solid #17365f;border-radius:16px;padding:14px;min-height:120px}}.learn h3{{margin:0 0 7px}}.ref{{border:1px solid #22c55e;background:linear-gradient(120deg,#052e16,#07182c);border-radius:18px;padding:15px;margin-top:12px}}.ref a{{display:block;text-align:center;text-decoration:none;background:#22c55e;color:#03210f;font-weight:1000;border-radius:13px;padding:13px;margin-top:10px}}
+.nav{{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);width:min(94%,780px);display:flex;justify-content:space-around;background:#07111ff4;border:1px solid #17365f;border-radius:18px;padding:10px;z-index:99;box-shadow:0 0 30px #000}}.nav a{{color:#9fb6d3;text-decoration:none;font-size:10px;font-weight:900;text-align:center}}.nav span{{display:block;color:#22d3ee;font-size:19px}}
+@media(max-width:650px){{body{{padding:7px 7px 90px}}.hero{{min-height:560px}}.hero img{{width:100%;height:58%;top:0;bottom:auto;object-position:18% center}}.heroText{{margin-left:0;padding:320px 16px 16px}}.title{{font-size:44px}}.tag{{font-size:20px}}.status{{grid-template-columns:repeat(2,1fr)}}.stocks{{grid-template-columns:1fr}}.cards{{grid-template-columns:repeat(2,1fr)}}.learn{{grid-template-columns:repeat(2,1fr)}}.quick{{grid-template-columns:repeat(5,1fr)}}.two{{grid-template-columns:1fr 1fr}}}}
+</style></head><body><div class="app" id="home">
+<div class="hero">''' + (f'<img src="{hero_src}" alt="AI Stocks guide">' if hero_src else '') + f'''<div class="heroText"><div class="eyebrow">AI STOCKS MADE SIMPLE • VERSION {APP_VERSION}</div><div class="title">AI STOCKS<br>MADE SIMPLE</div><div class="tag"><span class="cyan">AI POWERED.</span><br><span class="pink">DATA DRIVEN.</span><br>SMARTER INVESTING.</div><div class="callout">◆ DAILY AI STOCK RANKINGS<br><span class="muted">START SMALL • BUILD A ROUTINE • SEE THE MATH</span></div><div class="snake">🐍👓 PYTHON POWERED &nbsp; • &nbsp; 🥤 RED POP ENERGY</div></div></div>
+<div class="status"><div class="stat"><small>MARKET DATA</small><strong class="green">SNAPSHOT</strong></div><div class="stat"><small>LAST UPDATED</small><strong>{snapshot}</strong></div><div class="stat"><small>MODEL VERSION</small><strong class="cyan">{APP_VERSION}</strong></div><div class="stat"><small>AI STOCKS</small><strong class="orange">20</strong></div></div>
+<div class="panel" id="top20"><h2>🔥 TOP AI STOCKS TODAY</h2><div class="muted">Tap any company to load it into the simulator.</div><div class="stocks" id="stocks"></div></div>
+<div class="panel plan" id="simulate"><h2>💵 BUILD YOUR INVESTING PLAN</h2><div class="muted">Choose a stock, deposit amount, schedule and projection date.</div><div id="selectedBox" class="selected"></div><label>1. Pick your stock</label><select id="stockSelect"></select><label>2. Investment amount</label><div class="quick" id="quick"></div><input id="amount" type="number" min="1" step="1" value="10"><label>3. Frequency</label><select id="freq"><option value="14">Every 2 weeks / payday</option><option value="7">Every Friday</option><option value="30">Every month</option><option value="1">Custom days</option></select><div id="customWrap" style="display:none"><label>Custom number of days</label><input id="customDays" type="number" min="1" value="14"></div><div class="two"><div><label>4. Start date</label><input id="start" type="date"></div><div><label>5. End date</label><input id="end" type="date" value="2026-12-31"></div></div><button class="primary" id="run" style="width:100%;margin-top:14px">🚀 SHOW ME HOW THIS ADDS UP</button></div>
+<div class="panel results" id="results"><h2>📈 YOUR SIMULATION RESULTS</h2><div class="muted" id="resultSub"></div><div class="cards"><div class="card"><small>TOTAL CONTRIBUTED</small><strong class="green" id="total"></strong></div><div class="card"><small># OF DEPOSITS</small><strong class="pink" id="count"></strong></div><div class="card"><small>SHARES ACCUMULATED</small><strong class="cyan" id="shares"></strong></div><div class="card"><small>VALUE AT SHOWN PRICE</small><strong class="orange" id="value"></strong></div></div><div class="two"><div><h3>Portfolio Growth</h3><div class="chart" id="chart"></div></div><div><h3>Upcoming Deposits</h3><div class="upcoming" id="upcoming"></div></div></div><div class="muted">Future stock prices will change. This illustration holds the selected stock at the displayed price so the contribution/share math is easy to understand.</div></div>
+<div class="panel" id="learn"><h2>🎓 START SMALL. LEARN AS YOU GO.</h2><div class="learn"><div><h3 class="pink">🚀 START SMALL</h3>$5, $10 or $25 at a time. Fractional shares can make small investing approachable.</div><div><h3 class="cyan">🧠 LEARN</h3>Plain-English AI and investing explanations without Wall Street jargon.</div><div><h3 class="green">🎯 BUILD A ROUTINE</h3>Weekly, payday, bi-weekly or monthly contributions.</div><div><h3 class="orange">🛡️ RISK FIRST</h3>Stocks can fall. Rankings are research signals, not guarantees.</div></div></div>
+<div class="ref"><b class="green">Robinhood • Sponsored / Referral</b><div>Optional brokerage referral. Sponsorship never changes model rankings or simulator results.</div><a href="https://join.robinhood.com/steveng-15bac4" target="_blank">OPEN ROBINHOOD</a><div class="muted">I may receive a referral reward if you sign up or qualify through this link.</div></div>
+</div><div class="nav"><a href="#home"><span>⌂</span>HOME</a><a href="#top20"><span>☷</span>TOP 20</a><a href="#simulate"><span>🧮</span>SIMULATE</a><a href="#learn"><span>🎓</span>LEARN</a><a href="#home"><span>⚙</span>SETTINGS</a></div>
+<script>
+const stocks={stocks_json};let selected=stocks.find(x=>x.ticker==='NVDA')||stocks[0];let amount=10;
+const $=id=>document.getElementById(id);const money=n=>'$'+Number(n||0).toLocaleString(undefined,{{minimumFractionDigits:2,maximumFractionDigits:2}});
+function renderStocks(){{$('stocks').innerHTML=stocks.map(s=>`<button class="stock ${{s.ticker===selected.ticker?'active':''}}" data-t="${{s.ticker}}"><span class="badge">${{Math.round(s.score)}}</span><span class="stockMain"><span class="stockName">#${{s.rank}} ${{s.name}}</span><span class="ticker">${{s.ticker}} • ${{s.risk}} risk</span></span><span class="price">${{money(s.price)}}</span></button>`).join('');document.querySelectorAll('.stock').forEach(b=>b.onclick=()=>selectStock(b.dataset.t));}}
+function renderSelect(){{$('stockSelect').innerHTML=stocks.map(s=>`<option value="${{s.ticker}}">${{s.name}} (${{s.ticker}})</option>`).join('');$('stockSelect').value=selected.ticker;}}
+function selectStock(t){{selected=stocks.find(s=>s.ticker===t)||selected;renderStocks();renderSelect();$('selectedBox').innerHTML=`${{selected.name}} (${{selected.ticker}}) • displayed price <b>${{money(selected.price)}}</b>`;document.getElementById('simulate').scrollIntoView({{behavior:'smooth',block:'start'}});}}
+$('stockSelect').onchange=e=>selectStock(e.target.value);
+$('quick').innerHTML=[5,10,25,50,100].map(v=>`<button data-a="${{v}}">$${{v}}</button>`).join('');document.querySelectorAll('#quick button').forEach(b=>b.onclick=()=>{{amount=Number(b.dataset.a);$('amount').value=amount;document.querySelectorAll('#quick button').forEach(x=>x.classList.toggle('active',x===b));}});$('amount').oninput=e=>amount=Number(e.target.value||0);
+const today=new Date();const iso=d=>d.toISOString().slice(0,10);const friday=new Date(today);friday.setDate(today.getDate()+((5-today.getDay()+7)%7));$('start').value=iso(friday);$('freq').onchange=e=>$('customWrap').style.display=e.target.value==='1'?'block':'none';
+$('run').onclick=()=>{{const start=new Date($('start').value+'T12:00:00');const end=new Date($('end').value+'T12:00:00');if(!amount||amount<1){{alert('Enter an investment amount.');return}}if(end<start){{alert('End date must be after start date.');return}}let step=Number($('freq').value);if(step===1)step=Math.max(1,Number($('customDays').value||14));let dates=[];let d=new Date(start);while(d<=end){{dates.push(new Date(d));d.setDate(d.getDate()+step);if(dates.length>2000)break}}const total=dates.length*amount;const shares=selected.price>0?total/selected.price:0;$('results').classList.add('show');$('resultSub').textContent=`${{selected.name}} • through ${{$('end').value}}`;$('total').textContent=money(total);$('count').textContent=dates.length;$('shares').textContent=shares.toFixed(4)+' '+selected.ticker;$('value').textContent=money(total);const max=Math.max(1,dates.length);$('chart').innerHTML=dates.map((x,i)=>`<div class="bar" style="height:${{Math.max(3,((i+1)/max)*170)}}px"></div>`).join('');$('upcoming').innerHTML=dates.slice(0,6).map((x,i)=>`<div class="deposit"><span>${{x.toLocaleDateString()}} • ${{selected.ticker}}</span><b>${{money(amount)}}</b></div>`).join('')+(dates.length>6?`<div class="muted" style="padding-top:8px">+ ${{dates.length-6}} more scheduled deposits</div>`:'');$('results').scrollIntoView({{behavior:'smooth',block:'start'}});}};
+selectStock(selected.ticker);renderStocks();
+</script></body></html>'''
 
-# HERO — actual project artwork, cropped to emphasize the illustrated character.
-st.markdown(f"""<div id='home' class='hero'><img class='hero-img' src='{HERO_URL}'><div style='padding:10px 4px'><div class='eyebrow'>AI STOCKS MADE SIMPLE • VERSION {APP_VERSION}</div><div class='hero-title'>AI STOCKS<br>MADE SIMPLE</div><div class='hero-sub'><span class='cyan'>AI POWERED.</span><br><span class='pink'>DATA DRIVEN.</span><br>SMARTER INVESTING.</div><div style='margin-top:13px;padding:10px;border:1px solid #1d4ed8;border-radius:12px;background:#07152d'><b>◆ LIVE AI STOCK RANKINGS</b><br><span class='fine'>START SMALL • BUILD A ROUTINE • SEE THE MATH</span></div><div class='snake'>🐍👓 Python-powered guide &nbsp; • &nbsp; 🥤 Red Pop energy</div></div></div>""",unsafe_allow_html=True)
-avg_conf=sum(float(r.get("confidence",0) or 0) for r in top20)/len(top20)
-st.markdown(f"<div class='statusbar'><div class='status'><b>AI MODEL SIGNAL</b><strong class='green'>ACTIVE</strong><br><span class='fine'>Top-20 scoring engine</span></div><div class='status'><b>LAST UPDATED</b><strong>{snapshot}</strong></div><div class='status'><b>MODEL VERSION</b><strong class='cyan'>{APP_VERSION}</strong></div><div class='status'><b>DATA CONFIDENCE</b><strong class='orange'>{avg_conf:.0f}%</strong></div></div>",unsafe_allow_html=True)
-
-# Main desktop layout follows the approved mockup: rankings on left, simulator on right.
-st.markdown("<div id='simulate'></div>",unsafe_allow_html=True)
-left,right=st.columns([1.13,.87],gap="large")
-with left:
-    st.markdown("<div class='section-title'>🔥 TOP 20 AI STOCKS TODAY</div><div class='fine'>Tap USE to load a company into the simulator.</div>",unsafe_allow_html=True)
-    for r in top20:
-        t=r["ticker"]; price=get_price(t,rows,st.session_state.live_prices); day=st.session_state.live_prices.get(t,{}).get("day")
-        c1,c2=st.columns([4,1])
-        with c1:
-            trend=f"{day:+.2%}" if day is not None else "—"
-            st.markdown(f"<div class='stockrow'><div><img class='logo' src='{logo(t)}'><span class='stockname'>#{r.get('rank')} {NAMES.get(t,t)}</span><div class='fine'>{t}</div></div><div><b>${price:,.2f}</b></div><div><span class='score'>{float(r.get('score',0)):.0f}</span></div><div class='hide-mobile'><span class='green'>{trend}</span><div class='fine'>{r.get('risk','—')} risk</div></div></div>",unsafe_allow_html=True)
-        with c2:
-            st.button("✓" if st.session_state.selected_stock==t else "USE",key=f"use_{t}",use_container_width=True,disabled=st.session_state.selected_stock==t,on_click=choose_stock,args=(t,))
-with right:
-    st.markdown("<div class='plan'><div class='section-title'>💵 BUILD YOUR PLAN</div><div class='fine'>See how small, consistent deposits can add up.</div></div>",unsafe_allow_html=True)
-    selected=st.selectbox("1. Pick Your Stock",choices,key="stock_select",format_func=lambda x:f"{NAMES.get(x,x)} ({x})")
-    st.session_state.selected_stock=selected
-    selected_price=get_price(selected,rows,st.session_state.live_prices)
-    st.markdown(f"<div class='selected'><b>{NAMES.get(selected,selected)} ({selected})</b><br>Displayed price: <b>${selected_price:,.2f}</b> <span class='fine'>({'live refresh' if selected in st.session_state.live_prices else 'saved market snapshot'})</span></div>",unsafe_allow_html=True)
-    st.markdown("<div class='quick-title'>2. INVESTMENT AMOUNT</div>",unsafe_allow_html=True)
-    q=st.columns(5)
-    for i,v in enumerate([5,10,25,50,100]):
-        q[i].button(f"${v}",key=f"q_{v}",use_container_width=True,on_click=choose_amount,args=(v,))
-    amount=st.number_input("Custom amount",min_value=1.0,max_value=100000.0,step=1.0,key="amount_input",format="$%.2f")
-    freq=st.selectbox("3. Frequency",["Every 2 weeks","Every Friday","Every payday (2 weeks)","Every month","Custom number of days"],key="frequency")
-    custom=14
-    if freq=="Custom number of days":custom=st.number_input("Every how many days?",1,365,14,key="custom_days")
-    start=st.date_input("4. Start Date",value=next_friday(date.today()),key="start_date")
-    end=st.date_input("5. End Date",value=date(2026,12,31),min_value=date.today(),key="end_date")
-    rotation=st.toggle("Rotate 3 stocks",key="rotation")
-    stock_b=stock_c=None
-    if rotation:
-        stock_b=st.selectbox("Stock B",choices,index=min(1,len(choices)-1),format_func=lambda x:f"{NAMES.get(x,x)} ({x})",key="stock_b")
-        stock_c=st.selectbox("Stock C",choices,index=min(2,len(choices)-1),format_func=lambda x:f"{NAMES.get(x,x)} ({x})",key="stock_c")
-    run=st.button("🚀 SHOW ME HOW THIS ADDS UP",type="primary",use_container_width=True,key="run_sim")
-    if st.button("🔄 Refresh Live Prices",use_container_width=True,key="refresh_prices"):
-        with st.spinner("Refreshing prices…"):st.session_state.live_prices=fetch_live_prices(tuple(choices))
-        st.rerun()
-
-if run:
-    if end<start:st.error("End date must be after the start date.")
-    elif selected_price<=0:st.error("No usable price is available. Refresh live prices and try again.")
-    else:
-        dates=schedule_dates(start,end,freq,custom); picks=[selected,stock_b,stock_c] if rotation else [selected]; picks=[p for p in picks if p]
-        shares={p:0.0 for p in set(picks)}; invested={p:0.0 for p in set(picks)}; ledger=[]
-        for i,d in enumerate(dates):
-            t=picks[i%len(picks)]; p=get_price(t,rows,st.session_state.live_prices)
-            if p<=0:continue
-            qty=float(amount)/p; shares[t]+=qty; invested[t]+=float(amount); ledger.append({"Deposit date":d,"Stock":t,"Deposit":float(amount),"Price used":p,"Shares added":qty})
-        total=sum(invested.values()); value=sum(shares[t]*get_price(t,rows,st.session_state.live_prices) for t in shares)
-        st.markdown(f"<div class='result-head'><div class='section-title'>📈 YOUR SIMULATION RESULTS</div><div class='fine'>Based on the displayed price(s) • through {end:%b %d, %Y}</div></div>",unsafe_allow_html=True)
-        st.markdown(f"<div class='result-grid'><div class='result-card'><b>TOTAL CONTRIBUTED</b><strong class='green'>${total:,.2f}</strong></div><div class='result-card'><b># OF DEPOSITS</b><strong class='pink'>{len(ledger)}</strong></div><div class='result-card'><b>SHARES ACCUMULATED</b><strong class='cyan'>{sum(shares.values()):.4f}</strong></div><div class='result-card'><b>VALUE AT SHOWN PRICE</b><strong class='orange'>${value:,.2f}</strong></div></div>",unsafe_allow_html=True)
-        if ledger:
-            ldf=pd.DataFrame(ledger)
-            chart_col,list_col=st.columns([1.6,1])
-            with chart_col:
-                st.markdown("### Portfolio Growth (Estimated)")
-                st.area_chart(ldf.groupby("Deposit date")["Deposit"].sum().cumsum(),height=270)
-            with list_col:
-                st.markdown(f"### Upcoming Deposits ({len(ledger)} total)")
-                st.dataframe(ldf.head(5)[["Deposit date","Stock","Deposit","Shares added"]],use_container_width=True,hide_index=True)
-                st.info("💡 Pro Tip: consistent small contributions can make the habit easier to maintain. Future prices will vary.")
-            if not rotation:st.success(f"${amount:,.2f} into {NAMES.get(selected,selected)} on this schedule contributes ${total:,.2f} and accumulates about {shares[selected]:.4f} {selected} shares by {end:%b %d, %Y}, using the displayed ${selected_price:,.2f} price for the illustration.")
-            with st.expander("See every scheduled deposit"):st.dataframe(ldf,use_container_width=True,hide_index=True)
-        st.caption("Future stock prices will change. This is an educational accumulation illustration, not a prediction or guarantee of future account value.")
-
-st.markdown("<div id='learn'></div>",unsafe_allow_html=True)
-st.markdown("## 🎓 START SMALL. LEARN AS YOU GO.")
-st.markdown("""<div class='learn-grid'><div class='learn'><h3 class='pink'>🚀 START SMALL</h3><p>$5, $10 or $25 can be enough to begin learning with fractional shares.</p></div><div class='learn'><h3 class='cyan'>🧠 LEARN</h3><p>Plain-English AI and investing concepts without Wall Street jargon.</p></div><div class='learn'><h3 class='green'>🎯 BUILD A ROUTINE</h3><p>Weekly, payday, bi-weekly, monthly or custom schedules.</p></div><div class='learn'><h3 class='orange'>🛡️ RISK FIRST</h3><p>Stocks can fall. Rankings are research signals, not guarantees.</p></div></div>""",unsafe_allow_html=True)
-
-st.markdown("<div id='model'></div>",unsafe_allow_html=True)
-with st.expander("⚙️ How the 100-point model works"):
-    for n,p in [("Revenue Growth",15),("Earnings / Free Cash Flow",15),("Industry Growth",15),("Balance Sheet",10),("Valuation",10),("Competitive Advantage",10),("Momentum",10),("Insider / Institutional",5),("Catalysts",5),("Inflation Resilience",5)]:st.progress(p/15,text=f"{n} — {p} points")
-
-st.markdown("<div class='referral'><b class='green'>Robinhood • Sponsored / Referral</b><h3>Start investing with Robinhood</h3><span class='fine'>I may receive a referral reward if you sign up using my link. This never changes rankings or simulator math.</span></div>",unsafe_allow_html=True)
-st.link_button("Open Robinhood",ROBINHOOD_REFERRAL_URL,use_container_width=True)
-st.caption("Educational research only. No trades are placed. Stocks can lose value.")
-st.markdown("""<div class='bottom-nav'><a href='#home'><span>⌂</span>HOME</a><a href='#simulate'><span>☷</span>TOP 20</a><a href='#simulate'><span>🧮</span>SIMULATE</a><a href='#learn'><span>🎓</span>LEARN</a><a href='#model'><span>⚙</span>SETTINGS</a></div>""",unsafe_allow_html=True)
+components.html(html, height=4200, scrolling=False)
