@@ -1,5 +1,5 @@
 ACMR
-Score: 42.73/100
+Score: 42.6/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 94.1/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 7.83/15
 Industry Growth: 0.0/15
 Balance Sheet: 4.02/10
-Valuation: 6.86/10
+Valuation: 6.97/10
 Moat: 0.0/10
-Momentum: 5.39/10
+Momentum: 5.15/10
 Insider/Institutional: 3.63/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -38,5 +38,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-23T22:52:46.426423+00:00
+Data Timestamp: 2026-08-24T23:41:56.198991+00:00
 Missing Fields: price_to_fcf
