@@ -1,5 +1,5 @@
 CRDO
-Score: 52.7/100
+Score: 52.81/100
 Classification: RESEARCH
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.91/10
-Valuation: 2.48/10
+Valuation: 2.49/10
 Moat: 0.0/10
-Momentum: 6.75/10
+Momentum: 6.85/10
 Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-25T23:44:53.857324+00:00
+Data Timestamp: 2026-08-26T19:35:28.466330+00:00
 Missing Fields: None
