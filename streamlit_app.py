@@ -1,14 +1,12 @@
-# STREAMLIT DEPLOYMENT BUILD: 3.3.5
+# STREAMLIT DEPLOYMENT BUILD: 3.3.6
 # Preserve proven calculator, rotation mode, long-term schedule and colorful UX.
-# Do NOT render a legacy/frozen phone hero while the replacement artwork is unavailable.
+# Activate the verified 2.2 MB PNG uploaded to assets.
 from pathlib import Path
 entry=Path("beginner_app.py")
 source=entry.read_text(encoding="utf-8")
 source=source.replace("dates.slice(0,10).map", "dates.map")
-source=source.replace('APP_VERSION = "3.3.0"','APP_VERSION = "3.3.5"')
-# Disable the old image block entirely instead of falling back to the frozen 9:41 artwork.
-source=source.replace('hero_path=Path("assets/hero_v3_mobile.jpg")', 'hero_path=Path("assets/hero_v3_mobile_DISABLED.jpg")')
-# Colorful Superman-blue shell.
+source=source.replace('APP_VERSION = "3.3.0"','APP_VERSION = "3.3.6"')
+source=source.replace('hero_path=Path("assets/hero_v3_mobile.jpg")', 'hero_path=Path("assets/353a59db-bf44-4f87-a871-73026b8e29e7.png")')
 source=source.replace('.block-container{padding:.35rem .45rem 0!important;max-width:960px!important}.stApp{background:#020711}header,footer{visibility:hidden}', '.block-container{padding:.25rem .35rem 0!important;max-width:1040px!important}.stApp{background:linear-gradient(180deg,#087cf2,#075dcc 45%,#05378c 100%)}header,footer{visibility:hidden}')
 source=source.replace('.hero-note{margin:.35rem 0 .5rem;padding:8px 12px;border:1px solid #17365f;border-radius:12px;background:#07111f;color:#9fb4ce;font-size:.75rem;text-align:center}.hero-note b{color:#22d3ee}', '.hero-note{margin:.35rem 0 .5rem;padding:10px 12px;border:2px solid #ffd31a;border-radius:13px;background:linear-gradient(90deg,#e51b23,#ff6a00,#075fe4,#7a28ce);color:white;font-size:.8rem;text-align:center;font-weight:900;box-shadow:0 5px 16px #002a6a88}.hero-note b{color:#fff200}')
 source=source.replace('• AI-powered paycheck investing simulator • ranking snapshot {snapshot}', '• 🐍👓 PYTHON POWERED • 🥤 RED POP ENERGY • BUILD YOUR PAYDAY PLAN • ranking snapshot {snapshot}')
