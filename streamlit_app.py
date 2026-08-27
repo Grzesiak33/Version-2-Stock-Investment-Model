@@ -1,15 +1,20 @@
-# STREAMLIT DEPLOYMENT BUILD: 3.3.6
-# Preserve proven calculator, rotation mode, long-term schedule and colorful UX.
-# Activate the verified 2.2 MB PNG uploaded to assets.
+# STREAMLIT DEPLOYMENT BUILD: 3.3.7
+# Preserve v3.3.6 exactly, then add a prominent current model-pick card from the latest ranking snapshot.
 from pathlib import Path
 entry=Path("beginner_app.py")
 source=entry.read_text(encoding="utf-8")
 source=source.replace("dates.slice(0,10).map", "dates.map")
-source=source.replace('APP_VERSION = "3.3.0"','APP_VERSION = "3.3.6"')
+source=source.replace('APP_VERSION = "3.3.0"','APP_VERSION = "3.3.7"')
 source=source.replace('hero_path=Path("assets/hero_v3_mobile.jpg")', 'hero_path=Path("assets/353a59db-bf44-4f87-a871-73026b8e29e7.png")')
 source=source.replace('.block-container{padding:.35rem .45rem 0!important;max-width:960px!important}.stApp{background:#020711}header,footer{visibility:hidden}', '.block-container{padding:.25rem .35rem 0!important;max-width:1040px!important}.stApp{background:linear-gradient(180deg,#087cf2,#075dcc 45%,#05378c 100%)}header,footer{visibility:hidden}')
-source=source.replace('.hero-note{margin:.35rem 0 .5rem;padding:8px 12px;border:1px solid #17365f;border-radius:12px;background:#07111f;color:#9fb4ce;font-size:.75rem;text-align:center}.hero-note b{color:#22d3ee}', '.hero-note{margin:.35rem 0 .5rem;padding:10px 12px;border:2px solid #ffd31a;border-radius:13px;background:linear-gradient(90deg,#e51b23,#ff6a00,#075fe4,#7a28ce);color:white;font-size:.8rem;text-align:center;font-weight:900;box-shadow:0 5px 16px #002a6a88}.hero-note b{color:#fff200}')
+source=source.replace('.hero-note{margin:.35rem 0 .5rem;padding:8px 12px;border:1px solid #17365f;border-radius:12px;background:#07111f;color:#9fb4ce;font-size:.75rem;text-align:center}.hero-note b{color:#22d3ee}', '.hero-note{margin:.35rem 0 .5rem;padding:10px 12px;border:2px solid #ffd31a;border-radius:13px;background:linear-gradient(90deg,#e51b23,#ff6a00,#075fe4,#7a28ce);color:white;font-size:.8rem;text-align:center;font-weight:900;box-shadow:0 5px 16px #002a6a88}.hero-note b{color:#fff200}.payday-pick{margin:.45rem 0 .65rem;padding:14px 16px;border:3px solid #ffe600;border-radius:18px;background:linear-gradient(120deg,#13a52a 0%,#087b21 38%,#075bd0 39%,#063e9d 100%);color:white;box-shadow:0 8px 22px #00275f99}.payday-pick .eyebrow{font-size:12px;font-weight:1000;letter-spacing:.7px;color:#fff200}.payday-pick .pickline{font-size:25px;font-weight:1000;margin:3px 0}.payday-pick .details{font-size:13px;color:#e9f8ff}.payday-pick .fresh{display:inline-block;margin-top:7px;padding:5px 9px;border-radius:999px;background:#ff6a00;border:1px solid #ffd31a;font-size:11px;font-weight:900}')
 source=source.replace('• AI-powered paycheck investing simulator • ranking snapshot {snapshot}', '• 🐍👓 PYTHON POWERED • 🥤 RED POP ENERGY • BUILD YOUR PAYDAY PLAN • ranking snapshot {snapshot}')
+# Insert the model pick directly below the version/snapshot strip. It always follows rows[0], so it changes automatically when the daily model changes rank #1.
+source=source.replace('stocks_json=json.dumps(stocks)', '''top_pick=stocks[0]
+_top_class=rows[0].get("classification","MODEL RANK #1")
+_top_conf=float(rows[0].get("confidence",0) or 0)
+st.markdown(f"<div class='payday-pick'><div class='eyebrow'>⚡ MODEL PICK FOR YOUR NEXT PAYCHECK</div><div class='pickline'>#{top_pick['rank']} {top_pick['name']} ({top_pick['ticker']})</div><div class='details'>Model score <b>{top_pick['score']}</b> &nbsp;•&nbsp; Risk <b>{top_pick['risk']}</b> &nbsp;•&nbsp; Model confidence <b>{_top_conf:.0f}%</b> &nbsp;•&nbsp; Reference price <b>${top_pick['price']:,.2f}</b></div><span class='fresh'>DATA SNAPSHOT: {snapshot}</span><div class='details' style='margin-top:7px'>This is the model's highest-ranked candidate from the latest completed run — a decision aid, not an automatic trade instruction.</div></div>",unsafe_allow_html=True)
+stocks_json=json.dumps(stocks)''')
 source=source.replace('*{{box-sizing:border-box}}html,body{{margin:0;background:#020711;color:#edf7ff;font-family:Arial,Helvetica,sans-serif}}body{{padding:8px 4px 90px}}.app{{max-width:920px;margin:auto}}', '*{{box-sizing:border-box}}html,body{{margin:0;background:#0758c9;color:#fff;font-family:Arial,Helvetica,sans-serif}}body{{padding:8px 4px 100px;background:linear-gradient(180deg,#087cf2,#075dcc 42%,#0648ad 72%,#05378c) fixed}}.app{{max-width:980px;margin:auto}}')
 source=source.replace('.cyan{{color:#22d3ee}}.green{{color:#4ade80}}.muted{{color:#8fa6bf;font-size:13px}}', '.cyan{{color:#55efff}}.green{{color:#6aff59}}.muted{{color:#e1f2ff;font-size:13px}}')
 source=source.replace('.stat,.panel{{background:linear-gradient(180deg,#081322,#030812);border:1px solid #17365f;border-radius:18px;padding:14px;margin:10px 0}}', '.stat,.panel{{background:linear-gradient(180deg,#075fd7,#0647aa);border:2px solid #3bd7ff;border-radius:17px;padding:14px;margin:10px 0;box-shadow:0 7px 18px #00296388}}')
