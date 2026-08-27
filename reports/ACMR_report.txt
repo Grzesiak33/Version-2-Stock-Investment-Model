@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 7.83/15
 Industry Growth: 0.0/15
 Balance Sheet: 4.02/10
-Valuation: 6.82/10
+Valuation: 6.83/10
 Moat: 0.0/10
-Momentum: 5.19/10
+Momentum: 5.18/10
 Insider/Institutional: 3.63/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -38,5 +38,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-27T19:10:17.581832+00:00
+Data Timestamp: 2026-08-27T19:31:08.983706+00:00
 Missing Fields: price_to_fcf
