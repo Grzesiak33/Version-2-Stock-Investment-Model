@@ -1,5 +1,5 @@
 DELL
-Score: 51.16/100
+Score: 51.23/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 11.48/15
 Industry Growth: 0.0/15
 Balance Sheet: 6.33/10
-Valuation: 5.75/10
+Valuation: 5.77/10
 Moat: 0.0/10
-Momentum: 9.06/10
+Momentum: 9.11/10
 Insider/Institutional: 3.54/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-27T19:49:41.143850+00:00
+Data Timestamp: 2026-08-28T06:06:02.798169+00:00
 Missing Fields: None
