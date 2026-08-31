@@ -1,16 +1,16 @@
 MRVL
-Score: 47.51/100
+Score: 46.32/100
 Classification: REJECT
-Risk Level: LOW
+Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
 
 Revenue Growth: 15.0/15
-Earnings/FCF: 12.78/15
+Earnings/FCF: 12.88/15
 Industry Growth: 0.0/15
 Balance Sheet: 7.21/10
-Valuation: 0.89/10
+Valuation: 0.91/10
 Moat: 0.0/10
-Momentum: 8.1/10
+Momentum: 6.79/10
 Insider/Institutional: 3.53/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -18,7 +18,6 @@ Inflation Resilience: 0.0/5
 Major Strengths:
 - Revenue Growth
 - Earnings Fcf
-- Momentum
 
 Major Weaknesses:
 - Industry Growth
@@ -29,6 +28,7 @@ Major Weaknesses:
 
 Major Risks:
 - Excessive price-to-sales valuation
+- High market sensitivity / beta
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-08-28T22:51:05.465346+00:00
+Data Timestamp: 2026-08-31T22:50:50.930867+00:00
 Missing Fields: None
