@@ -1,5 +1,5 @@
 NVDA
-Score: 50.43/100
+Score: 50.44/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 8.08/10
-Valuation: 3.9/10
+Valuation: 3.91/10
 Moat: 0.0/10
 Momentum: 5.01/10
 Insider/Institutional: 3.44/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-01T20:42:35.049839+00:00
+Data Timestamp: 2026-09-01T22:50:58.848800+00:00
 Missing Fields: None

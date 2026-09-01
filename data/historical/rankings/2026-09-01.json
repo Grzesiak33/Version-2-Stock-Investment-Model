@@ -62,7 +62,7 @@
   {
     "ticker": "NVDA",
     "rank": 6,
-    "score": 50.43,
+    "score": 50.44,
     "classification": "RESEARCH",
     "price": 217.44000244140625,
     "experiment_start_price": 225.16000366210938,
@@ -350,7 +350,7 @@
   {
     "ticker": "ORCL",
     "rank": 30,
-    "score": 30.79,
+    "score": 30.78,
     "classification": "REJECT",
     "price": 141.32000732421875,
     "experiment_start_price": 150.52000427246094,
