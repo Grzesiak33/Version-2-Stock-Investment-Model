@@ -1,5 +1,5 @@
 ANET
-Score: 50.96/100
+Score: 50.9/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 10.0/10
 Valuation: 0.85/10
 Moat: 0.0/10
-Momentum: 6.48/10
+Momentum: 6.42/10
 Insider/Institutional: 3.63/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-02T16:03:10.542359+00:00
+Data Timestamp: 2026-09-02T16:52:47.181552+00:00
 Missing Fields: None
