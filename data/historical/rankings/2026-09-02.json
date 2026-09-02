@@ -14,7 +14,7 @@
   {
     "ticker": "MU",
     "rank": 2,
-    "score": 53.88,
+    "score": 53.89,
     "classification": "RESEARCH",
     "price": 933.4400024414062,
     "experiment_start_price": 971.6599731445312,
@@ -194,7 +194,7 @@
   {
     "ticker": "ACMR",
     "rank": 17,
-    "score": 42.27,
+    "score": 42.16,
     "classification": "REJECT",
     "price": 70.04000091552734,
     "experiment_start_price": 80.41999816894531,
@@ -228,20 +228,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "MDB",
-    "rank": 20,
-    "score": 41.77,
-    "classification": "REJECT",
-    "price": 434.2099914550781,
-    "experiment_start_price": 460.3299865722656,
-    "return_since_experiment_start": -0.05674189359612147,
-    "confidence": 88.2,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "SNOW",
-    "rank": 21,
+    "rank": 20,
     "score": 41.62,
     "classification": "REJECT",
     "price": 319.79998779296875,
@@ -253,12 +241,24 @@
   },
   {
     "ticker": "SMCI",
-    "rank": 22,
+    "rank": 21,
     "score": 41.43,
     "classification": "REJECT",
     "price": 36.709999084472656,
     "experiment_start_price": 39.84000015258789,
     "return_since_experiment_start": -0.07856428353733125,
+    "confidence": 94.1,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "MDB",
+    "rank": 22,
+    "score": 41.35,
+    "classification": "REJECT",
+    "price": 434.2099914550781,
+    "experiment_start_price": 460.3299865722656,
+    "return_since_experiment_start": -0.05674189359612147,
     "confidence": 94.1,
     "risk": "LOW",
     "model_version": "2.1.0"
