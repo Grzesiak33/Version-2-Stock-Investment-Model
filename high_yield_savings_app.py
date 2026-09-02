@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import base64
 from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
@@ -8,8 +7,9 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from PIL import Image
 
-APP_VERSION = "2.2.1"
+APP_VERSION = "2.3.0"
 TODAY = date(2026, 9, 1)
 DEFAULT_BALANCE = 20.71
 DEFAULT_DEPOSIT = 10.0
@@ -96,12 +96,22 @@ def project_two_bucket(cfg: AccountConfig, deposit_amount: float, next_apy: floa
     return pd.DataFrame(rows)
 
 
-def embedded_hero() -> str:
+def hero_figure() -> go.Figure | None:
     hero_path = Path("assets/hero_production.jpg")
     if not hero_path.exists():
-        return ""
-    encoded = base64.b64encode(hero_path.read_bytes()).decode("ascii")
-    return f"data:image/jpeg;base64,{encoded}"
+        return None
+    img = Image.open(hero_path).convert("RGB")
+    w, h = img.size
+    # The old mobile mockup had a fake 9:41 status bar baked into the top.
+    # Crop the top 14% so that phone chrome/time never appears in this project.
+    img = img.crop((0, int(h * 0.14), w, h))
+    fig = go.Figure()
+    fig.add_layout_image(dict(source=img, xref="paper", yref="paper", x=0, y=1, sizex=1, sizey=1, sizing="cover", xanchor="left", yanchor="top", layer="below"))
+    fig.add_shape(type="rect", xref="paper", yref="paper", x0=0, y0=0, x1=1, y1=1, line=dict(color="#18c8ff", width=3), fillcolor="rgba(0,0,0,0)")
+    fig.update_xaxes(visible=False, range=[0, 1], fixedrange=True)
+    fig.update_yaxes(visible=False, range=[0, 1], fixedrange=True)
+    fig.update_layout(height=330, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", dragmode=False)
+    return fig
 
 
 st.set_page_config(page_title="High-Yield Savings Project", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
@@ -110,24 +120,24 @@ st.markdown("""
 :root{--super:#0866ff;--electric:#18c8ff;--red:#ef233c;--orange:#ff7a00;--gold:#ffd23f}
 .stApp{background:radial-gradient(circle at 8% 4%,rgba(8,102,255,.35),transparent 29%),radial-gradient(circle at 92% 8%,rgba(239,35,60,.28),transparent 27%),radial-gradient(circle at 82% 45%,rgba(255,122,0,.12),transparent 22%),linear-gradient(180deg,#030817,#02050c 48%,#020307);color:#f7fbff}
 .block-container{max-width:1240px;padding:.55rem .65rem 3rem}header,footer{visibility:hidden}
-.hero-copy{min-height:100%;padding:25px 24px;border-radius:26px;border:1px solid #1c5ec7;background:linear-gradient(135deg,rgba(9,65,160,.94),rgba(5,15,37,.97) 48%,rgba(112,8,25,.9));box-shadow:0 14px 55px #000a,0 0 50px rgba(8,102,255,.18);position:relative;overflow:hidden}
+.hero-copy{min-height:330px;padding:25px 24px;border-radius:26px;border:1px solid #1c5ec7;background:linear-gradient(135deg,rgba(9,65,160,.94),rgba(5,15,37,.97) 48%,rgba(112,8,25,.9));box-shadow:0 14px 55px #000a,0 0 50px rgba(8,102,255,.18);position:relative;overflow:hidden}
 .hero-copy:after{content:"";position:absolute;right:-70px;bottom:-90px;width:220px;height:220px;border:28px solid rgba(255,122,0,.22);border-radius:50%}
 .kicker{display:inline-block;background:linear-gradient(90deg,#0866ff,#ef233c,#ff7a00);padding:7px 12px;border-radius:999px;font-size:.72rem;font-weight:1000;letter-spacing:.06em}.hero-copy h1{margin:12px 0 4px;font-size:clamp(2.35rem,5.1vw,4.8rem);line-height:.91;letter-spacing:-.06em;font-weight:1000}.blue{color:#42b5ff;text-shadow:0 0 26px rgba(8,102,255,.8)}.red{color:#ff3b4f;text-shadow:0 0 26px rgba(239,35,60,.65)}.orange{color:#ff941f;text-shadow:0 0 24px rgba(255,122,0,.48)}.hero-copy p{color:#d3e5ff;font-size:1rem;line-height:1.48}.hero-copy b{color:#ffd23f}
-.hero-img-wrap{height:100%;min-height:310px;border-radius:25px;padding:3px;background:linear-gradient(135deg,#0866ff,#18c8ff,#ef233c,#ff7a00);box-shadow:0 0 34px rgba(8,102,255,.45),0 0 60px rgba(239,35,60,.18);overflow:hidden}.hero-img-wrap img{display:block;width:100%;height:100%;min-height:304px;object-fit:cover;border-radius:22px;background:#02050b}
+[data-testid="stPlotlyChart"]{border-radius:24px;overflow:hidden;box-shadow:0 0 30px rgba(8,102,255,.22)}
 [data-testid="stMetric"]{background:linear-gradient(160deg,rgba(14,55,126,.96),rgba(4,10,22,.98));border:1px solid #1d64c9;border-radius:18px;padding:14px 15px;box-shadow:inset 0 1px 0 #ffffff0e,0 8px 24px #0006}[data-testid="stMetricLabel"]{color:#a9c0df!important;font-weight:900}[data-testid="stMetricValue"]{color:#fff!important;font-weight:1000;letter-spacing:-.04em}
 .stTabs [data-baseweb="tab-list"]{gap:6px;background:#06101f;border:1px solid #244d82;border-radius:16px;padding:6px}.stTabs [data-baseweb="tab"]{border-radius:12px;color:#afc3dd;font-weight:950}.stTabs [aria-selected="true"]{background:linear-gradient(90deg,#0866ff,#ef233c)!important;color:white!important;box-shadow:0 0 22px rgba(8,102,255,.28)}
 .goalbar{height:17px;background:#10192a;border:1px solid #244f88;border-radius:999px;overflow:hidden}.goalfill{height:100%;background:linear-gradient(90deg,#0866ff,#18c8ff 38%,#ff7a00 70%,#ef233c);box-shadow:0 0 24px #18c8ff}.caption{font-size:.78rem;color:#8fa9ca}.status{background:linear-gradient(90deg,rgba(8,102,255,.18),rgba(255,122,0,.10),rgba(239,35,60,.17));border:1px solid #2c5d9a;border-radius:17px;padding:14px 16px;margin:11px 0 14px}.status strong{color:#ffd23f}.section{font-size:1.35rem;font-weight:1000}.sub{color:#91a9c8;font-size:.86rem;margin-bottom:.6rem}.next{border:1px solid #663848;background:linear-gradient(135deg,#0d2f72,#07101f 52%,#4d0a18);border-radius:18px;padding:15px;margin:8px 0}.step{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:linear-gradient(135deg,#0866ff,#ef233c);font-weight:1000;margin-right:8px}.note{border-left:4px solid #ff7a00;background:#ff7a0014;padding:12px 14px;border-radius:11px}
-@media(max-width:760px){.block-container{padding:.35rem .35rem 2rem}.hero-copy{padding:18px 16px}.hero-copy h1{font-size:2.45rem}.hero-img-wrap{min-height:240px}.hero-img-wrap img{min-height:234px}}
+@media(max-width:760px){.block-container{padding:.35rem .35rem 2rem}.hero-copy{padding:18px 16px;min-height:280px}.hero-copy h1{font-size:2.45rem}}
 </style>
 """, unsafe_allow_html=True)
 
-hero_src = embedded_hero()
 left, right = st.columns([1.18, .82], gap="medium")
 with left:
     st.markdown(f"""<div class="hero-copy"><div class="kicker">⚡ PERSONAL SAVINGS CONTROL CENTER • v{APP_VERSION}</div><h1><span class="blue">HIGH-YIELD</span><br><span class="red">SAVINGS</span> <span class="orange">PROJECT</span></h1><p>Attack the <b>10% APY zone</b> first. Change the paycheck amount and watch your path to <b>$1,000</b> update instantly. Then keep the same saving habit and redirect the money to the next high-yield destination.</p></div>""", unsafe_allow_html=True)
 with right:
-    if hero_src:
-        st.markdown(f"<div class='hero-img-wrap'><img src='{hero_src}' alt='Savings project hero'></div>", unsafe_allow_html=True)
+    hero = hero_figure()
+    if hero is not None:
+        st.plotly_chart(hero, use_container_width=True, config={"displayModeBar": False, "staticPlot": True})
     else:
         st.markdown("<div class='hero-copy'><h2>⚡ HERO ASSET MISSING</h2><p>The repository image file is not present.</p></div>", unsafe_allow_html=True)
 
