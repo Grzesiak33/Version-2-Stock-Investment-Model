@@ -8,7 +8,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-APP_VERSION = "2.4.2"
+APP_VERSION = "2.5.0"
 TODAY = date(2026, 9, 1)
 DEFAULT_BALANCE = 20.71
 DEFAULT_DEPOSIT = 10.0
@@ -121,30 +121,41 @@ def style_chart(fig: go.Figure, height: int = 440):
     )
 
 
-st.set_page_config(page_title="High-Yield Savings Project", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="High-Yield Savings Project", page_icon="💰", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""
 <style>
 .stApp{background:linear-gradient(180deg,#087cf2 0%,#075dcc 46%,#05378c 100%);color:white}
 .block-container{max-width:1180px;padding:.35rem .45rem 3rem}header,footer{visibility:hidden}
-.hero-copy{min-height:330px;padding:24px;border:3px solid #ffe600;border-radius:22px;background:linear-gradient(125deg,#e51b23 0%,#d70d18 30%,#087cf2 31%,#075dcc 72%,#7a28ce 100%);box-shadow:0 8px 24px #00347c88}
+.hero-copy,.hero-savings{min-height:330px;border:3px solid #ffe600;border-radius:22px;box-shadow:0 8px 24px #00347c88}
+.hero-copy{padding:24px;background:linear-gradient(125deg,#e51b23 0%,#d70d18 30%,#087cf2 31%,#075dcc 72%,#7a28ce 100%)}
 .kicker{display:inline-block;background:#ff6a00;border:2px solid #ffe600;border-radius:999px;padding:7px 11px;font-weight:1000;font-size:.72rem}.hero-copy h1{margin:12px 0 6px;font-size:clamp(2.35rem,5vw,4.7rem);line-height:.92;letter-spacing:-.055em;font-weight:1000}.blue{color:#55efff}.red{color:white}.orange{color:#fff200}.hero-copy p{color:white;font-size:1rem;line-height:1.48}.hero-copy b{color:#fff200}
-.hero-image [data-testid="stImage"]{margin:0!important;height:330px!important;overflow:hidden!important;border:3px solid #ffe600!important;border-radius:22px!important;box-shadow:0 8px 24px #00347c88!important;background:#075dcc!important}.hero-image [data-testid="stImage"] img{width:100%!important;height:330px!important;object-fit:cover!important;object-position:center 58%!important;display:block!important;border-radius:18px!important}
+.hero-savings{padding:18px;background:radial-gradient(circle at 80% 18%,#ff6a0077,transparent 30%),linear-gradient(145deg,#0647aa,#075fd7 58%,#7a28ce);display:flex;flex-direction:column;justify-content:center}.s-label{font-size:.75rem;font-weight:1000;letter-spacing:.09em;color:#fff200}.s-balance{font-size:3.35rem;line-height:1;font-weight:1000;margin:6px 0;color:white}.s-arrow{font-size:1.15rem;font-weight:1000;color:#55efff}.s-goal{font-size:2.15rem;font-weight:1000;color:#fff200;margin:2px 0 12px}.s-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px}.s-chip{background:#053b98;border:2px solid #55efff;border-radius:14px;padding:10px}.s-chip b{display:block;font-size:1.12rem;color:white}.s-chip span{font-size:.72rem;font-weight:900;color:#dff9ff}.s-progress{height:18px;background:#053b98;border:2px solid #55efff;border-radius:999px;overflow:hidden;margin:14px 0 6px}.s-progress>div{height:100%;background:linear-gradient(90deg,#24bd2d,#55efff,#ff6a00,#e51b23);width:2.071%}.s-bottom{font-size:.8rem;font-weight:900;color:white;display:flex;justify-content:space-between}
 [data-testid="stMetric"]{background:linear-gradient(180deg,#075fd7,#0647aa);border:2px solid #55efff;border-radius:17px;padding:14px;box-shadow:0 7px 18px #00296388}[data-testid="stMetricLabel"]{color:white!important;font-weight:900}[data-testid="stMetricValue"]{color:white!important;font-weight:1000}
 .stTabs [data-baseweb="tab-list"]{gap:6px;background:#075fd7;border:2px solid #55efff;border-radius:15px;padding:6px}.stTabs [data-baseweb="tab"]{border-radius:11px;color:white;font-weight:950}.stTabs [aria-selected="true"]{background:linear-gradient(90deg,#e51b23,#ff6a00)!important;color:white!important;border:2px solid #ffe600}
 [data-testid="stPlotlyChart"]{border:2px solid #55efff;border-radius:18px;overflow:hidden;box-shadow:0 7px 18px #00296388}
 .goalbar{height:18px;background:#0647aa;border:2px solid #55efff;border-radius:999px;overflow:hidden}.goalfill{height:100%;background:linear-gradient(90deg,#24bd2d,#55efff,#ff6a00,#e51b23);box-shadow:0 0 18px #fff200}.caption{font-size:.8rem;color:white;font-weight:800}.status{background:linear-gradient(90deg,#13a52a 0%,#087b21 35%,#075bd0 36%,#063e9d 100%);border:3px solid #ffe600;border-radius:18px;padding:14px 16px;margin:10px 0 14px;color:white;box-shadow:0 8px 22px #00275f99}.status strong{color:#fff200}.section{font-size:1.35rem;font-weight:1000;color:white}.sub{color:#e9f8ff;font-size:.88rem;font-weight:700;margin-bottom:.65rem}.next{border:2px solid #55efff;background:linear-gradient(135deg,#0b72ed,#0649b0);border-radius:15px;padding:14px;margin:8px 0}.step{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#ff6a00;border:2px solid #ffe600;font-weight:1000;margin-right:8px}.note{border:3px solid #ffe600;background:linear-gradient(120deg,#e51b23,#ff6a00);padding:12px 14px;border-radius:15px;color:white;font-weight:800}
-@media(max-width:760px){.block-container{padding:.25rem .3rem 2rem}.hero-copy{min-height:280px;padding:17px}.hero-copy h1{font-size:2.4rem}.hero-image [data-testid="stImage"],.hero-image [data-testid="stImage"] img{height:280px!important}}
+@media(max-width:760px){.block-container{padding:.25rem .3rem 2rem}.hero-copy,.hero-savings{min-height:280px}.hero-copy{padding:17px}.hero-copy h1{font-size:2.4rem}.s-balance{font-size:2.65rem}.s-goal{font-size:1.8rem}}
 </style>
 """, unsafe_allow_html=True)
 
 left, right = st.columns([1.18, .82], gap="medium")
 with left:
-    st.markdown(f"<div class='hero-copy'><div class='kicker'>⚡ PERSONAL SAVINGS CONTROL CENTER • v{APP_VERSION}</div><h1><span class='blue'>HIGH-YIELD</span><br><span class='red'>SAVINGS</span> <span class='orange'>PROJECT</span></h1><p>Attack the <b>10% APY zone</b> first. Change the paycheck amount and watch your path to <b>$1,000</b> update instantly. Then keep the saving habit and redirect the money to the next high-yield destination.</p></div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='hero-copy'><div class='kicker'>💰 PERSONAL SAVINGS CONTROL CENTER • v{APP_VERSION}</div><h1><span class='blue'>HIGH-YIELD</span><br><span class='red'>SAVINGS</span> <span class='orange'>PROJECT</span></h1><p>Fill the <b>10% APY $1,000 zone</b> first. Change the amount coming from every paycheck and instantly see how much faster you reach the cap — then redirect future deposits to the next high-yield account.</p></div>", unsafe_allow_html=True)
 with right:
-    st.markdown("<div class='hero-image'>", unsafe_allow_html=True)
-    # This is the verified 2.18 MB PNG in the repo. No Pillow, base64, raw URL, or Plotly image conversion.
-    st.image("assets/App interface stock.png", use_container_width=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class='hero-savings'>
+      <div class='s-label'>CURRENT HIGH-YIELD SAVINGS</div>
+      <div class='s-balance'>$20.71</div>
+      <div class='s-arrow'>AUTOMATIC SAVING →</div>
+      <div class='s-goal'>$1,000 TARGET</div>
+      <div class='s-strip'>
+        <div class='s-chip'><span>PREMIUM APY</span><b>10.00%</b></div>
+        <div class='s-chip'><span>PAYCHECK PLAN</span><b>$10 / CHECK</b></div>
+      </div>
+      <div class='s-progress'><div></div></div>
+      <div class='s-bottom'><span>2.1% FILLED</span><span>$979.29 TO GO</span></div>
+    </div>
+    """, unsafe_allow_html=True)
 
 c1,c2,c3,c4 = st.columns([1.2,1,1,1])
 with c1: deposit_amount = st.slider("Deposit every paycheck", 5, 150, DEFAULT_DEPOSIT, 5)
@@ -170,42 +181,42 @@ m5.metric("INTEREST TO $1K", f"${interest_to_goal:,.2f}" if hit else "—")
 if hit:
     st.markdown(f"<div class='status'>💥 <b>${deposit_amount} every {frequency} days</b> projects to <strong>$1,000 on {hit.strftime('%B %d, %Y')}</strong> — about <b>{months:.1f} months</b>. Roughly <strong>${interest_to_goal:,.2f}</strong> comes from interest.</div>", unsafe_allow_html=True)
 
-plan_tab, race_tab, next_tab, history_tab = st.tabs(["⚡ YOUR PLAN","🏁 DEPOSIT RACE","🚀 AFTER $1,000","🧾 ACTUAL HISTORY"])
+plan_tab, race_tab, next_tab, history_tab = st.tabs(["💰 YOUR PLAN","🏁 DEPOSIT RACE","🚀 AFTER $1,000","🧾 ACTUAL HISTORY"])
 
 with plan_tab:
-    st.markdown("<div class='section'>Your Run to $1,000</div><div class='sub'>Bright cyan is your balance, orange dots are paycheck deposits, red is the finish line.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section'>Your Run to $1,000</div><div class='sub'>Bright cyan is your projected savings balance, orange dots are paycheck deposits, and red is the $1,000 premium-rate finish line.</div>", unsafe_allow_html=True)
     end = min(TODAY + timedelta(days=365*5), hit + timedelta(days=180) if hit else TODAY + timedelta(days=365*5))
     p = frame[frame["date"] <= end]
     deps = p[p["deposit"] > 0]
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=p["date"], y=p["balance"], mode="lines", name="Projected balance", line=dict(color=CYAN, width=6), fill="tozeroy", fillcolor="rgba(85,239,255,.22)"))
+    fig.add_trace(go.Scatter(x=p["date"], y=p["balance"], mode="lines", name="Projected savings", line=dict(color=CYAN, width=6), fill="tozeroy", fillcolor="rgba(85,239,255,.22)"))
     fig.add_trace(go.Scatter(x=deps["date"], y=deps["balance"], mode="markers", name="Paycheck deposit", marker=dict(color=ORANGE, size=9, line=dict(color=YELLOW, width=2))))
-    fig.add_hline(y=1000, line_dash="dash", line_color=RED, line_width=5, annotation_text="⚡ $1,000 PREMIUM ZONE FILLED", annotation_font_color=YELLOW)
+    fig.add_hline(y=1000, line_dash="dash", line_color=RED, line_width=5, annotation_text="💰 $1,000 PREMIUM ZONE FILLED", annotation_font_color=YELLOW)
     style_chart(fig)
     fig.update_yaxes(tickprefix="$")
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar":False})
 
-    gauge = go.Figure(go.Indicator(mode="gauge+number", value=min(starting_balance,1000), number={"prefix":"$","font":{"size":44,"color":"white"}}, title={"text":"CURRENT PROGRESS TO $1,000","font":{"color":"white"}}, gauge={"axis":{"range":[0,1000],"tickprefix":"$","tickcolor":"white"},"bar":{"color":CYAN,"thickness":.34},"bgcolor":PANEL,"bordercolor":YELLOW,"steps":[{"range":[0,500],"color":DEEP},{"range":[500,800],"color":PURPLE},{"range":[800,1000],"color":ORANGE}],"threshold":{"line":{"color":RED,"width":7},"thickness":.9,"value":1000}}))
+    gauge = go.Figure(go.Indicator(mode="gauge+number", value=min(starting_balance,1000), number={"prefix":"$","font":{"size":44,"color":"white"}}, title={"text":"CURRENT SAVINGS PROGRESS TO $1,000","font":{"color":"white"}}, gauge={"axis":{"range":[0,1000],"tickprefix":"$","tickcolor":"white"},"bar":{"color":CYAN,"thickness":.34},"bgcolor":PANEL,"bordercolor":YELLOW,"steps":[{"range":[0,500],"color":DEEP},{"range":[500,800],"color":PURPLE},{"range":[800,1000],"color":ORANGE}],"threshold":{"line":{"color":RED,"width":7},"thickness":.9,"value":1000}}))
     gauge.update_layout(height=300, margin=dict(l=25,r=25,t=55,b=10), paper_bgcolor="rgba(0,0,0,0)", font_color="white")
     st.plotly_chart(gauge, use_container_width=True, config={"displayModeBar":False})
 
 with race_tab:
-    st.markdown("<div class='section'>How Much Faster if You Save More?</div><div class='sub'>Shorter bars mean faster to $1,000.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section'>How Much Faster if You Save More?</div><div class='sub'>Shorter bars mean fewer months to fill the 10% APY bucket.</div>", unsafe_allow_html=True)
     amounts = sorted(set([5,10,15,20,25,30,40,50,75,100,125,150,int(deposit_amount)]))
     sc = scenarios(cfg, amounts)
     colors = [GREEN if a<25 else CYAN if a<50 else ORANGE if a<100 else RED for a in sc["Deposit"]]
     fig2 = go.Figure(go.Bar(x=sc["Deposit"], y=sc["Months"], marker=dict(color=colors, line=dict(color=YELLOW,width=1)), text=sc["Months"].map(lambda x:f"{x:.1f} mo"), textposition="outside"))
     style_chart(fig2, 430)
-    fig2.update_xaxes(title="Deposit each paycheck ($)")
+    fig2.update_xaxes(title="Automatic deposit each paycheck ($)")
     fig2.update_yaxes(title="Months to $1,000")
     st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar":False})
     table = sc.copy(); table["Deposit"] = table["Deposit"].map(lambda x:f"${x:,.0f}"); table["Interest"] = table["Interest"].map(lambda x:f"${x:,.2f}")
     st.dataframe(table, hide_index=True, use_container_width=True)
 
 with next_tab:
-    st.markdown("<div class='section'>Keep Capitalizing After $1,000</div><div class='sub'>Fill the ORSA premium zone, then redirect future deposits instead of stopping.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section'>Keep Capitalizing After $1,000</div><div class='sub'>The $1,000 ORSA cap is checkpoint #1. After that, keep the automatic-saving habit and change only the destination.</div>", unsafe_allow_html=True)
     a,b = st.columns(2)
-    with a: next_apy = st.number_input("Next account APY (%)", 0.0, 20.0, 4.50, .10)
+    with a: next_apy = st.number_input("Next savings account APY (%)", 0.0, 20.0, 4.50, .10)
     with b: total_goal = st.number_input("Total cash-savings goal", 1000.0, 50000.0, 5000.0, 500.0)
     strategy = two_bucket(cfg, float(deposit_amount), next_apy/100, TODAY + timedelta(days=365*12))
     orsa_hit_rows = strategy[strategy["ORSA"] >= 1000]
@@ -213,20 +224,20 @@ with next_tab:
     goal_rows = strategy[strategy["Total"] >= float(total_goal)]
     goal_hit = None if goal_rows.empty else goal_rows.iloc[0]["date"]
     q1,q2,q3,q4 = st.columns(4)
-    q1.metric("ORSA TARGET","$1,000"); q2.metric("REDIRECT START",orsa_hit.strftime("%b %d, %Y") if orsa_hit else "—"); q3.metric("TOTAL GOAL",f"${total_goal:,.0f}"); q4.metric("GOAL DATE",goal_hit.strftime("%b %d, %Y") if goal_hit else "Beyond model")
-    st.markdown("<div class='next'><span class='step'>1</span><b>Fill the 10% ORSA zone.</b></div><div class='next'><span class='step'>2</span><b>Redirect every new paycheck deposit.</b></div><div class='next'><span class='step'>3</span><b>Keep stacking toward the larger emergency fund.</b></div>", unsafe_allow_html=True)
+    q1.metric("ORSA TARGET","$1,000"); q2.metric("REDIRECT START",orsa_hit.strftime("%b %d, %Y") if orsa_hit else "—"); q3.metric("TOTAL SAVINGS GOAL",f"${total_goal:,.0f}"); q4.metric("GOAL DATE",goal_hit.strftime("%b %d, %Y") if goal_hit else "Beyond model")
+    st.markdown("<div class='next'><span class='step'>1</span><b>Fill ORSA's 10% APY bucket.</b></div><div class='next'><span class='step'>2</span><b>Redirect every future paycheck deposit to Savings Bucket #2.</b></div><div class='next'><span class='step'>3</span><b>Keep building until your emergency-fund target is reached.</b></div>", unsafe_allow_html=True)
     end2 = min(TODAY + timedelta(days=365*6), goal_hit + timedelta(days=120) if goal_hit else TODAY + timedelta(days=365*6))
     s = strategy[strategy["date"] <= end2]
     fig3 = go.Figure()
     fig3.add_trace(go.Scatter(x=s["date"], y=s["ORSA"], stackgroup="one", name="ORSA 10% bucket", line=dict(color=CYAN,width=3), fillcolor="rgba(85,239,255,.50)"))
-    fig3.add_trace(go.Scatter(x=s["date"], y=s["Bucket #2"], stackgroup="one", name="Next HYSA bucket", line=dict(color=ORANGE,width=3), fillcolor="rgba(255,106,0,.55)"))
-    fig3.add_hline(y=float(total_goal), line_dash="dot", line_color=YELLOW, line_width=4, annotation_text=f"🔥 ${total_goal:,.0f} TOTAL GOAL", annotation_font_color=YELLOW)
+    fig3.add_trace(go.Scatter(x=s["date"], y=s["Bucket #2"], stackgroup="one", name="Savings Bucket #2", line=dict(color=ORANGE,width=3), fillcolor="rgba(255,106,0,.55)"))
+    fig3.add_hline(y=float(total_goal), line_dash="dot", line_color=YELLOW, line_width=4, annotation_text=f"🔥 ${total_goal:,.0f} TOTAL SAVINGS GOAL", annotation_font_color=YELLOW)
     style_chart(fig3,470); fig3.update_yaxes(tickprefix="$")
     st.plotly_chart(fig3,use_container_width=True,config={"displayModeBar":False})
-    st.markdown("<div class='note'><b>Strategy:</b> once the 10% tier is full, change the destination — not the saving behavior.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='note'><b>Strategy:</b> once the 10% tier is full, change the destination — not the automatic-saving behavior.</div>", unsafe_allow_html=True)
 
 with history_tab:
-    st.markdown("<div class='section'>Actual ORSA History</div><div class='sub'>Real transactions remain separate from projections.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section'>Actual ORSA Savings History</div><div class='sub'>Your real deposits and dividend payments stay separate from projections.</div>", unsafe_allow_html=True)
     hp = Path("data/savings_transactions.csv")
     if hp.exists():
         hist = pd.read_csv(hp); hist["date"] = pd.to_datetime(hist["date"]); hist = hist.sort_values("date", ascending=False)
@@ -234,4 +245,4 @@ with history_tab:
     else:
         st.info("Savings transaction history file is not present yet.")
 
-st.markdown(f"<div class='caption' style='text-align:center;margin-top:20px'>High-Yield Savings Project v{APP_VERSION}</div>", unsafe_allow_html=True)
+st.markdown(f"<div class='caption' style='text-align:center;margin-top:20px'>High-Yield Savings Project v{APP_VERSION} • Savings only • No stock-model content</div>", unsafe_allow_html=True)
