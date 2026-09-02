@@ -9,13 +9,12 @@ import plotly.graph_objects as go
 import streamlit as st
 from PIL import Image
 
-APP_VERSION = "2.4.0"
+APP_VERSION = "2.4.1"
 TODAY = date(2026, 9, 1)
 DEFAULT_BALANCE = 20.71
 DEFAULT_DEPOSIT = 10.0
 DEFAULT_NEXT_PAYCHECK = date(2026, 9, 11)
 
-# Trademark palette pulled from the stock/mobile app.
 BLUE_TOP = "#087cf2"
 BLUE_MID = "#075dcc"
 BLUE_PANEL = "#075fd7"
@@ -104,12 +103,20 @@ def project_two_bucket(cfg: AccountConfig, amount: float, next_apy: float, end_d
 
 
 def hero_figure() -> go.Figure | None:
-    p = Path("assets/hero_production.jpg")
-    if not p.exists():
+    candidates = [
+        Path("assets/353a59db-bf44-4f87-a871-73026b8e29e7.png"),
+        Path("assets/hero_v3_mobile.jpg"),
+    ]
+    p = next((x for x in candidates if x.exists()), None)
+    if p is None:
         return None
-    img = Image.open(p).convert("RGB")
-    w, h = img.size
-    img = img.crop((0, int(h * 0.14), w, h))  # removes baked-in 9:41 status bar
+    try:
+        with Image.open(p) as source:
+            img = source.convert("RGB")
+            w, h = img.size
+            img = img.crop((0, int(h * 0.14), w, h))
+    except Exception:
+        return None
     fig = go.Figure()
     fig.add_layout_image(dict(source=img, xref="paper", yref="paper", x=0, y=1, sizex=1, sizey=1, sizing="cover", xanchor="left", yanchor="top", layer="below"))
     fig.add_shape(type="rect", xref="paper", yref="paper", x0=0, y0=0, x1=1, y1=1, line=dict(color=YELLOW, width=5), fillcolor="rgba(0,0,0,0)")
@@ -120,17 +127,7 @@ def hero_figure() -> go.Figure | None:
 
 
 def chart_layout(fig: go.Figure, height: int = 450):
-    fig.update_layout(
-        height=height,
-        margin=dict(l=8, r=8, t=28, b=8),
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor=BLUE_DEEP,
-        font_color="white",
-        xaxis=dict(gridcolor="#48bdf055", linecolor=CYAN, zeroline=False),
-        yaxis=dict(gridcolor="#48bdf055", linecolor=CYAN, zeroline=False),
-        hovermode="x unified",
-        legend=dict(orientation="h", y=1.08),
-    )
+    fig.update_layout(height=height, margin=dict(l=8, r=8, t=28, b=8), paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor=BLUE_DEEP, font_color="white", xaxis=dict(gridcolor="#48bdf055", linecolor=CYAN, zeroline=False), yaxis=dict(gridcolor="#48bdf055", linecolor=CYAN, zeroline=False), hovermode="x unified", legend=dict(orientation="h", y=1.08))
 
 
 st.set_page_config(page_title="High-Yield Savings Project", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
@@ -154,7 +151,10 @@ with left:
     st.markdown(f"<div class='hero-copy'><div class='kicker'>⚡ PERSONAL SAVINGS CONTROL CENTER • v{APP_VERSION}</div><h1><span class='blue'>HIGH-YIELD</span><br><span class='red'>SAVINGS</span> <span class='orange'>PROJECT</span></h1><p>Attack the <b>10% APY zone</b> first. Change the paycheck amount and watch your path to <b>$1,000</b> update instantly. Then keep the same saving habit and redirect the money to the next high-yield destination.</p></div>",unsafe_allow_html=True)
 with right:
     hero=hero_figure()
-    if hero is not None: st.plotly_chart(hero,use_container_width=True,config={"displayModeBar":False,"staticPlot":True})
+    if hero is not None:
+        st.plotly_chart(hero,use_container_width=True,config={"displayModeBar":False,"staticPlot":True})
+    else:
+        st.markdown("<div class='hero-copy'><h3>⚡ SAVINGS MODE</h3><p>Hero artwork unavailable, but the app remains fully functional.</p></div>",unsafe_allow_html=True)
 
 c1,c2,c3,c4=st.columns([1.2,1,1,1])
 with c1: deposit_amount=st.slider("Deposit every paycheck",5,150,int(DEFAULT_DEPOSIT),5)
@@ -196,9 +196,9 @@ with next_tab:
     end2=min(TODAY+timedelta(days=365*6),goal_hit+timedelta(days=120) if goal_hit else TODAY+timedelta(days=365*6));s=strategy[strategy["date"]<=end2];fig3=go.Figure();fig3.add_trace(go.Scatter(x=s["date"],y=s["ORSA"],stackgroup="one",name="ORSA 10% bucket",line=dict(color=CYAN,width=3),fillcolor="rgba(85,239,255,.50)"));fig3.add_trace(go.Scatter(x=s["date"],y=s["Bucket #2"],stackgroup="one",name="Next HYSA bucket",line=dict(color=ORANGE,width=3),fillcolor="rgba(255,106,0,.55)"));fig3.add_hline(y=float(total_goal),line_dash="dot",line_color=YELLOW,line_width=4,annotation_text=f"🔥 ${total_goal:,.0f} TOTAL GOAL",annotation_font_color=YELLOW);chart_layout(fig3,470);fig3.update_yaxes(tickprefix="$");st.plotly_chart(fig3,use_container_width=True,config={"displayModeBar":False});st.markdown("<div class='note'><b>Strategy:</b> once the 10% tier is full, change the destination — not the saving behavior.</div>",unsafe_allow_html=True)
 with history_tab:
     st.markdown("<div class='section'>Actual ORSA History</div><div class='sub'>Real transactions remain separate from projections.</div>",unsafe_allow_html=True)
-    p=Path("data/savings_transactions.csv")
-    if p.exists():
-        hist=pd.read_csv(p);hist["date"]=pd.to_datetime(hist["date"]);hist=hist.sort_values("date",ascending=False);st.dataframe(hist,hide_index=True,use_container_width=True);div=hist[hist["type"]=="dividend"].sort_values("date")
+    tx=Path("data/savings_transactions.csv")
+    if tx.exists():
+        hist=pd.read_csv(tx);hist["date"]=pd.to_datetime(hist["date"]);hist=hist.sort_values("date",ascending=False);st.dataframe(hist,hide_index=True,use_container_width=True);div=hist[hist["type"]=="dividend"].sort_values("date")
         if not div.empty:
             hc=[GREEN,CYAN,ORANGE,RED,PURPLE]*10;hf=go.Figure(go.Bar(x=div["date"],y=div["amount"],marker=dict(color=hc[:len(div)],line=dict(color=YELLOW,width=1)),text=div["amount"].map(lambda x:f"${x:.2f}"),textposition="outside"));chart_layout(hf,330);hf.update_yaxes(tickprefix="$");st.plotly_chart(hf,use_container_width=True,config={"displayModeBar":False})
 st.markdown(f"<div class='caption' style='text-align:center;margin-top:20px'>High-Yield Savings Project v{APP_VERSION} • same trademark palette as the stock/mobile app</div>",unsafe_allow_html=True)
