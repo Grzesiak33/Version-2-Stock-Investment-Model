@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
@@ -8,12 +9,11 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-APP_VERSION = "2.2.0"
+APP_VERSION = "2.2.1"
 TODAY = date(2026, 9, 1)
 DEFAULT_BALANCE = 20.71
 DEFAULT_DEPOSIT = 10.0
 DEFAULT_NEXT_PAYCHECK = date(2026, 9, 11)
-HERO_URL = "https://raw.githubusercontent.com/Grzesiak33/Version-2-Stock-Investment-Model/main/assets/hero_production.jpg"
 
 @dataclass(frozen=True)
 class AccountConfig:
@@ -96,6 +96,14 @@ def project_two_bucket(cfg: AccountConfig, deposit_amount: float, next_apy: floa
     return pd.DataFrame(rows)
 
 
+def embedded_hero() -> str:
+    hero_path = Path("assets/hero_production.jpg")
+    if not hero_path.exists():
+        return ""
+    encoded = base64.b64encode(hero_path.read_bytes()).decode("ascii")
+    return f"data:image/jpeg;base64,{encoded}"
+
+
 st.set_page_config(page_title="High-Yield Savings Project", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""
 <style>
@@ -113,11 +121,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+hero_src = embedded_hero()
 left, right = st.columns([1.18, .82], gap="medium")
 with left:
     st.markdown(f"""<div class="hero-copy"><div class="kicker">⚡ PERSONAL SAVINGS CONTROL CENTER • v{APP_VERSION}</div><h1><span class="blue">HIGH-YIELD</span><br><span class="red">SAVINGS</span> <span class="orange">PROJECT</span></h1><p>Attack the <b>10% APY zone</b> first. Change the paycheck amount and watch your path to <b>$1,000</b> update instantly. Then keep the same saving habit and redirect the money to the next high-yield destination.</p></div>""", unsafe_allow_html=True)
 with right:
-    st.markdown(f"<div class='hero-img-wrap'><img src='{HERO_URL}' alt='Savings project hero'></div>", unsafe_allow_html=True)
+    if hero_src:
+        st.markdown(f"<div class='hero-img-wrap'><img src='{hero_src}' alt='Savings project hero'></div>", unsafe_allow_html=True)
+    else:
+        st.markdown("<div class='hero-copy'><h2>⚡ HERO ASSET MISSING</h2><p>The repository image file is not present.</p></div>", unsafe_allow_html=True)
 
 c1,c2,c3,c4 = st.columns([1.2,1,1,1])
 with c1: deposit_amount = st.slider("Deposit every paycheck",5,150,int(DEFAULT_DEPOSIT),5)
