@@ -1,5 +1,5 @@
 SMCI
-Score: 41.78/100
+Score: 41.28/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 94.1/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 7.23/15
 Industry Growth: 0.0/15
 Balance Sheet: 2.24/10
-Valuation: 9.89/10
+Valuation: 9.87/10
 Moat: 0.0/10
-Momentum: 3.89/10
+Momentum: 3.41/10
 Insider/Institutional: 3.53/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-02T22:51:49.958753+00:00
+Data Timestamp: 2026-09-03T22:51:16.106726+00:00
 Missing Fields: price_to_fcf

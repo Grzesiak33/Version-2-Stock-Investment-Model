@@ -1,5 +1,5 @@
 DDOG
-Score: 43.7/100
+Score: 43.82/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 96.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 10.11/15
 Industry Growth: 0.0/15
 Balance Sheet: 8.98/10
-Valuation: 0.94/10
+Valuation: 0.92/10
 Moat: 0.0/10
-Momentum: 5.0/10
+Momentum: 5.14/10
 Insider/Institutional: 3.67/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-02T22:51:50.790596+00:00
+Data Timestamp: 2026-09-03T22:51:17.495744+00:00
 Missing Fields: None

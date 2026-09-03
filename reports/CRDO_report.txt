@@ -1,16 +1,16 @@
 CRDO
-Score: 50.63/100
+Score: 50.03/100
 Classification: RESEARCH
-Risk Level: MEDIUM
-Data Confidence: 100.0/100 (HIGH)
+Risk Level: LOW
+Data Confidence: 88.2/100 (HIGH)
 
 Revenue Growth: 15.0/15
-Earnings/FCF: 15.0/15
+Earnings/FCF: 13.8/15
 Industry Growth: 0.0/15
-Balance Sheet: 9.91/10
-Valuation: 2.5/10
+Balance Sheet: 9.74/10
+Valuation: 3.33/10
 Moat: 0.0/10
-Momentum: 4.68/10
+Momentum: 4.62/10
 Insider/Institutional: 3.54/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -28,7 +28,6 @@ Major Weaknesses:
 - Inflation Resilience
 
 Major Risks:
-- Excessive price-to-sales valuation
 - High market sensitivity / beta
 
 Key Catalysts:
@@ -42,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-02T22:51:42.464087+00:00
-Missing Fields: None
+Data Timestamp: 2026-09-03T22:51:03.516558+00:00
+Missing Fields: free_cash_flow, price_to_fcf
