@@ -1,5 +1,5 @@
 GOOGL
-Score: 46.74/100
+Score: 46.65/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 8.34/10
 Valuation: 4.47/10
 Moat: 0.0/10
-Momentum: 4.45/10
+Momentum: 4.36/10
 Insider/Institutional: 3.53/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-04T22:50:57.091067+00:00
+Data Timestamp: 2026-09-05T00:27:30.199474+00:00
 Missing Fields: None

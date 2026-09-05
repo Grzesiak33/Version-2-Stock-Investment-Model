@@ -1,6 +1,6 @@
 PLTR
-Score: 49.58/100
-Classification: REJECT
+Score: 50.19/100
+Classification: RESEARCH
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
 
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 9.89/10
 Valuation: 0.68/10
 Moat: 0.0/10
-Momentum: 5.66/10
+Momentum: 6.27/10
 Insider/Institutional: 3.35/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-04T22:50:52.234211+00:00
+Data Timestamp: 2026-09-05T00:27:27.011496+00:00
 Missing Fields: None
