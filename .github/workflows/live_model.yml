@@ -7,8 +7,19 @@ on:
     paths-ignore:
       - 'data/historical/**'
       - 'reports/**'
+  # Refresh throughout the U.S. trading day so the app does not rely on one stale daily reading.
+  # GitHub cron uses UTC. These runs cover pre-market, regular-session checkpoints, and after-close.
   schedule:
+    - cron: '0 13 * * 1-5'
+    - cron: '45 14 * * 1-5'
+    - cron: '0 16 * * 1-5'
+    - cron: '0 18 * * 1-5'
+    - cron: '0 20 * * 1-5'
     - cron: '45 22 * * 1-5'
+
+concurrency:
+  group: live-model-v2-1
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -16,6 +27,7 @@ permissions:
 jobs:
   live-model:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -71,5 +83,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- data/historical/snapshots data/historical/rankings reports
-          git diff --cached --quiet || git commit -m "data: live v2.1 market ranking"
+          git diff --cached --quiet || git commit -m "data: live v2.1 market ranking refresh"
+          git pull --rebase origin main
           git push
