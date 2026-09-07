@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-07T18:11:51.059344+00:00
+Data Timestamp: 2026-09-07T20:06:02.062721+00:00
 Missing Fields: eps_growth
