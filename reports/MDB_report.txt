@@ -1,5 +1,5 @@
 MDB
-Score: 42.26/100
+Score: 42.19/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 94.1/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 13.31/15
 Earnings/FCF: 8.42/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.89/10
-Valuation: 2.35/10
+Valuation: 2.37/10
 Moat: 0.0/10
-Momentum: 4.55/10
+Momentum: 4.46/10
 Insider/Institutional: 3.74/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-08T14:55:00.172377+00:00
+Data Timestamp: 2026-09-08T16:12:56.329072+00:00
 Missing Fields: eps_growth
