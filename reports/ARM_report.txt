@@ -1,36 +1,34 @@
 ARM
-Score: 0.0/100
+Score: 40.57/100
 Classification: REJECT
-Risk Level: LOW
-Data Confidence: 0.0/100 (VERY LOW)
+Risk Level: MEDIUM
+Data Confidence: 100.0/100 (HIGH)
 
-Revenue Growth: 0.0/15
-Earnings/FCF: 0/15
+Revenue Growth: 10.28/15
+Earnings/FCF: 11.27/15
 Industry Growth: 0.0/15
-Balance Sheet: 0/10
-Valuation: 0/10
+Balance Sheet: 9.45/10
+Valuation: 0.2/10
 Moat: 0.0/10
-Momentum: 0.0/10
-Insider/Institutional: 0.0/5
+Momentum: 5.67/10
+Insider/Institutional: 3.7/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
+- Balance Sheet
 
 Major Weaknesses:
-- Revenue Growth
-- Earnings Fcf
 - Industry Growth
-- Balance Sheet
 - Valuation
 - Competitive Advantage
-- Momentum
-- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
 Major Risks:
-- No explicit risk flags in supplied data
+- Excessive price-to-sales valuation
+- Very high earnings multiple
+- High market sensitivity / beta
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -42,6 +40,6 @@ What Would Invalidate the Thesis:
 Unavailable — requires research.
 
 Model Version: 2.1.0
-Data Sources: Unavailable
-Data Timestamp: 2026-09-09T16:11:49.069535+00:00
-Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, one_month_return, three_month_return, six_month_return, one_year_return, institutional_activity
+Data Sources: Yahoo Finance via yfinance
+Data Timestamp: 2026-09-09T18:12:38.662208+00:00
+Missing Fields: None
