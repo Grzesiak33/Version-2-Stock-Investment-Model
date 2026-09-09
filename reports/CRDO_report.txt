@@ -1,35 +1,36 @@
 CRDO
-Score: 48.83/100
+Score: 0.0/100
 Classification: REJECT
 Risk Level: LOW
-Data Confidence: 100.0/100 (HIGH)
+Data Confidence: 0.0/100 (VERY LOW)
 
-Revenue Growth: 15.0/15
-Earnings/FCF: 14.2/15
+Revenue Growth: 0.0/15
+Earnings/FCF: 0/15
 Industry Growth: 0.0/15
-Balance Sheet: 9.83/10
-Valuation: 2.5/10
+Balance Sheet: 0/10
+Valuation: 0/10
 Moat: 0.0/10
-Momentum: 3.76/10
-Insider/Institutional: 3.54/5
+Momentum: 0.0/10
+Insider/Institutional: 0.0/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
-- Revenue Growth
-- Earnings Fcf
-- Balance Sheet
 
 Major Weaknesses:
+- Revenue Growth
+- Earnings Fcf
 - Industry Growth
+- Balance Sheet
 - Valuation
 - Competitive Advantage
 - Momentum
+- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
 Major Risks:
-- High market sensitivity / beta
+- No explicit risk flags in supplied data
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -41,6 +42,6 @@ What Would Invalidate the Thesis:
 Unavailable — requires research.
 
 Model Version: 2.1.0
-Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-09T20:05:40.179625+00:00
-Missing Fields: None
+Data Sources: Unavailable
+Data Timestamp: 2026-09-09T22:51:35.439332+00:00
+Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, one_month_return, three_month_return, six_month_return, one_year_return, institutional_activity
