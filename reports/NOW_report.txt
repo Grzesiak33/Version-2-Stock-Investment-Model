@@ -1,5 +1,5 @@
 NOW
-Score: 34.96/100
+Score: 34.95/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -11,7 +11,7 @@ Balance Sheet: 6.78/10
 Valuation: 3.9/10
 Moat: 0.0/10
 Momentum: 4.15/10
-Insider/Institutional: 3.57/5
+Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-10T22:51:35.079649+00:00
+Data Timestamp: 2026-09-11T13:16:00.408737+00:00
 Missing Fields: None
