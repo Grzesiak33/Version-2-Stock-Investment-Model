@@ -1,5 +1,5 @@
 ARM
-Score: 40.46/100
+Score: 39.98/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 10.28/15
 Earnings/FCF: 11.27/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.45/10
-Valuation: 0.2/10
+Valuation: 0.22/10
 Moat: 0.0/10
-Momentum: 5.56/10
+Momentum: 5.06/10
 Insider/Institutional: 3.7/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-14T13:18:41.110406+00:00
+Data Timestamp: 2026-09-14T14:55:27.128368+00:00
 Missing Fields: None
