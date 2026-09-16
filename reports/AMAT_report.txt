@@ -1,5 +1,5 @@
 AMAT
-Score: 44.42/100
+Score: 44.4/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 11.18/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 7.78/10
-Valuation: 2.8/10
+Valuation: 2.78/10
 Moat: 0.0/10
 Momentum: 4.08/10
 Insider/Institutional: 3.58/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-15T22:50:42.364792+00:00
+Data Timestamp: 2026-09-16T13:17:49.280810+00:00
 Missing Fields: None
