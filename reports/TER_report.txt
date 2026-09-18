@@ -1,5 +1,5 @@
 TER
-Score: 49.81/100
+Score: 49.56/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 8.9/10
 Valuation: 3.1/10
 Moat: 0.0/10
-Momentum: 4.06/10
+Momentum: 3.81/10
 Insider/Institutional: 3.75/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -24,6 +24,7 @@ Major Weaknesses:
 - Industry Growth
 - Valuation
 - Competitive Advantage
+- Momentum
 - Catalysts
 - Inflation Resilience
 
@@ -41,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-17T22:33:51.917370+00:00
+Data Timestamp: 2026-09-18T00:47:46.722347+00:00
 Missing Fields: None
