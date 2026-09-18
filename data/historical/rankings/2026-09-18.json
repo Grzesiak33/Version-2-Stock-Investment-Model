@@ -204,25 +204,25 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "MDB",
-    "rank": 18,
-    "score": 43.11,
-    "classification": "REJECT",
-    "price": 383.55999755859375,
-    "experiment_start_price": 460.3299865722656,
-    "return_since_experiment_start": -0.16677164480489481,
-    "confidence": 94.1,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "ACMR",
-    "rank": 19,
+    "rank": 18,
     "score": 43.1,
     "classification": "REJECT",
     "price": 68.51000213623047,
     "experiment_start_price": 80.41999816894531,
     "return_since_experiment_start": -0.14809744222692567,
+    "confidence": 94.1,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "MDB",
+    "rank": 19,
+    "score": 43.1,
+    "classification": "REJECT",
+    "price": 383.55999755859375,
+    "experiment_start_price": 460.3299865722656,
+    "return_since_experiment_start": -0.16677164480489481,
     "confidence": 94.1,
     "risk": "LOW",
     "model_version": "2.1.0"
