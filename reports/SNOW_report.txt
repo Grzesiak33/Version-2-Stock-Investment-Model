@@ -1,5 +1,5 @@
 SNOW
-Score: 42.66/100
+Score: 42.64/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 88.2/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 7.29/10
 Valuation: 1.07/10
 Moat: 0.0/10
-Momentum: 8.25/10
+Momentum: 8.23/10
 Insider/Institutional: 3.55/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-22T19:35:08.192504+00:00
+Data Timestamp: 2026-09-22T20:53:39.531454+00:00
 Missing Fields: eps_growth, pe_ratio
