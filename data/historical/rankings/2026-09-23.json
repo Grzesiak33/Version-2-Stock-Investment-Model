@@ -158,7 +158,7 @@
   {
     "ticker": "MDB",
     "rank": 14,
-    "score": 45.3,
+    "score": 45.31,
     "classification": "REJECT",
     "price": 428.3599853515625,
     "experiment_start_price": 460.3299865722656,
@@ -182,7 +182,7 @@
   {
     "ticker": "META",
     "rank": 16,
-    "score": 44.31,
+    "score": 44.3,
     "classification": "REJECT",
     "price": 744.0999755859375,
     "experiment_start_price": 589.3848266601562,
@@ -218,7 +218,7 @@
   {
     "ticker": "SMCI",
     "rank": 19,
-    "score": 43.86,
+    "score": 43.85,
     "classification": "REJECT",
     "price": 41.439998626708984,
     "experiment_start_price": 39.84000015258789,
@@ -242,7 +242,7 @@
   {
     "ticker": "ACMR",
     "rank": 21,
-    "score": 43.15,
+    "score": 43.28,
     "classification": "REJECT",
     "price": 80.66999816894531,
     "experiment_start_price": 80.41999816894531,
