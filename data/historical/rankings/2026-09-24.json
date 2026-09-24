@@ -242,7 +242,7 @@
   {
     "ticker": "ACMR",
     "rank": 21,
-    "score": 43.12,
+    "score": 43.0,
     "classification": "REJECT",
     "price": 76.18000030517578,
     "experiment_start_price": 80.41999816894531,
@@ -278,7 +278,7 @@
   {
     "ticker": "MSFT",
     "rank": 24,
-    "score": 42.58,
+    "score": 42.57,
     "classification": "REJECT",
     "price": 497.92999267578125,
     "experiment_start_price": 494.4691467285156,
