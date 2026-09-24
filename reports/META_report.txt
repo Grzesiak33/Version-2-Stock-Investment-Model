@@ -1,5 +1,5 @@
 META
-Score: 44.09/100
+Score: 45.31/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,15 +8,16 @@ Revenue Growth: 12.38/15
 Earnings/FCF: 10.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 7.23/10
-Valuation: 4.34/10
+Valuation: 4.17/10
 Moat: 0.0/10
-Momentum: 6.65/10
+Momentum: 8.04/10
 Insider/Institutional: 3.49/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
 - Revenue Growth
+- Momentum
 
 Major Weaknesses:
 - Industry Growth
@@ -38,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-24T00:53:52.553438+00:00
+Data Timestamp: 2026-09-24T17:49:17.873442+00:00
 Missing Fields: None
