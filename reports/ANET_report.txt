@@ -1,5 +1,5 @@
 ANET
-Score: 52.38/100
+Score: 52.32/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 10.0/10
-Valuation: 0.75/10
+Valuation: 0.76/10
 Moat: 0.0/10
-Momentum: 8.0/10
+Momentum: 7.93/10
 Insider/Institutional: 3.63/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -19,7 +19,6 @@ Major Strengths:
 - Revenue Growth
 - Earnings Fcf
 - Balance Sheet
-- Momentum
 
 Major Weaknesses:
 - Industry Growth
@@ -42,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-25T17:52:30.884343+00:00
+Data Timestamp: 2026-09-25T18:53:19.569478+00:00
 Missing Fields: None
