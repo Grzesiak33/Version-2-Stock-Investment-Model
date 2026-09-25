@@ -134,7 +134,7 @@
   {
     "ticker": "AVGO",
     "rank": 12,
-    "score": 46.16,
+    "score": 46.12,
     "classification": "REJECT",
     "price": 352.80999755859375,
     "experiment_start_price": 392.2756652832031,
@@ -182,7 +182,7 @@
   {
     "ticker": "MDB",
     "rank": 16,
-    "score": 44.6,
+    "score": 44.61,
     "classification": "REJECT",
     "price": 410.44000244140625,
     "experiment_start_price": 460.3299865722656,
