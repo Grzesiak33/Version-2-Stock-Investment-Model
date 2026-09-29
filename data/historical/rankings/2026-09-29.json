@@ -134,7 +134,7 @@
   {
     "ticker": "AVGO",
     "rank": 12,
-    "score": 45.87,
+    "score": 45.9,
     "classification": "REJECT",
     "price": 355.1000061035156,
     "experiment_start_price": 392.2756652832031,
@@ -266,7 +266,7 @@
   {
     "ticker": "MSFT",
     "rank": 23,
-    "score": 42.35,
+    "score": 42.36,
     "classification": "REJECT",
     "price": 508.9599914550781,
     "experiment_start_price": 494.4691467285156,
@@ -302,7 +302,7 @@
   {
     "ticker": "MDB",
     "rank": 26,
-    "score": 42.11,
+    "score": 42.1,
     "classification": "REJECT",
     "price": 337.19000244140625,
     "experiment_start_price": 460.3299865722656,
