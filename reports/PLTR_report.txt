@@ -1,5 +1,5 @@
 PLTR
-Score: 49.91/100
+Score: 49.9/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.89/10
-Valuation: 0.64/10
+Valuation: 0.63/10
 Moat: 0.0/10
 Momentum: 6.03/10
 Insider/Institutional: 3.35/5
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-09-30T01:36:26.984211+00:00
+Data Timestamp: 2026-09-30T18:20:34.568383+00:00
 Missing Fields: None
