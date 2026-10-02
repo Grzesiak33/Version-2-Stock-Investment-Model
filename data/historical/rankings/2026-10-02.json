@@ -180,20 +180,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "ACMR",
-    "rank": 16,
-    "score": 43.79,
-    "classification": "REJECT",
-    "price": 83.37999725341797,
-    "experiment_start_price": 80.41999816894531,
-    "return_since_experiment_start": 0.036806753940162196,
-    "confidence": 94.1,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "NET",
-    "rank": 17,
+    "rank": 16,
     "score": 43.77,
     "classification": "REJECT",
     "price": 349.07000732421875,
@@ -205,7 +193,7 @@
   },
   {
     "ticker": "META",
-    "rank": 18,
+    "rank": 17,
     "score": 43.71,
     "classification": "REJECT",
     "price": 728.0800170898438,
@@ -217,7 +205,7 @@
   },
   {
     "ticker": "PANW",
-    "rank": 19,
+    "rank": 18,
     "score": 43.66,
     "classification": "REJECT",
     "price": 403.239990234375,
@@ -225,6 +213,18 @@
     "return_since_experiment_start": 0.04936633555327741,
     "confidence": 94.1,
     "risk": "MEDIUM",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "ACMR",
+    "rank": 19,
+    "score": 43.57,
+    "classification": "REJECT",
+    "price": 83.37999725341797,
+    "experiment_start_price": 80.41999816894531,
+    "return_since_experiment_start": 0.036806753940162196,
+    "confidence": 94.1,
+    "risk": "LOW",
     "model_version": "2.1.0"
   },
   {
@@ -278,7 +278,7 @@
   {
     "ticker": "MDB",
     "rank": 24,
-    "score": 42.54,
+    "score": 42.53,
     "classification": "REJECT",
     "price": 357.9599914550781,
     "experiment_start_price": 460.3299865722656,
