@@ -1,5 +1,5 @@
 AMZN
-Score: 42.32/100
+Score: 42.31/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 9.22/15
 Earnings/FCF: 12.28/15
 Industry Growth: 0.0/15
 Balance Sheet: 6.64/10
-Valuation: 6.6/10
+Valuation: 6.59/10
 Moat: 0.0/10
 Momentum: 4.11/10
 Insider/Institutional: 3.47/5
@@ -38,5 +38,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-01T23:37:07.842362+00:00
+Data Timestamp: 2026-10-02T01:49:46.503132+00:00
 Missing Fields: None
