@@ -1,5 +1,5 @@
 AMD
-Score: 49.87/100
+Score: 49.59/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 8.77/10
 Valuation: 1.0/10
 Moat: 0.0/10
-Momentum: 8.77/10
+Momentum: 8.49/10
 Insider/Institutional: 3.45/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -44,5 +44,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-03T01:28:08.283347+00:00
+Data Timestamp: 2026-10-05T21:12:55.127062+00:00
 Missing Fields: None
