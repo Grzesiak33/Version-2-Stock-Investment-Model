@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-06T22:20:30.128523+00:00
+Data Timestamp: 2026-10-06T23:29:35.468277+00:00
 Missing Fields: price_to_fcf
