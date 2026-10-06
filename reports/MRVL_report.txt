@@ -1,5 +1,5 @@
 MRVL
-Score: 46.89/100
+Score: 47.46/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 7.13/10
 Valuation: 0.71/10
 Moat: 0.0/10
-Momentum: 7.74/10
+Momentum: 8.31/10
 Insider/Institutional: 3.53/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -18,6 +18,7 @@ Inflation Resilience: 0.0/5
 Major Strengths:
 - Revenue Growth
 - Earnings Fcf
+- Momentum
 
 Major Weaknesses:
 - Industry Growth
@@ -41,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-05T23:44:40.827123+00:00
+Data Timestamp: 2026-10-06T01:03:44.582106+00:00
 Missing Fields: None
