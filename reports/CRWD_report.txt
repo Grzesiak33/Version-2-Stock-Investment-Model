@@ -1,5 +1,5 @@
 CRWD
-Score: 41.32/100
+Score: 41.35/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 94.1/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 9.3/10
 Valuation: 0.26/10
 Moat: 0.0/10
-Momentum: 9.22/10
+Momentum: 9.25/10
 Insider/Institutional: 3.49/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-07T19:16:56.950105+00:00
+Data Timestamp: 2026-10-07T20:09:31.195512+00:00
 Missing Fields: eps_growth
