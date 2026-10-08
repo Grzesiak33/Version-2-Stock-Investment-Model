@@ -1,5 +1,5 @@
 MU
-Score: 56.64/100
+Score: 56.26/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 96.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.47/10
-Valuation: 6.32/10
+Valuation: 6.58/10
 Moat: 0.0/10
-Momentum: 7.35/10
+Momentum: 6.71/10
 Insider/Institutional: 3.5/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-08T02:17:08.561465+00:00
+Data Timestamp: 2026-10-08T19:13:10.877147+00:00
 Missing Fields: None
