@@ -1,36 +1,36 @@
 PLTR
-Score: 51.81/100
-Classification: RESEARCH
-Risk Level: MEDIUM
-Data Confidence: 100.0/100 (HIGH)
+Score: 8.0/100
+Classification: REJECT
+Risk Level: LOW
+Data Confidence: 23.5/100 (VERY LOW)
 
-Revenue Growth: 15.0/15
-Earnings/FCF: 15.0/15
+Revenue Growth: 0.0/15
+Earnings/FCF: 0/15
 Industry Growth: 0.0/15
-Balance Sheet: 9.89/10
-Valuation: 0.57/10
+Balance Sheet: 0/10
+Valuation: 0/10
 Moat: 0.0/10
 Momentum: 8.0/10
-Insider/Institutional: 3.35/5
+Insider/Institutional: 0.0/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
-- Revenue Growth
-- Earnings Fcf
-- Balance Sheet
 - Momentum
 
 Major Weaknesses:
+- Revenue Growth
+- Earnings Fcf
 - Industry Growth
+- Balance Sheet
 - Valuation
 - Competitive Advantage
+- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
 Major Risks:
-- Excessive price-to-sales valuation
-- Very high earnings multiple
+- No explicit risk flags in supplied data
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -43,5 +43,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-09T23:44:46.186451+00:00
-Missing Fields: None
+Data Timestamp: 2026-10-10T01:55:14.997039+00:00
+Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, institutional_activity

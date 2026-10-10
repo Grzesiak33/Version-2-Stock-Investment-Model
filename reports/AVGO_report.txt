@@ -1,29 +1,31 @@
 AVGO
-Score: 44.83/100
+Score: 2.42/100
 Classification: REJECT
 Risk Level: LOW
-Data Confidence: 100.0/100 (HIGH)
+Data Confidence: 23.5/100 (VERY LOW)
 
-Revenue Growth: 15.0/15
-Earnings/FCF: 15.0/15
+Revenue Growth: 0.0/15
+Earnings/FCF: 0/15
 Industry Growth: 0.0/15
-Balance Sheet: 6.44/10
-Valuation: 2.45/10
+Balance Sheet: 0/10
+Valuation: 0/10
 Moat: 0.0/10
 Momentum: 2.42/10
-Insider/Institutional: 3.52/5
+Insider/Institutional: 0.0/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
-- Revenue Growth
-- Earnings Fcf
 
 Major Weaknesses:
+- Revenue Growth
+- Earnings Fcf
 - Industry Growth
+- Balance Sheet
 - Valuation
 - Competitive Advantage
 - Momentum
+- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
@@ -41,5 +43,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-09T23:44:46.806343+00:00
-Missing Fields: None
+Data Timestamp: 2026-10-10T01:55:15.564445+00:00
+Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, institutional_activity
