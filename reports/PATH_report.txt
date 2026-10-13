@@ -1,5 +1,5 @@
 PATH
-Score: 44.25/100
+Score: 43.62/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 96.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 9.71/10
 Valuation: 7.86/10
 Moat: 0.0/10
-Momentum: 4.53/10
+Momentum: 3.9/10
 Insider/Institutional: 3.76/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -21,6 +21,7 @@ Major Strengths:
 Major Weaknesses:
 - Industry Growth
 - Competitive Advantage
+- Momentum
 - Catalysts
 - Inflation Resilience
 
@@ -38,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-13T00:08:41.814346+00:00
+Data Timestamp: 2026-10-13T01:45:02.932259+00:00
 Missing Fields: None
