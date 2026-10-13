@@ -1,5 +1,5 @@
 AVGO
-Score: 44.61/100
+Score: 44.56/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 6.44/10
-Valuation: 2.56/10
+Valuation: 2.51/10
 Moat: 0.0/10
 Momentum: 2.09/10
 Insider/Institutional: 3.52/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-13T21:00:47.842076+00:00
+Data Timestamp: 2026-10-13T22:17:29.625005+00:00
 Missing Fields: None
