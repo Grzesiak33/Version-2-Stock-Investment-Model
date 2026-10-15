@@ -1,5 +1,5 @@
 MSFT
-Score: 42.2/100
+Score: 42.23/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 8.51/15
 Earnings/FCF: 14.63/15
 Industry Growth: 0.0/15
 Balance Sheet: 6.87/10
-Valuation: 2.57/10
+Valuation: 2.6/10
 Moat: 0.0/10
 Momentum: 6.17/10
 Insider/Institutional: 3.45/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-14T22:54:09.919521+00:00
+Data Timestamp: 2026-10-15T00:54:05.735644+00:00
 Missing Fields: None
