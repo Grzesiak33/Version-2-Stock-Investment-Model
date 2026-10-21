@@ -1,5 +1,5 @@
 ARM
-Score: 38.8/100
+Score: 39.39/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 9.45/10
 Valuation: 0.24/10
 Moat: 0.0/10
-Momentum: 3.86/10
+Momentum: 4.45/10
 Insider/Institutional: 3.7/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -22,7 +22,6 @@ Major Weaknesses:
 - Industry Growth
 - Valuation
 - Competitive Advantage
-- Momentum
 - Catalysts
 - Inflation Resilience
 
@@ -42,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-20T22:51:35.504762+00:00
+Data Timestamp: 2026-10-21T00:59:17.062175+00:00
 Missing Fields: None
