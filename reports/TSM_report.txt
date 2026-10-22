@@ -1,5 +1,5 @@
 TSM
-Score: 55.93/100
+Score: 55.28/100
 Classification: RESEARCH
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.15/10
-Valuation: 8.9/10
+Valuation: 8.96/10
 Moat: 0.0/10
-Momentum: 5.19/10
+Momentum: 4.48/10
 Insider/Institutional: 2.69/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-22T00:55:06.609428+00:00
+Data Timestamp: 2026-10-22T17:54:35.842717+00:00
 Missing Fields: None
