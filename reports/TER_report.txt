@@ -1,5 +1,5 @@
 TER
-Score: 48.86/100
+Score: 48.9/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 8.9/10
-Valuation: 3.71/10
+Valuation: 3.75/10
 Moat: 0.0/10
 Momentum: 2.5/10
 Insider/Institutional: 3.75/5
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-22T17:54:32.420365+00:00
+Data Timestamp: 2026-10-22T18:49:26.472323+00:00
 Missing Fields: None
