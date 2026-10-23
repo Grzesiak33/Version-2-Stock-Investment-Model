@@ -30,7 +30,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:21.313993+00:00",
+    "data_timestamp": "2026-10-23T22:47:08.176481+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -76,7 +76,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:22.621092+00:00",
+    "data_timestamp": "2026-10-23T22:47:08.650585+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -122,7 +122,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:23.524273+00:00",
+    "data_timestamp": "2026-10-23T22:47:09.093421+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -168,7 +168,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:24.294468+00:00",
+    "data_timestamp": "2026-10-23T22:47:09.546715+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -214,7 +214,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:25.027275+00:00",
+    "data_timestamp": "2026-10-23T22:47:10.010634+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -260,7 +260,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:25.618396+00:00",
+    "data_timestamp": "2026-10-23T22:47:10.509970+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -306,7 +306,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:26.164134+00:00",
+    "data_timestamp": "2026-10-23T22:47:10.925432+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -352,7 +352,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:26.659249+00:00",
+    "data_timestamp": "2026-10-23T22:47:11.512723+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -398,7 +398,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:27.286062+00:00",
+    "data_timestamp": "2026-10-23T22:47:11.956240+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -444,7 +444,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:27.950002+00:00",
+    "data_timestamp": "2026-10-23T22:47:12.405850+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -490,7 +490,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:28.484487+00:00",
+    "data_timestamp": "2026-10-23T22:47:12.904015+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -528,7 +528,7 @@
     "one_month_return": 0.04778364250728795,
     "three_month_return": 0.37672877661046567,
     "six_month_return": 0.24025143980389374,
-    "one_year_return": 0.015878112197823535,
+    "one_year_return": 0.015878232288568217,
     "insider_activity": 0.00079,
     "institutional_activity": 0.75782996,
     "industry_growth": null,
@@ -536,7 +536,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:28.998797+00:00",
+    "data_timestamp": "2026-10-23T22:47:13.377192+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -573,7 +573,7 @@
     "price_to_fcf": 172.7839087657378,
     "one_month_return": -0.05215639764831348,
     "three_month_return": 0.002113650624468111,
-    "six_month_return": -0.06908482220091738,
+    "six_month_return": -0.06908473960939965,
     "one_year_return": 0.26854252075022966,
     "insider_activity": 0.01597,
     "institutional_activity": 0.81037,
@@ -582,7 +582,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:29.697070+00:00",
+    "data_timestamp": "2026-10-23T22:47:13.966342+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -628,7 +628,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:30.183335+00:00",
+    "data_timestamp": "2026-10-23T22:47:14.486015+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -666,7 +666,7 @@
     "one_month_return": -0.13637949710835584,
     "three_month_return": 0.0805409290301844,
     "six_month_return": -0.04637842144247961,
-    "one_year_return": -0.12152612209006752,
+    "one_year_return": -0.12152619538661091,
     "insider_activity": 0.00148,
     "institutional_activity": 0.79136,
     "industry_growth": null,
@@ -674,7 +674,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:30.832284+00:00",
+    "data_timestamp": "2026-10-23T22:47:15.069292+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -712,7 +712,7 @@
     "one_month_return": -0.12405500852105322,
     "three_month_return": 0.10119668248733671,
     "six_month_return": -0.26669473464628446,
-    "one_year_return": -0.5435141696291974,
+    "one_year_return": -0.5435142200352776,
     "insider_activity": 0.38395,
     "institutional_activity": 0.43377998,
     "industry_growth": null,
@@ -720,7 +720,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:31.433316+00:00",
+    "data_timestamp": "2026-10-23T22:47:15.636981+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -757,7 +757,7 @@
     "price_to_fcf": 1.8042074539886324,
     "one_month_return": -0.06283448753472065,
     "three_month_return": 0.04021406643162151,
-    "six_month_return": 0.045111282412200415,
+    "six_month_return": 0.04511120276523117,
     "one_year_return": 0.45474966770518743,
     "insider_activity": 0.00013,
     "institutional_activity": 0.15512,
@@ -766,7 +766,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:31.986398+00:00",
+    "data_timestamp": "2026-10-23T22:47:16.076290+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -804,7 +804,7 @@
     "one_month_return": -0.09905362113848837,
     "three_month_return": -0.10429579125969213,
     "six_month_return": 0.08202679952423786,
-    "one_year_return": 0.5265703701903384,
+    "one_year_return": 0.5265705511769576,
     "insider_activity": 8.0000005e-05,
     "institutional_activity": 0.20372,
     "industry_growth": null,
@@ -812,7 +812,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:32.518394+00:00",
+    "data_timestamp": "2026-10-23T22:47:16.635082+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -858,7 +858,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:32.956409+00:00",
+    "data_timestamp": "2026-10-23T22:47:17.113241+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -904,7 +904,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:33.474668+00:00",
+    "data_timestamp": "2026-10-23T22:47:17.547396+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -950,7 +950,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:33.962438+00:00",
+    "data_timestamp": "2026-10-23T22:47:17.969172+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -996,7 +996,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:34.481692+00:00",
+    "data_timestamp": "2026-10-23T22:47:18.407047+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1042,7 +1042,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:34.999501+00:00",
+    "data_timestamp": "2026-10-23T22:47:18.998642+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1088,7 +1088,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:35.617705+00:00",
+    "data_timestamp": "2026-10-23T22:47:19.463158+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1134,7 +1134,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:36.140161+00:00",
+    "data_timestamp": "2026-10-23T22:47:20.080415+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1180,7 +1180,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:36.669346+00:00",
+    "data_timestamp": "2026-10-23T22:47:20.577772+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1226,7 +1226,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:37.123026+00:00",
+    "data_timestamp": "2026-10-23T22:47:21.011413+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1272,7 +1272,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:37.636303+00:00",
+    "data_timestamp": "2026-10-23T22:47:21.434256+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1318,7 +1318,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:38.146322+00:00",
+    "data_timestamp": "2026-10-23T22:47:21.959508+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
@@ -1364,7 +1364,7 @@
     "catalysts": [],
     "inflation_resilience": null,
     "risk_factors": [],
-    "data_timestamp": "2026-10-23T20:59:38.582399+00:00",
+    "data_timestamp": "2026-10-23T22:47:22.380756+00:00",
     "data_sources": [
       "Yahoo Finance via yfinance"
     ],
