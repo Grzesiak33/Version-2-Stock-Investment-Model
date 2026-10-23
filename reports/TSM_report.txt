@@ -1,29 +1,30 @@
 TSM
-Score: 55.29/100
-Classification: RESEARCH
+Score: 5.08/100
+Classification: REJECT
 Risk Level: LOW
-Data Confidence: 100.0/100 (HIGH)
+Data Confidence: 23.5/100 (VERY LOW)
 
-Revenue Growth: 15.0/15
-Earnings/FCF: 15.0/15
+Revenue Growth: 0.0/15
+Earnings/FCF: 0/15
 Industry Growth: 0.0/15
-Balance Sheet: 9.15/10
-Valuation: 8.95/10
+Balance Sheet: 0/10
+Valuation: 0/10
 Moat: 0.0/10
-Momentum: 4.5/10
-Insider/Institutional: 2.69/5
+Momentum: 5.08/10
+Insider/Institutional: 0.0/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
-- Revenue Growth
-- Earnings Fcf
-- Balance Sheet
-- Valuation
 
 Major Weaknesses:
+- Revenue Growth
+- Earnings Fcf
 - Industry Growth
+- Balance Sheet
+- Valuation
 - Competitive Advantage
+- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
@@ -41,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-22T22:54:05.737741+00:00
-Missing Fields: None
+Data Timestamp: 2026-10-23T00:58:36.203263+00:00
+Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, institutional_activity

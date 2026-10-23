@@ -1,27 +1,31 @@
 META
-Score: 40.21/100
+Score: 2.93/100
 Classification: REJECT
 Risk Level: LOW
-Data Confidence: 100.0/100 (HIGH)
+Data Confidence: 23.5/100 (VERY LOW)
 
-Revenue Growth: 12.38/15
-Earnings/FCF: 10.0/15
+Revenue Growth: 0.0/15
+Earnings/FCF: 0/15
 Industry Growth: 0.0/15
-Balance Sheet: 7.23/10
-Valuation: 5.17/10
+Balance Sheet: 0/10
+Valuation: 0/10
 Moat: 0.0/10
-Momentum: 1.94/10
-Insider/Institutional: 3.49/5
+Momentum: 2.93/10
+Insider/Institutional: 0.0/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
-- Revenue Growth
 
 Major Weaknesses:
+- Revenue Growth
+- Earnings Fcf
 - Industry Growth
+- Balance Sheet
+- Valuation
 - Competitive Advantage
 - Momentum
+- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
@@ -39,5 +43,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-22T22:54:05.040577+00:00
-Missing Fields: None
+Data Timestamp: 2026-10-23T00:58:35.002877+00:00
+Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, institutional_activity
