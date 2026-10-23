@@ -1,35 +1,33 @@
 PANW
-Score: 6.23/100
+Score: 42.52/100
 Classification: REJECT
-Risk Level: LOW
-Data Confidence: 23.5/100 (VERY LOW)
+Risk Level: MEDIUM
+Data Confidence: 94.1/100 (HIGH)
 
-Revenue Growth: 0.0/15
-Earnings/FCF: 0/15
+Revenue Growth: 14.81/15
+Earnings/FCF: 8.85/15
 Industry Growth: 0.0/15
-Balance Sheet: 0/10
-Valuation: 0/10
+Balance Sheet: 7.72/10
+Valuation: 0.64/10
 Moat: 0.0/10
-Momentum: 6.23/10
-Insider/Institutional: 0.0/5
+Momentum: 6.94/10
+Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
 Major Strengths:
+- Revenue Growth
 
 Major Weaknesses:
-- Revenue Growth
-- Earnings Fcf
 - Industry Growth
-- Balance Sheet
 - Valuation
 - Competitive Advantage
-- Insider Institutional
 - Catalysts
 - Inflation Resilience
 
 Major Risks:
-- No explicit risk flags in supplied data
+- Excessive price-to-sales valuation
+- Very high earnings multiple
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -42,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-23T00:58:32.887443+00:00
-Missing Fields: revenue, revenue_growth, eps, eps_growth, free_cash_flow, cash, debt, gross_margin, operating_margin, pe_ratio, price_to_sales, price_to_fcf, institutional_activity
+Data Timestamp: 2026-10-23T17:49:05.224399+00:00
+Missing Fields: eps_growth
