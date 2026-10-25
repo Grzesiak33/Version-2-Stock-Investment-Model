@@ -1,0 +1,30 @@
+name: Read-only AI Stock Watchlist
+on:
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: 'Comma-separated stock tickers (max 12)'
+        required: false
+        default: 'NVDA,AMD,AVGO,TSM,ARM,PLTR,SOFI,IONQ'
+  schedule:
+    - cron: '15 21 * * 1-5'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'yfinance>=0.2.54,<2'
+      - name: Generate read-only watchlist
+        env:
+          TICKERS: ${{ github.event.inputs.tickers || 'NVDA,AMD,AVGO,TSM,ARM,PLTR,SOFI,IONQ' }}
+        run: python agent_watchlist.py --tickers "$TICKERS"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent-watchlist
+          path: reports/agent_watchlist.md
