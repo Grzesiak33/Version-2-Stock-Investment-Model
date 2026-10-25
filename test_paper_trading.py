@@ -73,7 +73,7 @@ def test_sell_only_owned_shares():
     p.buy(quote(), "2", NOW, approved=True)
     t = p.sell(quote(), "1", NOW, approved=True)
     assert t.simulated and t.side == "SELL"
-    assert p.holdings["MU"] == Decimal("0")
+    assert "MU" not in p.holdings  # Fully sold positions are removed
 
 
 def test_halt_blocks_orders():
