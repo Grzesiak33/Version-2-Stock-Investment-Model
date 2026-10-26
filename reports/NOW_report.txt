@@ -1,5 +1,5 @@
 NOW
-Score: 36.2/100
+Score: 36.31/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 10.88/15
 Earnings/FCF: 5.68/15
 Industry Growth: 0.0/15
 Balance Sheet: 6.78/10
-Valuation: 2.95/10
+Valuation: 3.02/10
 Moat: 0.0/10
-Momentum: 6.35/10
+Momentum: 6.39/10
 Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-24T01:08:32.635212+00:00
+Data Timestamp: 2026-10-26T19:06:23.677950+00:00
 Missing Fields: None
