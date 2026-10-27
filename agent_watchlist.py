@@ -59,6 +59,13 @@ def main():
     if errors:
         lines.extend(["", "## Missing/failed data", ""])
         lines.extend(f"- {sym}: {err}" for sym, err in errors)
+    lines.extend(["", "## OpenAI-assisted research", ""])
+    try:
+        from openai_research import analyze
+        lines.append(analyze(rows, errors))
+    except Exception as exc:
+        # Do not leak API error messages or secrets to logs.
+        lines.append(f"AI commentary unavailable ({type(exc).__name__}); quantitative scan completed.")
     lines.extend(["", "## Next step", "Research candidates independently. Do not place trades from this report alone."])
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
