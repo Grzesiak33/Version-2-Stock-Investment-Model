@@ -1,0 +1,33 @@
+name: Scheduled Agent Research (paper only)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 13 * * 1-5'
+    - cron: '15 21 * * 1-5'
+permissions:
+  contents: read
+jobs:
+  watchlist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out trading agent development branch
+        uses: actions/checkout@v4
+        with:
+          ref: agentic-trader-development
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install market data library
+        run: python -m pip install 'yfinance>=0.2.54,<2'
+      - name: Generate research watchlist (no orders)
+        run: python agent_watchlist.py --output reports/agent_watchlist.md
+      - name: Save watchlist
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-watchlist
+          path: reports/agent_watchlist.md
+          if-no-files-found: warn
