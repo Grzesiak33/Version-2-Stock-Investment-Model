@@ -242,7 +242,7 @@
   {
     "ticker": "MSFT",
     "rank": 21,
-    "score": 41.72,
+    "score": 41.69,
     "classification": "REJECT",
     "price": 531.3300170898438,
     "experiment_start_price": 494.4691467285156,
@@ -278,7 +278,7 @@
   {
     "ticker": "ACMR",
     "rank": 24,
-    "score": 41.39,
+    "score": 41.41,
     "classification": "REJECT",
     "price": 51.970001220703125,
     "experiment_start_price": 80.41999816894531,
@@ -302,7 +302,7 @@
   {
     "ticker": "VRT",
     "rank": 26,
-    "score": 41.03,
+    "score": 41.11,
     "classification": "REJECT",
     "price": 208.55999755859375,
     "experiment_start_price": 293.7679748535156,
