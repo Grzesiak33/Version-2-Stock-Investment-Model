@@ -1,5 +1,5 @@
 PANW
-Score: 42.48/100
+Score: 42.56/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 94.1/100 (HIGH)
@@ -10,7 +10,7 @@ Industry Growth: 0.0/15
 Balance Sheet: 7.72/10
 Valuation: 0.64/10
 Moat: 0.0/10
-Momentum: 6.9/10
+Momentum: 6.98/10
 Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-29T18:54:00.036954+00:00
+Data Timestamp: 2026-10-29T19:52:34.846997+00:00
 Missing Fields: eps_growth
