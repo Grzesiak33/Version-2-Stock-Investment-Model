@@ -38,11 +38,11 @@
   {
     "ticker": "DELL",
     "rank": 4,
-    "score": 49.61,
+    "score": 49.6,
     "classification": "REJECT",
-    "price": 424.1600036621094,
+    "price": 424.29998779296875,
     "experiment_start_price": 490.1310729980469,
-    "return_since_experiment_start": -0.13459883074216028,
+    "return_since_experiment_start": -0.13431322524075195,
     "confidence": 100.0,
     "risk": "HIGH",
     "model_version": "2.1.0"
@@ -122,11 +122,11 @@
   {
     "ticker": "CRDO",
     "rank": 11,
-    "score": 45.21,
+    "score": 45.34,
     "classification": "REJECT",
-    "price": 146.27999877929688,
+    "price": 150.99000549316406,
     "experiment_start_price": 259.8999938964844,
-    "return_since_experiment_start": -0.4371681330721433,
+    "return_since_experiment_start": -0.4190457520622263,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -242,11 +242,11 @@
   {
     "ticker": "SMCI",
     "rank": 21,
-    "score": 40.79,
+    "score": 41.07,
     "classification": "REJECT",
-    "price": 32.09000015258789,
+    "price": 32.95000076293945,
     "experiment_start_price": 39.84000015258789,
-    "return_since_experiment_start": -0.19452811170475315,
+    "return_since_experiment_start": -0.17294175108583387,
     "confidence": 94.1,
     "risk": "MEDIUM",
     "model_version": "2.1.0"
@@ -278,11 +278,11 @@
   {
     "ticker": "CRWD",
     "rank": 24,
-    "score": 39.56,
+    "score": 39.65,
     "classification": "REJECT",
-    "price": 248.375,
+    "price": 250.42999267578125,
     "experiment_start_price": 216.9499969482422,
-    "return_since_experiment_start": 0.14484905966260464,
+    "return_since_experiment_start": 0.15432125466001456,
     "confidence": 94.1,
     "risk": "MEDIUM",
     "model_version": "2.1.0"
@@ -290,11 +290,11 @@
   {
     "ticker": "SNOW",
     "rank": 25,
-    "score": 39.16,
+    "score": 39.4,
     "classification": "REJECT",
-    "price": 300.385009765625,
+    "price": 306.0799865722656,
     "experiment_start_price": 328.9200134277344,
-    "return_since_experiment_start": -0.08675362549314347,
+    "return_since_experiment_start": -0.06943945616883795,
     "confidence": 88.2,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -302,11 +302,11 @@
   {
     "ticker": "NET",
     "rank": 26,
-    "score": 39.02,
+    "score": 39.03,
     "classification": "REJECT",
-    "price": 280.510009765625,
+    "price": 280.70001220703125,
     "experiment_start_price": 315.7799987792969,
-    "return_since_experiment_start": -0.11169164972453682,
+    "return_since_experiment_start": -0.1110899572736509,
     "confidence": 88.2,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -352,9 +352,9 @@
     "rank": 30,
     "score": 33.22,
     "classification": "REJECT",
-    "price": 105.125,
+    "price": 105.12000274658203,
     "experiment_start_price": 124.0,
-    "return_since_experiment_start": -0.15221774193548387,
+    "return_since_experiment_start": -0.15225804236627394,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
