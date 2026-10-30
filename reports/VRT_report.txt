@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-29T23:44:02.473116+00:00
+Data Timestamp: 2026-10-30T02:09:41.445939+00:00
 Missing Fields: revenue, free_cash_flow, price_to_sales, price_to_fcf
