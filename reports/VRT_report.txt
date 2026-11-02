@@ -1,16 +1,16 @@
 VRT
-Score: 48.4/100
+Score: 47.7/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
 
 Revenue Growth: 15.0/15
-Earnings/FCF: 13.83/15
+Earnings/FCF: 13.96/15
 Industry Growth: 0.0/15
-Balance Sheet: 7.66/10
-Valuation: 5.73/10
+Balance Sheet: 7.63/10
+Valuation: 5.93/10
 Moat: 0.0/10
-Momentum: 2.62/10
+Momentum: 1.62/10
 Insider/Institutional: 3.56/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-10-31T01:50:39.495687+00:00
+Data Timestamp: 2026-11-02T22:15:22.835286+00:00
 Missing Fields: None
