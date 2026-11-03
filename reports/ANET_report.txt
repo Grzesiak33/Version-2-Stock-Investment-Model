@@ -1,5 +1,5 @@
 ANET
-Score: 46.09/100
+Score: 46.46/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,9 +8,9 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 10.0/10
-Valuation: 0.96/10
+Valuation: 0.93/10
 Moat: 0.0/10
-Momentum: 1.5/10
+Momentum: 1.9/10
 Insider/Institutional: 3.63/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -29,7 +29,7 @@ Major Weaknesses:
 - Inflation Resilience
 
 Major Risks:
-- No explicit risk flags in supplied data
+- Excessive price-to-sales valuation
 
 Key Catalysts:
 - Unavailable — requires qualitative research; not fabricated
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-03T03:43:06.200409+00:00
+Data Timestamp: 2026-11-03T20:00:26.729289+00:00
 Missing Fields: None
