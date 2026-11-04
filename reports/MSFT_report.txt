@@ -39,5 +39,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-03T22:54:32.858808+00:00
+Data Timestamp: 2026-11-04T00:18:45.944914+00:00
 Missing Fields: None
