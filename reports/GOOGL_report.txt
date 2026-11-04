@@ -1,5 +1,5 @@
 GOOGL
-Score: 30.74/100
+Score: 30.75/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 94.1/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 11.14/15
 Earnings/FCF: 5.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 3.19/10
-Valuation: 7.0/10
+Valuation: 7.01/10
 Moat: 0.0/10
 Momentum: 0.88/10
 Insider/Institutional: 3.53/5
@@ -40,5 +40,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-04T20:56:17.321855+00:00
+Data Timestamp: 2026-11-04T21:43:54.432555+00:00
 Missing Fields: price_to_fcf
