@@ -304,9 +304,9 @@
     "rank": 26,
     "score": 35.91,
     "classification": "REJECT",
-    "price": 116.05000305175781,
+    "price": 116.0999984741211,
     "experiment_start_price": 149.96536254882812,
-    "return_since_experiment_start": -0.22615461944439075,
+    "return_since_experiment_start": -0.22582123964579226,
     "confidence": 94.1,
     "risk": "HIGH",
     "model_version": "2.1.0"
