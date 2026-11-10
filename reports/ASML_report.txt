@@ -1,5 +1,5 @@
 ASML
-Score: 48.09/100
+Score: 47.97/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 15.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 9.33/10
-Valuation: 2.85/10
+Valuation: 2.73/10
 Moat: 0.0/10
 Momentum: 3.16/10
 Insider/Institutional: 2.75/5
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-10T04:20:07.576899+00:00
+Data Timestamp: 2026-11-10T20:23:28.690038+00:00
 Missing Fields: None

@@ -1,16 +1,16 @@
 AMD
-Score: 46.08/100
+Score: 46.31/100
 Classification: REJECT
-Risk Level: LOW
+Risk Level: MEDIUM
 Data Confidence: 100.0/100 (HIGH)
 
 Revenue Growth: 15.0/15
 Earnings/FCF: 13.53/15
 Industry Growth: 0.0/15
 Balance Sheet: 8.16/10
-Valuation: 1.22/10
+Valuation: 1.2/10
 Moat: 0.0/10
-Momentum: 4.73/10
+Momentum: 4.98/10
 Insider/Institutional: 3.44/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
@@ -28,6 +28,7 @@ Major Weaknesses:
 - Inflation Resilience
 
 Major Risks:
+- Very high earnings multiple
 - High market sensitivity / beta
 
 Key Catalysts:
@@ -41,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-10T04:20:00.316393+00:00
+Data Timestamp: 2026-11-10T20:23:22.145178+00:00
 Missing Fields: None
