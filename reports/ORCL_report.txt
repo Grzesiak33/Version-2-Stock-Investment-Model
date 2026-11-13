@@ -1,5 +1,5 @@
 ORCL
-Score: 35.79/100
+Score: 36.19/100
 Classification: REJECT
 Risk Level: HIGH
 Data Confidence: 94.1/100 (HIGH)
@@ -8,10 +8,10 @@ Revenue Growth: 12.97/15
 Earnings/FCF: 10.0/15
 Industry Growth: 0.0/15
 Balance Sheet: 0.9/10
-Valuation: 8.25/10
+Valuation: 8.31/10
 Moat: 0.0/10
-Momentum: 0.17/10
-Insider/Institutional: 3.5/5
+Momentum: 0.5/10
+Insider/Institutional: 3.51/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-13T02:55:45.275096+00:00
+Data Timestamp: 2026-11-13T20:25:37.486905+00:00
 Missing Fields: price_to_fcf
