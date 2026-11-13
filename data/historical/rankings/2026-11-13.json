@@ -2,7 +2,7 @@
   {
     "ticker": "TSM",
     "rank": 1,
-    "score": 54.6,
+    "score": 54.57,
     "classification": "RESEARCH",
     "price": 405.489990234375,
     "experiment_start_price": 425.20928955078125,
@@ -242,7 +242,7 @@
   {
     "ticker": "MDB",
     "rank": 21,
-    "score": 38.89,
+    "score": 38.9,
     "classification": "REJECT",
     "price": 339.7799987792969,
     "experiment_start_price": 460.3299865722656,
@@ -290,7 +290,7 @@
   {
     "ticker": "ORCL",
     "rank": 25,
-    "score": 35.81,
+    "score": 35.79,
     "classification": "REJECT",
     "price": 127.11000061035156,
     "experiment_start_price": 149.96536254882812,
