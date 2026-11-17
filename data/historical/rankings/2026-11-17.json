@@ -2,7 +2,7 @@
   {
     "ticker": "MU",
     "rank": 1,
-    "score": 54.5,
+    "score": 54.47,
     "classification": "RESEARCH",
     "price": 719.02001953125,
     "experiment_start_price": 971.507080078125,
@@ -14,7 +14,7 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 53.89,
+    "score": 53.79,
     "classification": "RESEARCH",
     "price": 373.45001220703125,
     "experiment_start_price": 425.20928955078125,
@@ -38,7 +38,7 @@
   {
     "ticker": "TER",
     "rank": 4,
-    "score": 50.42,
+    "score": 50.29,
     "classification": "RESEARCH",
     "price": 231.89999389648438,
     "experiment_start_price": 418.62921142578125,
@@ -50,7 +50,7 @@
   {
     "ticker": "AMAT",
     "rank": 5,
-    "score": 49.25,
+    "score": 49.15,
     "classification": "REJECT",
     "price": 350.25,
     "experiment_start_price": 506.63824462890625,
@@ -62,7 +62,7 @@
   {
     "ticker": "DELL",
     "rank": 6,
-    "score": 49.2,
+    "score": 49.12,
     "classification": "REJECT",
     "price": 320.54998779296875,
     "experiment_start_price": 490.1310729980469,
@@ -74,7 +74,7 @@
   {
     "ticker": "ASML",
     "rank": 7,
-    "score": 48.32,
+    "score": 48.19,
     "classification": "REJECT",
     "price": 1406.7900390625,
     "experiment_start_price": 1841.650390625,
@@ -86,7 +86,7 @@
   {
     "ticker": "VRT",
     "rank": 8,
-    "score": 47.97,
+    "score": 47.82,
     "classification": "REJECT",
     "price": 188.6699981689453,
     "experiment_start_price": 293.7679748535156,
@@ -96,20 +96,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "CRDO",
-    "rank": 9,
-    "score": 46.51,
-    "classification": "REJECT",
-    "price": 120.70999908447266,
-    "experiment_start_price": 259.8999938964844,
-    "return_since_experiment_start": -0.5355521280521836,
-    "confidence": 100.0,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "PLTR",
-    "rank": 10,
+    "rank": 9,
     "score": 46.44,
     "classification": "REJECT",
     "price": 160.38999938964844,
@@ -121,12 +109,24 @@
   },
   {
     "ticker": "NVDA",
-    "rank": 11,
-    "score": 46.4,
+    "rank": 10,
+    "score": 46.35,
     "classification": "REJECT",
     "price": 156.13999938964844,
     "experiment_start_price": 224.90834045410156,
     "return_since_experiment_start": -0.30576163127435063,
+    "confidence": 100.0,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "CRDO",
+    "rank": 11,
+    "score": 46.27,
+    "classification": "REJECT",
+    "price": 120.70999908447266,
+    "experiment_start_price": 259.8999938964844,
+    "return_since_experiment_start": -0.5355521280521836,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -146,7 +146,7 @@
   {
     "ticker": "META",
     "rank": 13,
-    "score": 45.52,
+    "score": 45.49,
     "classification": "REJECT",
     "price": 626.4099731445312,
     "experiment_start_price": 589.3848266601562,
@@ -170,7 +170,7 @@
   {
     "ticker": "PATH",
     "rank": 15,
-    "score": 42.83,
+    "score": 42.82,
     "classification": "REJECT",
     "price": 13.140000343322754,
     "experiment_start_price": 16.010000228881836,
@@ -182,7 +182,7 @@
   {
     "ticker": "MRVL",
     "rank": 16,
-    "score": 42.67,
+    "score": 42.53,
     "classification": "REJECT",
     "price": 145.36000061035156,
     "experiment_start_price": 221.97149658203125,
@@ -206,7 +206,7 @@
   {
     "ticker": "MSFT",
     "rank": 18,
-    "score": 40.88,
+    "score": 40.86,
     "classification": "REJECT",
     "price": 517.989990234375,
     "experiment_start_price": 494.4691467285156,
@@ -302,7 +302,7 @@
   {
     "ticker": "ACMR",
     "rank": 26,
-    "score": 35.72,
+    "score": 35.52,
     "classification": "REJECT",
     "price": 44.0,
     "experiment_start_price": 80.41999816894531,
@@ -338,7 +338,7 @@
   {
     "ticker": "GOOGL",
     "rank": 29,
-    "score": 30.77,
+    "score": 30.72,
     "classification": "REJECT",
     "price": 283.7200012207031,
     "experiment_start_price": 345.67779541015625,
@@ -350,7 +350,7 @@
   {
     "ticker": "AMZN",
     "rank": 30,
-    "score": 25.01,
+    "score": 24.95,
     "classification": "REJECT",
     "price": 257.75,
     "experiment_start_price": 262.6499938964844,

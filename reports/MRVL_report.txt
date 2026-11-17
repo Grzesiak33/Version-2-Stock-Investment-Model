@@ -1,5 +1,5 @@
 MRVL
-Score: 42.67/100
+Score: 42.53/100
 Classification: REJECT
 Risk Level: LOW
 Data Confidence: 100.0/100 (HIGH)
@@ -8,7 +8,7 @@ Revenue Growth: 15.0/15
 Earnings/FCF: 12.8/15
 Industry Growth: 0.0/15
 Balance Sheet: 7.13/10
-Valuation: 1.68/10
+Valuation: 1.54/10
 Moat: 0.0/10
 Momentum: 2.55/10
 Insider/Institutional: 3.51/5
@@ -41,5 +41,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-17T02:42:50.119615+00:00
+Data Timestamp: 2026-11-17T04:47:55.867438+00:00
 Missing Fields: None
