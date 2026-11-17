@@ -86,7 +86,7 @@
   {
     "ticker": "VRT",
     "rank": 8,
-    "score": 48.06,
+    "score": 47.98,
     "classification": "REJECT",
     "price": 190.3699951171875,
     "experiment_start_price": 293.7679748535156,
@@ -266,7 +266,7 @@
   {
     "ticker": "MDB",
     "rank": 23,
-    "score": 38.33,
+    "score": 38.34,
     "classification": "REJECT",
     "price": 298.6300048828125,
     "experiment_start_price": 460.3299865722656,
@@ -302,7 +302,7 @@
   {
     "ticker": "ACMR",
     "rank": 26,
-    "score": 35.77,
+    "score": 35.57,
     "classification": "REJECT",
     "price": 44.119998931884766,
     "experiment_start_price": 80.41999816894531,
