@@ -1,5 +1,5 @@
 SMCI
-Score: 37.03/100
+Score: 37.04/100
 Classification: REJECT
 Risk Level: MEDIUM
 Data Confidence: 94.1/100 (HIGH)
@@ -11,7 +11,7 @@ Balance Sheet: 2.15/10
 Valuation: 10.0/10
 Moat: 0.0/10
 Momentum: 0.0/10
-Insider/Institutional: 3.49/5
+Insider/Institutional: 3.5/5
 Catalysts: 0.0/5
 Inflation Resilience: 0.0/5
 
@@ -42,5 +42,5 @@ Unavailable — requires research.
 
 Model Version: 2.1.0
 Data Sources: Yahoo Finance via yfinance
-Data Timestamp: 2026-11-19T03:51:59.693523+00:00
+Data Timestamp: 2026-11-19T21:16:56.541262+00:00
 Missing Fields: price_to_fcf
