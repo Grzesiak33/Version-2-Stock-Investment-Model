@@ -62,11 +62,11 @@
   {
     "ticker": "DELL",
     "rank": 6,
-    "score": 48.74,
+    "score": 48.75,
     "classification": "REJECT",
-    "price": 312.6199951171875,
+    "price": 312.5400085449219,
     "experiment_start_price": 490.1310729980469,
-    "return_since_experiment_start": -0.36217062671634925,
+    "return_since_experiment_start": -0.36233382096513733,
     "confidence": 100.0,
     "risk": "HIGH",
     "model_version": "2.1.0"
@@ -208,9 +208,9 @@
     "rank": 18,
     "score": 41.35,
     "classification": "REJECT",
-    "price": 303.69000244140625,
+    "price": 303.67999267578125,
     "experiment_start_price": 315.7799987792969,
-    "return_since_experiment_start": -0.03828613713543172,
+    "return_since_experiment_start": -0.03831783567765634,
     "confidence": 88.2,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -292,9 +292,9 @@
     "rank": 25,
     "score": 36.06,
     "classification": "REJECT",
-    "price": 110.51000213623047,
+    "price": 110.56999969482422,
     "experiment_start_price": 149.96536254882812,
-    "return_since_experiment_start": -0.26309648936267627,
+    "return_since_experiment_start": -0.2626964132546069,
     "confidence": 94.1,
     "risk": "HIGH",
     "model_version": "2.1.0"
