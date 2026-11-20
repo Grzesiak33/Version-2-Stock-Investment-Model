@@ -2,11 +2,11 @@
   {
     "ticker": "MU",
     "rank": 1,
-    "score": 54.2,
+    "score": 53.94,
     "classification": "RESEARCH",
-    "price": null,
+    "price": 690.4400024414062,
     "experiment_start_price": 971.507080078125,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.2893103749836968,
     "confidence": 96.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -14,11 +14,11 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 53.44,
+    "score": 52.79,
     "classification": "RESEARCH",
-    "price": null,
+    "price": 352.0899963378906,
     "experiment_start_price": 425.20928955078125,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.17196071442874306,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -38,11 +38,11 @@
   {
     "ticker": "TER",
     "rank": 4,
-    "score": 50.62,
+    "score": 50.41,
     "classification": "RESEARCH",
-    "price": null,
+    "price": 227.42999267578125,
     "experiment_start_price": 418.62921142578125,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.456726892274926,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -50,11 +50,11 @@
   {
     "ticker": "AMAT",
     "rank": 5,
-    "score": 49.35,
+    "score": 49.34,
     "classification": "REJECT",
-    "price": null,
-    "experiment_start_price": 506.63824462890625,
-    "return_since_experiment_start": null,
+    "price": 338.92999267578125,
+    "experiment_start_price": 505.87603759765625,
+    "return_since_experiment_start": -0.3300137435144812,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -76,9 +76,9 @@
     "rank": 7,
     "score": 48.61,
     "classification": "REJECT",
-    "price": null,
+    "price": 145.97999572753906,
     "experiment_start_price": 224.90834045410156,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.35093560588816797,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -98,11 +98,11 @@
   {
     "ticker": "ASML",
     "rank": 9,
-    "score": 48.27,
+    "score": 47.66,
     "classification": "REJECT",
-    "price": null,
+    "price": 1356.199951171875,
     "experiment_start_price": 1841.650390625,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.2635953283665191,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -110,7 +110,7 @@
   {
     "ticker": "CRDO",
     "rank": 10,
-    "score": 46.78,
+    "score": 46.67,
     "classification": "REJECT",
     "price": null,
     "experiment_start_price": 259.8999938964844,
@@ -120,20 +120,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "AMD",
-    "rank": 11,
-    "score": 46.77,
-    "classification": "REJECT",
-    "price": null,
-    "experiment_start_price": 514.3900146484375,
-    "return_since_experiment_start": null,
-    "confidence": 100.0,
-    "risk": "MEDIUM",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "PLTR",
-    "rank": 12,
+    "rank": 11,
     "score": 46.14,
     "classification": "REJECT",
     "price": null,
@@ -145,7 +133,7 @@
   },
   {
     "ticker": "META",
-    "rank": 13,
+    "rank": 12,
     "score": 45.81,
     "classification": "REJECT",
     "price": null,
@@ -156,13 +144,25 @@
     "model_version": "2.1.0"
   },
   {
+    "ticker": "AMD",
+    "rank": 13,
+    "score": 45.58,
+    "classification": "REJECT",
+    "price": 489.19000244140625,
+    "experiment_start_price": 514.3900146484375,
+    "return_since_experiment_start": -0.04899008823927953,
+    "confidence": 100.0,
+    "risk": "MEDIUM",
+    "model_version": "2.1.0"
+  },
+  {
     "ticker": "AVGO",
     "rank": 14,
-    "score": 45.05,
+    "score": 44.56,
     "classification": "REJECT",
-    "price": null,
+    "price": 346.6499938964844,
     "experiment_start_price": 392.2756652832031,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.11631022626340926,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -172,9 +172,9 @@
     "rank": 15,
     "score": 42.96,
     "classification": "REJECT",
-    "price": null,
+    "price": 138.47000122070312,
     "experiment_start_price": 221.97149658203125,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.3761811613072109,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -218,11 +218,11 @@
   {
     "ticker": "MSFT",
     "rank": 19,
-    "score": 40.8,
+    "score": 40.57,
     "classification": "REJECT",
-    "price": null,
-    "experiment_start_price": 494.4691467285156,
-    "return_since_experiment_start": null,
+    "price": 498.29998779296875,
+    "experiment_start_price": 493.51580810546875,
+    "return_since_experiment_start": 0.009694075871380381,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -280,9 +280,9 @@
     "rank": 24,
     "score": 37.04,
     "classification": "REJECT",
-    "price": null,
+    "price": 23.84000015258789,
     "experiment_start_price": 39.84000015258789,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.40160642416465164,
     "confidence": 94.1,
     "risk": "MEDIUM",
     "model_version": "2.1.0"
@@ -290,11 +290,11 @@
   {
     "ticker": "ORCL",
     "rank": 25,
-    "score": 36.19,
+    "score": 36.06,
     "classification": "REJECT",
-    "price": null,
+    "price": 110.56999969482422,
     "experiment_start_price": 149.96536254882812,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.2626964132546069,
     "confidence": 94.1,
     "risk": "HIGH",
     "model_version": "2.1.0"
@@ -338,11 +338,11 @@
   {
     "ticker": "GOOGL",
     "rank": 29,
-    "score": 30.84,
+    "score": 30.56,
     "classification": "REJECT",
-    "price": null,
+    "price": 272.6600036621094,
     "experiment_start_price": 345.67779541015625,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.21123078403520035,
     "confidence": 94.1,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -350,11 +350,11 @@
   {
     "ticker": "AMZN",
     "rank": 30,
-    "score": 25.71,
+    "score": 25.0,
     "classification": "REJECT",
-    "price": null,
+    "price": 257.3699951171875,
     "experiment_start_price": 262.6499938964844,
-    "return_since_experiment_start": null,
+    "return_since_experiment_start": -0.020102794220424824,
     "confidence": 94.1,
     "risk": "LOW",
     "model_version": "2.1.0"
