@@ -50,7 +50,7 @@
   {
     "ticker": "AMAT",
     "rank": 5,
-    "score": 49.58,
+    "score": 49.8,
     "classification": "REJECT",
     "price": 346.8699951171875,
     "experiment_start_price": 505.87603759765625,
@@ -60,25 +60,25 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "VRT",
+    "ticker": "NVDA",
     "rank": 6,
-    "score": 48.53,
+    "score": 48.55,
     "classification": "REJECT",
-    "price": 186.35000610351562,
-    "experiment_start_price": 293.7679748535156,
-    "return_since_experiment_start": -0.36565581664768887,
+    "price": 165.0500030517578,
+    "experiment_start_price": 224.90834045410156,
+    "return_since_experiment_start": -0.26614547633710106,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
   },
   {
-    "ticker": "NVDA",
+    "ticker": "VRT",
     "rank": 7,
-    "score": 48.29,
+    "score": 48.53,
     "classification": "REJECT",
-    "price": 165.0500030517578,
-    "experiment_start_price": 224.90834045410156,
-    "return_since_experiment_start": -0.26614547633710106,
+    "price": 186.35000610351562,
+    "experiment_start_price": 293.7679748535156,
+    "return_since_experiment_start": -0.36565581664768887,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -290,7 +290,7 @@
   {
     "ticker": "ORCL",
     "rank": 25,
-    "score": 36.23,
+    "score": 36.39,
     "classification": "REJECT",
     "price": 113.68000030517578,
     "experiment_start_price": 149.96536254882812,
