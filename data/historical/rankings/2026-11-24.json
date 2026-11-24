@@ -110,7 +110,7 @@
   {
     "ticker": "CRDO",
     "rank": 10,
-    "score": 46.74,
+    "score": 47.25,
     "classification": "REJECT",
     "price": 122.45999908447266,
     "experiment_start_price": 259.8999938964844,
@@ -194,7 +194,7 @@
   {
     "ticker": "PATH",
     "rank": 17,
-    "score": 41.73,
+    "score": 41.8,
     "classification": "REJECT",
     "price": 11.84000015258789,
     "experiment_start_price": 16.010000228881836,
