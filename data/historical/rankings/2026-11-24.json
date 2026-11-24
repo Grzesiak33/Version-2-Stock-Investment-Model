@@ -14,7 +14,7 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 53.68,
+    "score": 53.5,
     "classification": "RESEARCH",
     "price": 363.6000061035156,
     "experiment_start_price": 425.20928955078125,
@@ -60,25 +60,25 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "NVDA",
-    "rank": 6,
-    "score": 48.55,
-    "classification": "REJECT",
-    "price": 165.0500030517578,
-    "experiment_start_price": 224.90834045410156,
-    "return_since_experiment_start": -0.26614547633710106,
-    "confidence": 100.0,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "VRT",
-    "rank": 7,
+    "rank": 6,
     "score": 48.53,
     "classification": "REJECT",
     "price": 186.35000610351562,
     "experiment_start_price": 293.7679748535156,
     "return_since_experiment_start": -0.36565581664768887,
+    "confidence": 100.0,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "NVDA",
+    "rank": 7,
+    "score": 48.29,
+    "classification": "REJECT",
+    "price": 165.0500030517578,
+    "experiment_start_price": 224.90834045410156,
+    "return_since_experiment_start": -0.26614547633710106,
     "confidence": 100.0,
     "risk": "LOW",
     "model_version": "2.1.0"
@@ -194,7 +194,7 @@
   {
     "ticker": "PATH",
     "rank": 17,
-    "score": 41.8,
+    "score": 41.73,
     "classification": "REJECT",
     "price": 11.84000015258789,
     "experiment_start_price": 16.010000228881836,
@@ -290,7 +290,7 @@
   {
     "ticker": "ORCL",
     "rank": 25,
-    "score": 36.39,
+    "score": 36.23,
     "classification": "REJECT",
     "price": 113.68000030517578,
     "experiment_start_price": 149.96536254882812,
