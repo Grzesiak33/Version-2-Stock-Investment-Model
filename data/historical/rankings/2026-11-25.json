@@ -50,7 +50,7 @@
   {
     "ticker": "AMAT",
     "rank": 5,
-    "score": 49.52,
+    "score": 49.41,
     "classification": "REJECT",
     "price": 323.760009765625,
     "experiment_start_price": 505.87603759765625,
@@ -62,7 +62,7 @@
   {
     "ticker": "NVDA",
     "rank": 6,
-    "score": 48.29,
+    "score": 48.23,
     "classification": "REJECT",
     "price": 155.3800048828125,
     "experiment_start_price": 224.90834045410156,
@@ -110,7 +110,7 @@
   {
     "ticker": "CRDO",
     "rank": 10,
-    "score": 47.15,
+    "score": 46.8,
     "classification": "REJECT",
     "price": 106.45999908447266,
     "experiment_start_price": 259.8999938964844,
@@ -254,7 +254,7 @@
   {
     "ticker": "MDB",
     "rank": 22,
-    "score": 38.74,
+    "score": 38.73,
     "classification": "REJECT",
     "price": 308.5,
     "experiment_start_price": 460.3299865722656,
@@ -290,7 +290,7 @@
   {
     "ticker": "ORCL",
     "rank": 25,
-    "score": 36.18,
+    "score": 36.12,
     "classification": "REJECT",
     "price": 109.5,
     "experiment_start_price": 149.96536254882812,
