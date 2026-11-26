@@ -2,7 +2,7 @@
   {
     "ticker": "MU",
     "rank": 1,
-    "score": 54.04,
+    "score": 53.91,
     "classification": "RESEARCH",
     "price": 601.25,
     "experiment_start_price": 971.507080078125,
@@ -14,7 +14,7 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 52.51,
+    "score": 52.54,
     "classification": "RESEARCH",
     "price": 342.3399963378906,
     "experiment_start_price": 425.20928955078125,
@@ -36,8 +36,20 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "ANET",
+    "ticker": "AMAT",
     "rank": 4,
+    "score": 49.1,
+    "classification": "REJECT",
+    "price": 311.17999267578125,
+    "experiment_start_price": 505.87603759765625,
+    "return_since_experiment_start": -0.38486907948133464,
+    "confidence": 100.0,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
+    "ticker": "ANET",
+    "rank": 5,
     "score": 49.1,
     "classification": "REJECT",
     "price": 163.99000549316406,
@@ -48,21 +60,9 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "AMAT",
-    "rank": 5,
-    "score": 49.04,
-    "classification": "REJECT",
-    "price": 311.17999267578125,
-    "experiment_start_price": 505.87603759765625,
-    "return_since_experiment_start": -0.38486907948133464,
-    "confidence": 100.0,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "NVDA",
     "rank": 6,
-    "score": 48.46,
+    "score": 48.5,
     "classification": "REJECT",
     "price": 149.3000030517578,
     "experiment_start_price": 224.90834045410156,
@@ -96,20 +96,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "DELL",
-    "rank": 9,
-    "score": 47.7,
-    "classification": "REJECT",
-    "price": 297.05999755859375,
-    "experiment_start_price": 490.1310729980469,
-    "return_since_experiment_start": -0.39391723168757864,
-    "confidence": 100.0,
-    "risk": "HIGH",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "CRDO",
-    "rank": 10,
+    "rank": 9,
     "score": 47.14,
     "classification": "REJECT",
     "price": 106.79499816894531,
@@ -121,7 +109,7 @@
   },
   {
     "ticker": "PLTR",
-    "rank": 11,
+    "rank": 10,
     "score": 46.93,
     "classification": "REJECT",
     "price": 163.58999633789062,
@@ -133,8 +121,8 @@
   },
   {
     "ticker": "META",
-    "rank": 12,
-    "score": 45.27,
+    "rank": 11,
+    "score": 45.23,
     "classification": "REJECT",
     "price": 609.8900146484375,
     "experiment_start_price": 589.3848266601562,
@@ -145,7 +133,7 @@
   },
   {
     "ticker": "AVGO",
-    "rank": 13,
+    "rank": 12,
     "score": 43.66,
     "classification": "REJECT",
     "price": 300.8599853515625,
@@ -157,7 +145,7 @@
   },
   {
     "ticker": "AMD",
-    "rank": 14,
+    "rank": 13,
     "score": 43.63,
     "classification": "REJECT",
     "price": 406.0299987792969,
@@ -169,7 +157,7 @@
   },
   {
     "ticker": "MRVL",
-    "rank": 15,
+    "rank": 14,
     "score": 43.4,
     "classification": "REJECT",
     "price": 130.92999267578125,
@@ -181,7 +169,7 @@
   },
   {
     "ticker": "PANW",
-    "rank": 16,
+    "rank": 15,
     "score": 42.53,
     "classification": "REJECT",
     "price": 356.1400146484375,
@@ -193,7 +181,7 @@
   },
   {
     "ticker": "PATH",
-    "rank": 17,
+    "rank": 16,
     "score": 41.74,
     "classification": "REJECT",
     "price": 12.420000076293945,
@@ -205,7 +193,7 @@
   },
   {
     "ticker": "MSFT",
-    "rank": 18,
+    "rank": 17,
     "score": 40.35,
     "classification": "REJECT",
     "price": 489.92999267578125,
@@ -217,7 +205,7 @@
   },
   {
     "ticker": "DDOG",
-    "rank": 19,
+    "rank": 18,
     "score": 40.33,
     "classification": "REJECT",
     "price": 158.25,
@@ -229,7 +217,7 @@
   },
   {
     "ticker": "NET",
-    "rank": 20,
+    "rank": 19,
     "score": 39.9,
     "classification": "REJECT",
     "price": 283.29998779296875,
@@ -240,9 +228,21 @@
     "model_version": "2.1.0"
   },
   {
+    "ticker": "DELL",
+    "rank": 20,
+    "score": 39.19,
+    "classification": "REJECT",
+    "price": 297.05999755859375,
+    "experiment_start_price": 490.1310729980469,
+    "return_since_experiment_start": -0.39391723168757864,
+    "confidence": 94.1,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
     "ticker": "MDB",
     "rank": 21,
-    "score": 38.97,
+    "score": 38.96,
     "classification": "REJECT",
     "price": 313.5299987792969,
     "experiment_start_price": 460.3299865722656,
