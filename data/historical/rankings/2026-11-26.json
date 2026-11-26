@@ -14,7 +14,7 @@
   {
     "ticker": "TSM",
     "rank": 2,
-    "score": 52.54,
+    "score": 52.51,
     "classification": "RESEARCH",
     "price": 342.3399963378906,
     "experiment_start_price": 425.20928955078125,
@@ -36,20 +36,8 @@
     "model_version": "2.1.0"
   },
   {
-    "ticker": "AMAT",
-    "rank": 4,
-    "score": 49.1,
-    "classification": "REJECT",
-    "price": 311.17999267578125,
-    "experiment_start_price": 505.87603759765625,
-    "return_since_experiment_start": -0.38486907948133464,
-    "confidence": 100.0,
-    "risk": "LOW",
-    "model_version": "2.1.0"
-  },
-  {
     "ticker": "ANET",
-    "rank": 5,
+    "rank": 4,
     "score": 49.1,
     "classification": "REJECT",
     "price": 163.99000549316406,
@@ -60,9 +48,21 @@
     "model_version": "2.1.0"
   },
   {
+    "ticker": "AMAT",
+    "rank": 5,
+    "score": 49.04,
+    "classification": "REJECT",
+    "price": 311.17999267578125,
+    "experiment_start_price": 505.87603759765625,
+    "return_since_experiment_start": -0.38486907948133464,
+    "confidence": 100.0,
+    "risk": "LOW",
+    "model_version": "2.1.0"
+  },
+  {
     "ticker": "NVDA",
     "rank": 6,
-    "score": 48.5,
+    "score": 48.46,
     "classification": "REJECT",
     "price": 149.3000030517578,
     "experiment_start_price": 224.90834045410156,
@@ -134,7 +134,7 @@
   {
     "ticker": "META",
     "rank": 12,
-    "score": 45.23,
+    "score": 45.27,
     "classification": "REJECT",
     "price": 609.8900146484375,
     "experiment_start_price": 589.3848266601562,
