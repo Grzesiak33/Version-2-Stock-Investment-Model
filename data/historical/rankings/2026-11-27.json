@@ -122,7 +122,7 @@
   {
     "ticker": "META",
     "rank": 11,
-    "score": 45.85,
+    "score": 45.81,
     "classification": "REJECT",
     "price": 628.9600219726562,
     "experiment_start_price": 589.3848266601562,
@@ -242,7 +242,7 @@
   {
     "ticker": "MDB",
     "rank": 21,
-    "score": 38.5,
+    "score": 38.49,
     "classification": "REJECT",
     "price": 320.1199951171875,
     "experiment_start_price": 460.3299865722656,
